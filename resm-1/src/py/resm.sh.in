@@ -1,0 +1,65 @@
+#!@INTERPRETER_PATH@ -B
+# vim: set ts=4 sw=4 sts=4 et:
+
+#
+# Executable wrapper
+#
+# @author  Vadim Sannikov <vsj.vadim@gmail.com> 
+# @version $id$
+# @link    ____link____
+#
+
+import sys, os, logging, getopt
+logging.basicConfig(level=logging.DEBUG)
+
+#
+# Main wrapper
+#
+def main():
+
+    # Directories
+    DIR_DATA = '@RESM_DATA@'
+    DIR_LIB  = '@RESM_LIB@'
+
+    CONF_FILE = '@RESM_SYSCONF@/resm.conf'
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], '', ['help', 'version', 'local=', 'config='])
+
+    except getopt.GetoptError as err:
+        print str(err)
+        sys.exit(1)
+
+    opts = dict(opts);
+
+    if '--local' in opts:
+        local_dir = os.path.realpath(opts.get('--local'))
+
+        DIR_DATA  = local_dir + '/src/data'
+        DIR_LIB   = local_dir + '/src/py'
+        CONF_FILE = local_dir + '/conf/resm.conf'
+
+    if '--config' in opts:
+        CONF_FILE = os.path.realpath(opts.get('--config'))
+
+    if '--help' in opts:
+        print open(DIR_DATA + '/HELP', 'r').read().strip('\n')
+
+    elif '--version' in opts:
+        print open(DIR_DATA + '/VERSION', 'r').read().strip('\n')
+
+    else:
+        sys.path.append(DIR_LIB)
+        import Application
+
+        try:
+            Application.Application(CONF_FILE).run()
+
+        except:
+            print os.linesep + 'Error: ' + str(sys.exc_info())
+            sys.exit(1)
+
+if __name__ == '__main__':
+    main()
+
+logging.shutdown()

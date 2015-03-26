@@ -1,0 +1,6 @@
+[Main]
+address=@RESM_INADDR_ANY@
+port=@RESM_PORT@
+res_count=3
+res_prefix=t
+test_mode=Off

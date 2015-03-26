@@ -1,0 +1,3 @@
+resm binary: new-package-should-close-itp-bug
+resm binary: extended-description-is-probably-too-short
+resm binary: package-contains-upstream-install-documentation

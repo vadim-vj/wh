@@ -1,0 +1,6 @@
+[Main]
+address=@RESM_INADDR_ANY@
+port=@RESM_PORT@
+res_count=@RESM_CNT@
+res_prefix=@RESM_PREF@
+test_mode=@RESM_TEST_MODE@

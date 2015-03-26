@@ -1,0 +1,5 @@
+As service:  
+    resm &  
+
+As service on Debian system(s):  
+    service resm (start|stop|restart|status)  

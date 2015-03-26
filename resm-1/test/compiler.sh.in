@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ ! -e .pid ]]; then
+    echo "Local version of service 'resm' isn't running; unable to test"
+    exit 77 > /dev/null 2>&1
+fi
+
+request="$(echo "$1" | sed -r "s/.*[[:digit:]]+_([a-zA-Z0-9_]+)\.req$/\1/" | tr "_" "/")"
+pattern="^\s*HTTP/1.1\s\+$(cat "$1" \
+    | sed -e "s/@RESM_HEAD_CT@/Content-Type:\\\\s\\\\+application\/json;\\\\s\\\\+charset=utf-8/g" \
+    | sed -e "s/@RESM_Q@/\[\\\\\"'\]\\\\?/g")\s*$"
+
+exec 3<>/dev/tcp/0.0.0.0/@RESM_PORT@ || exit 99
+echo "GET /$request" >&3
+response=$(cat <&3)
+
+if [[ -z $(echo "$response" | grep -iz "$pattern") ]]; then
+    echo "Response doesn't match:
+---------
+$response
+---------
+Request: \"$request\"
+Pattern: \"$pattern\""
+
+    exit 1 > /dev/null 2>&1
+fi

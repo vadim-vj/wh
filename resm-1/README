@@ -1,0 +1,74 @@
+README file for RESM v.1
+*************************
+
+Author: Vadim Sannikov <vsj.vadim@gmail.com>, 2015
+
+
+About
+=====================================================================
+
+   Simple resource manager on TCP/IP protocol.
+
+   Options:
+
+  --help
+  --version
+
+
+API
+=====================================================================
+
+   Only GET request method is allowed. Request headers format:
+
+  GET /<`action'>/<`extra_param'> ...
+
+   Available actions:
+
+  1. `allocate': allocate resource for user. In this action, <`extra_param'>
+     is required, and if it's not passed, server will produce the 
+     `400 Bad Request' code. If resource is successfully allocated, its name
+     will be returned in response body, and code is `201 Created'. In case 
+     there are no available resources, the `503 Service Unavailable' is
+     returned.
+
+  2. `deallocate': deallocate resource by name (mandatory <`extra_param'>).
+     If successfully, returns '204 No Content'. If resource is not allocated,
+     the '404 Not Found' will be returned.
+
+  3. `list': return list of the resources in the response body. Optional
+     <`extra_param'> treats as user name. If it's passed, list will 
+     contain resources for that use only. Response code is always `200 OK'.
+
+  4. `reset': reset resources list to the initial state. Always returns
+     `204 No Content' and empty body.
+
+  5. any other: any other action or request method (e.g. POST) will produce
+     the `400 Bad Request' response. The same response may be received in
+     some other cases, mainly, due to <`extra_param'>: for example, if user
+     name has a wrong format, or trying to deallocate non-existing resource.
+
+   Response headers contain only two lines: the first (main) and the 
+`Contain-Type'. Value of the last one depends on the `test_mode' parameter
+in main config file (`text' if On, and `json' if Off):
+
+  HTTP/1.1 <`status'> <`phrase'>
+  Content-Type: {text/plain|application/json}; charset=utf-8
+
+  <`json_encoded_body'>
+
+
+Test mode
+=====================================================================
+
+  If the `test_mode' param in main config file is turned on, then the requests
+contain header 'Content-Type: text/plain', and server adds the info message to
+request body. Message contains response code and phrase, sent request and list
+of the resources in it current state. Something like this:
+
+  <`json_encoded_body'>
+
+  =============== Test info ===============
+  200: OK
+
+  Request:   "GET /list HTTP/1.1"
+  Resources: "{"allocated":[],"deallocated":["r1","r2","r3"]}"
