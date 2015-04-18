@@ -1,0 +1,9 @@
+/**
+ * CSS
+ *
+ * @author Vadim Sannikov <vsj.vadim@gmail.com>
+ */
+
+input#submit {
+  display: none;
+}
