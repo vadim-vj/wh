@@ -11,6 +11,11 @@
 final class Application
 {
     /**
+     * For debug
+     */
+    const DEV_MODE = true;
+
+    /**
      * Request param names
      */
     const ACTION = 'action';
@@ -70,7 +75,12 @@ final class Application
             $controller->$handler();
 
         } catch (\Exception $exception) {
-            echo $exception->getMessage();
+            if (static::DEV_MODE) {
+                throw $exception;
+
+            } else {
+                echo $exception->getMessage();
+            }
         }
     }
 
@@ -86,11 +96,10 @@ final class Application
             $config = require_once DIR_PRIVATE . DS . 'database' . DS . 'config.php';
             $dsn = 'mysql:dbname=' . $config['dbname'];
 
-            if (empty($config['sock'])) {
-               $dsn .= ';host=' . $config['host'] . (empty($config['port']) ? '' : ';port='. $config['port']);
-
-            } else {
-                $dsn .= ';unix_socket=' . $config['sock'];
+            foreach (array('host', 'port', 'unix_socket') as $param) {
+                if (!empty($config[$param])) {
+                    $dsn .= ';' . $param . '=' . $config[$param];
+                }
             }
 
             $this->db = new \PDO(

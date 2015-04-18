@@ -11,6 +11,11 @@
 class Controller
 {
     /**
+     * Number of lines in .csv file processed per one iteration
+     */
+    const LINES_PER_ITERATION = 200;
+
+    /**
      * Import paths
      *
      * @var array
@@ -39,8 +44,74 @@ class Controller
      */
     public function doActionImport()
     {
-        @unlink($this->importPaths['csv']);
-        $this->redirect();
+        // Number of current iteration
+        $page = isset($_REQUEST['page']) ? max(0, intval($_REQUEST['page'])) : 0;
+
+        $file = new \SplFileObject($this->importPaths['csv'], 'r');
+        $file->setFlags(\SplFileObject::DROP_NEW_LINE | \SplFileObject::SKIP_EMPTY | \SplFileObject::READ_AHEAD);
+        $file->seek(static::LINES_PER_ITERATION * $page);
+
+        if (false === ($log = @fopen($this->importPaths['log'], 'a'))) {
+            throw new \Exception('Failed to open import log file for writing');
+        }
+        $count = 0;
+
+        try {
+            $parser = new \Parser();
+            $model  = new \Model();
+
+            $transaction = \Application::getInstance()->getDB()->beginTransaction();
+
+            while ($file->valid() && static::LINES_PER_ITERATION >= ++$count) {
+                $data = $parser->parseLine($line = $file->current());
+
+                if (empty($data['name']) || empty($data['category'])) {
+                    fwrite($log, '[' . ($file->key() + 1) . ']: ' . $line . PHP_EOL);
+
+                    if (!empty($data['name'])) {
+                        $model->saveProduct($data);
+                    }
+                }
+
+                $file->next();
+            }
+
+            fclose($log);
+
+            if (!empty($transaction)) {
+                \Application::getInstance()->getDB()->commit();
+            }
+
+        } catch (\Exception $exception) {
+            @fclose($log);
+
+            if (!empty($transaction)) {
+                \Application::getInstance()->getDB()->rollback();
+            }
+
+            throw $exception;
+        }
+
+        if ($file->valid()) {
+            $this->redirect(array(\Application::ACTION => 'import', 'page' => $page + 1));
+
+        } else {
+            header('Content-Type: text/html; charset=utf-8');
+
+            if ($text = file_get_contents($this->importPaths['log'])) {
+                echo '<b>Not recognized name or category</b>: <br />';
+                echo str_replace(PHP_EOL, '<br />', $text) . '<br />';
+            }
+
+            echo 'Done. Processed: ' . $file->key() . ' records.<br />';
+
+            // It's not possible to remove file before the \SplFileObject::__destruct() is called
+            // See http://php.net/manual/en/class.splfileobject.php#113149
+            unset($file);
+            @unlink($this->importPaths['csv']);
+
+            $this->redirect(null, false, 'Return');
+        }
     }
 
     /**
@@ -66,11 +137,11 @@ class Controller
         } elseif (!move_uploaded_file($_FILES['inputfile']['tmp_name'], $this->importPaths['csv'])) {
             throw new \Exception('Unable to save temporary .csv file');
 
-        } elseif (false === ($file = @fopen($this->importPaths['log'], 'w'))) {
+        } elseif (false === ($log = @fopen($this->importPaths['log'], 'w'))) {
             throw new \Exception('Failed to truncate import log file');
         }
 
-        fclose($file);
+        fclose($log);
         $this->redirect(array(\Application::ACTION => 'import'));
     }
 
@@ -81,6 +152,17 @@ class Controller
      */
     public function doActionGetProducts()
     {
+        $params = array(
+            'start' => 10 * (isset($_REQUEST['page']) ? max(0, intval($_REQUEST['page'])) : 0),
+            'count' => 10,
+        );
+
+        foreach (array('category', 'sort', 'sort_dir') as $name) {
+            $params[$name] = isset($_REQUEST[$name]) ? $_REQUEST[$name] : null;
+        }
+
+        header('Content-Type: application/json;');
+        echo json_encode(call_user_func_array(array(new \Model(), 'getProducts'), $params));
     }
 
     /**
@@ -90,6 +172,10 @@ class Controller
      */
     public function doActionDeleteAllProducts()
     {
+        $model = new \Model();
+        $model->deleteAllProducts();
+
+        $this->redirect();
     }
 
     // }}}
