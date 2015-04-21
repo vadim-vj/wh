@@ -13,7 +13,7 @@ class Controller
     /**
      * Number of lines in .csv file processed per one iteration
      */
-    const LINES_PER_ITERATION = 800;
+    const LINES_PER_ITERATION = 500;
 
     /**
      * Products per page
