@@ -39,7 +39,7 @@ class Parser
     protected $colors = array(
         'крас(?:н(?:ый|ая|ое|ые)?)?', 'син(?:ий|яя|ее|ие)?', 'бел(?:ый|ая|ое|ые)?',
         'зел(?:ен(?:ый|ая|ое|ые)?)?', 'сер(?:ый|ая|ое|ые)?', 'чер(?:н(?:ый|ая|ое|ые)?)?',
-        'жел(?:т(?:ый|ая|ое|ые)?)?', 'оранж(?:ев(?:ый|ая|ое|ые)?)?', 'золот(?:ой|ая|ое|ые)?',
+        'жел(?:т(?:ый|ая|ое|ые)?)?', 'оранж(?:ев(?:ый|ая|ое|ые)?)?', 'золот(?:о|ой|ая|ое|ые)?',
         'хром',
     );
 
@@ -75,17 +75,17 @@ class Parser
 
                     // Search for non-empty value with non-numeric key (category/brand ID)
                     // I.e. we search for first matched named group
-                    if (in_array($name, array('brand', 'category'))) {
+                    if (in_array($name, array('brand_id', 'category_id'))) {
                         $data = array_filter(array_keys(array_filter($matches)), 'is_string');
                         $key  = array_shift($data);
 
                         // Last value in the "matches" array is a product name
-                        if ('category' === $name) {
+                        if ('category_id' === $name) {
                             $result['name'] = array_pop($matches);
-                            $matches[1] = str_replace($result['name'], '', $matches[$key]);
+                            $matches[1] = str_replace($result['name'], ' ', $matches[$key]);
 
                         } else {
-                            $matches[1] = '';
+                            $matches[1] = ' ';
                         }
 
                         // Key of the found named group is a brand/category ID, needed to join SQL tables
@@ -104,7 +104,11 @@ class Parser
         $result['model'] = $line;
 
         // Remove extra spaces and other non-alphabetical symbols
-        $result = preg_replace('/\s+/Su', ' ', array_map(function ($val) { return trim($val, ' .-'); }, $result));
+        $result = preg_replace(
+            array('/\(\s+(\S)/Su', '/(\S)\s+\)/Su', '/\(\s*\)/Su', '/\s+/Su'),
+            array('(\1', '\1)', '', ' '),
+            array_map(function ($val) { return trim($val, ' .-'); }, $result)
+        );
 
         $result['model'] = $this->ucfirst($result['model']);
         $result['name']  = $this->ucfirst($result['name'], true);
@@ -119,48 +123,42 @@ class Parser
      */
     protected function getPatterns()
     {
+        // Definition order is important
         if (!isset($this->patterns)) {
-            // Definition order is important
-            $this->patterns = array_fill_keys(
-                array('article', 'brand', 'orient', 'size', 'color', 'category'),
-                array()
-            );
 
             // Article. Format: " ... (42345677)", "... <brand> H378456699 ...", " .... K45789960" etc.
-            $article = '\b([A-Z]?\d{3,9}[A-Z]?)\b';
-            $this->patterns['article'][] = '/()\(\s*' . $article . '\s*\)?\s*$/Sui';
-            if ($this->getBrands()) {
-                $this->patterns['article'][] = '/\b(' . implode('|', $this->getBrands()) . ')\b'
-                    . '\s*(?:\(\s*)?' .  $article . '(?:\s*\))?/Sui';
-            }
+            $this->patterns['article'] = '/(\s*)\(?\s*\b([A-Z]?\d{5,10}[A-Z]?)\b\s*\)?/Sui';
 
             // Brand. Format: name from the list
             // Here we use named groups ("(?<_ID>name)") to pass ID to the preg_replace_callback()
-            if ($this->getBrands()) {
-                foreach ($this->getBrands() as $id => $pattern) {
-                    $this->patterns['brand'][] = '/\b(?<_' . $id . '>' . $pattern . ')\b/Sui';
-                }
+            $this->patterns['brand_id'] = array();
+            foreach ($this->getBrands() as $id => $pattern) {
+                $this->patterns['brand_id'][] = '(?<_' . $id . '>' . $pattern . ')';
             }
+            $this->patterns['brand_id'] = '/(^|\s+)(' . implode('|', $this->patterns['brand_id']) . ')(?:\s+|$)/Sui';
 
             // Stick orientation. Format: {L|R} at the end
-            $this->patterns['orient'][] = '/(.*(?:клюшк|ловушк|блокер|блин).*)(?:-\s*|\s+)(L|R)\s*$/Sui';
+            $this->patterns['orient'] = '/(.*(?:клюшк|ловушк|блокер|блин).*)(?:-\s*|\s+)(L|R)\s*$/Sui';
 
             // Size. Format: "... - XL", "... - 160", "... - S=120", "... - 6.5 (D)", "... 40"", ..." etc.
             $size = '(?:' . implode('|', $this->sizes) . ')';
+            $this->patterns['size'] = array();
             $this->patterns['size'][] = '/(.*коньки.*)(?:-\s*|\s+)(' . $this->sizes[0]
-                . '(?:\s*(\()?[A-Z]{1,2}(?(3)\)))?)\s*$/Sui';
+                . '(?:\s*(\()?\w{1,2}(?(3)\)))?)\s*$/Sui';
             $this->patterns['size'][] = '/(\s)?(?(1)|-\s+)(' . $size . '(?:\s*=\s*' . $size . ')?)\s*$/Sui';
             $this->patterns['size'][] = '/(\s)?(?(1)|-\s+)(\d{1,3}\s*(?:см|"")?)\s*$/Sui';
 
             // Color. Format (word roots, points, hyphens and slashes): "красн/син", "т.синее", "темно-синяя" etc.
-            $this->patterns['color'][] = '/(\(?\s*)?\b([а-я\/\-\.]*\b(?:' . implode('|', $this->colors) . ')\b'
-                . '[а-я\/\-\.]*)\b\s*\)?/Sui';
+            $this->patterns['color'] = '/(\s+)\(?\s*([а-я\/\-\.]*\b(?:' . implode('|', $this->colors) . ')\b'
+                . '[а-я\/\-\.]*)\s*\)?/Sui';
 
             // Category and name. Format: pattern from the list
             // Here we use named groups ("(?<_ID>name)") to pass ID to the preg_replace_callback()
+            $this->patterns['category_id'] = array();
             foreach ($this->getCategories() as $id => $pattern) {
-                $this->patterns['category'][] = '/\b(?<_' . $id . '>' . $pattern . ')\b/Sui';
+                $this->patterns['category_id'][] = '(?<_' . $id . '>' . $pattern . ')';
             }
+            $this->patterns['category_id'] = '/()\b(' . implode('|', $this->patterns['category_id']) . ')\b/Sui';
         }
 
         return $this->patterns;
@@ -192,7 +190,7 @@ class Parser
         if (!isset($this->categories)) {
             $this->categories = \Application::getInstance()->getDB()->query(
                 'SELECT id, pattern FROM categories WHERE pattern IS NOT NULL'
-                . ' ORDER BY CASE WHEN parent_id = 0 THEN 0 ELSE 1 END DESC'
+                . ' ORDER BY CASE WHEN parent_id IS NULL THEN 0 ELSE 1 END DESC'
             )->fetchAll(\PDO::FETCH_GROUP | \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
         }
 

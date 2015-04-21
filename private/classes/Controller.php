@@ -16,6 +16,11 @@ class Controller
     const LINES_PER_ITERATION = 800;
 
     /**
+     * Products per page
+     */
+    const PRODUCTS_PER_PAGE = 10;
+
+    /**
      * Import paths
      *
      * @var array
@@ -31,6 +36,8 @@ class Controller
      */
     public function doActionDefault()
     {
+        $model = new \Model();
+
         require_once DIR_PRIVATE . DS . 'template.php';
     }
 
@@ -65,7 +72,7 @@ class Controller
             while ($file->valid() && static::LINES_PER_ITERATION >= ++$count) {
                 $data = $parser->parseLine($line = $file->current());
 
-                if (empty($data['name']) || empty($data['category'])) {
+                if (empty($data['name'])) {
                     fwrite($log, '[' . ($file->key() + 1) . ']: ' . $line . PHP_EOL);
 
                 } else {
@@ -152,16 +159,22 @@ class Controller
     public function doActionGetProducts()
     {
         $params = array(
-            'start' => 10 * (isset($_REQUEST['page']) ? max(0, intval($_REQUEST['page'])) : 0),
-            'count' => 10,
+            'start' => static::PRODUCTS_PER_PAGE * (isset($_REQUEST['page']) ? max(0, intval($_REQUEST['page'])) : 0),
+            'count' => static::PRODUCTS_PER_PAGE,
         );
 
-        foreach (array('category', 'sort', 'sort_dir') as $name) {
+        foreach (array('category_id', 'sort', 'sort_dir') as $name) {
             $params[$name] = isset($_REQUEST[$name]) ? $_REQUEST[$name] : null;
         }
 
         header('Content-Type: application/json;');
-        echo json_encode(call_user_func_array(array(new \Model(), 'getProducts'), $params));
+        echo json_encode(
+            call_user_func_array(
+                array(new \Model(), 'getProducts'),
+                $params
+            ) + array('per_page' => static::PRODUCTS_PER_PAGE)
+        );
+
     }
 
     /**
