@@ -13,7 +13,7 @@ class Controller
     /**
      * Number of lines in .csv file processed per one iteration
      */
-    const LINES_PER_ITERATION = 200;
+    const LINES_PER_ITERATION = 800;
 
     /**
      * Import paths
@@ -68,9 +68,8 @@ class Controller
                 if (empty($data['name']) || empty($data['category'])) {
                     fwrite($log, '[' . ($file->key() + 1) . ']: ' . $line . PHP_EOL);
 
-                    if (!empty($data['name'])) {
-                        $model->saveProduct($data);
-                    }
+                } else {
+                    $model->saveProduct($data);
                 }
 
                 $file->next();

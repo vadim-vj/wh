@@ -112,6 +112,7 @@ final class Application
                     \PDO::ATTR_AUTOCOMMIT         => false,
                 )
             );
+            $this->db->exec('SET NAMES "utf8"');
         }
 
         return $this->db;
