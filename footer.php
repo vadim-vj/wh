@@ -10,6 +10,9 @@
  */
 
 if (!defined('BASE_DIR')) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', true);
+
     throw new \LogicException('Footer: the "top.inc.php" file is not included.');
 }
 
