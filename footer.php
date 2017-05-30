@@ -4,7 +4,6 @@
  *
  * @author  Vadim Sannikov <vsj.vadim@gmail.com>
  * @version $id$
- * @link    ____link____
  */
 
 if (!defined('BASE_DIR')) {
