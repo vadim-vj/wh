@@ -14,3 +14,10 @@ _Example:_ support for multiple database types
 ||*Connection*|*Database*|
 |*MySQL*|<code>MySQL\Connection</code>|<code>MySQL\Database</code>|
 |*PostgreSQL*|<code>PostgreSQL\Connection</code>|<code>PostgreSQL\Database</code>|
+
+_Code example:_ usage
+```$connection = new MySQL\Connection();
+// ...
+$database = new MySQL\Database();```
+_Needed:_ select database type in runtime
+_Solution:_ base abstract class for "products" and factories
