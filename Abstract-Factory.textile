@@ -1,4 +1,16 @@
-|       | *A* | *B* | *C* |
-| *Type1* || <pre style="margin-bottom: 0px;">Type1_B</pre> |  |
-| *Type2* |   |   |   |
-| *Type3* |   |   |   |
+_Products:_ *A*, *B*, *C*
+_Kinds of products (families):_ *Type1*, *Type2*, *Type3*
+Their combinations are non-abstract classes
+
+_Constraint:_ a family of related product objects is designed to be used together
+
+||*A*|*B*|*C*|
+|*Type1*||-<code>Type1_A</code>-||
+|*Type2*|<code>Type2_A</code>|<code>Type2_B</code>|<code>Type2_C</code>|
+|*Type3*|||-<code>Type3_C</code>-|
+
+_Example:_ support for multiple database types
+
+||*Connection*|*Database*|
+|*MySQL*|<code>MySQL\Connection</code>|<code>MySQL\Database</code>|
+|*PostgreSQL*|<code>PostgreSQL\Connection</code>|<code>PostgreSQL\Database</code>|
