@@ -1,3 +1,4 @@
+<meta name='keywords' content='abstract factory, php'>
 _Products:_ *A*, *B*, *C*
 _Kinds of products (families):_ *Type1*, *Type2*, *Type3*
 Their combinations are non-abstract classes
