@@ -1,2 +1,4 @@
-```ew             23e2e2
-edw         21w1w1``` wdeewdew
+|       | *A* | *B* | *C* |
+| *Type1* || <pre style="margin-bottom: 0px;">Type1_B</pre> |  |
+| *Type2* |   |   |   |
+| *Type3* |   |   |   |
