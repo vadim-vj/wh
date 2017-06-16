@@ -19,6 +19,11 @@ _Example:_ support for multiple database types
 _Code example:_ usage
 ```$connection = new MySQL\Connection();
 // ...
-$database = new MySQL\Database();```
-_Needed:_ select database type in runtime
-_Solution:_ base abstract class for "products" and factories
+$database = new MySQL\Database();```_Needed:_ select database type in runtime
+&nbsp;
+_Solutions:_
+# *Common* (for all languages)
+# *Prototype-based*
+- object base (for all languages)
+- class name based (PHP specific)
+# *Based on naming convention* (PHP specific, only for certain class and file structure)
