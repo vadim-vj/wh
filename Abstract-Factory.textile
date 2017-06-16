@@ -22,8 +22,10 @@ _Code example:_ usage
 $database = new MySQL\Database();```_Needed:_ select database type in runtime
 &nbsp;
 _Solutions:_
-# *Common* (for all languages)
-# *Prototype-based*
-- object base (for all languages)
-- class name based (PHP specific)
-# *Based on naming convention* (PHP specific, only for certain class and file structure)
+# *Common* (for all languages): "AbstractFactory/Common":https://github.com/vadim-vj/gang-of-four/tree/master/AbstractFactory/Common
+# *Prototype-based*: "AbstractFactory/Prototype":https://github.com/vadim-vj/gang-of-four/tree/master/AbstractFactory/Prototype
+- object base (for all languages): "Factory/Object":https://github.com/vadim-vj/gang-of-four/blob/master/AbstractFactory/Prototype/Factory/Object.php
+- class name based (PHP specific): "Factory/Name":https://github.com/vadim-vj/gang-of-four/blob/master/AbstractFactory/Prototype/Factory/Name.php
+# *Based on naming convention* (PHP specific, only for certain class and file structure): "AbstractFactory/NameConv":https://github.com/vadim-vj/gang-of-four/tree/master/AbstractFactory/NameConv
+
+Solutions 2 and 3 are working only when all objects (<code>TypeN_A</code>, <code>TypeN_B</code>, <code>TypeN_C</code>) have the same abstract base class (or implement the same interface, e.g. <code>IBase</code>) or when they can be safely coerced to the correct type. Of course, it's not the major issue in weakly typed PHP, since we can simple omit return type declaration for factory method.
