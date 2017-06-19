@@ -6,4 +6,26 @@ AbstractCreator delegates product creation to its subclasees
 ||*AbstractProduct*|*ProductA*|*ProductB*|
 |*CreatorA*||<code>new ProductA()</code>||
 |*AbstractCreator*|<code>ProductA</code> or <code>ProductB</code>|||
-|*CreatorB*|||<code>new ProductB</code>|
+|*CreatorB*|||<code>new ProductB()</code>|
+
+_Example:_ page widget for admin or customer area in eshop
+
+||*AHeader*||
+|*Page\Admin*||<code>Header\Admin</code>|
+|*APage*|<code>AHeader</code>||
+|*Page\Customer*||<code>Header\Customer</code>|
+
+_Code example:_ creator
+```abstract class APage
+{
+    public function display(): void {
+        $header = new Header\Admin();
+        $header->display()
+        // ...
+    }
+}```_Needed:_ select header class in runtime
+&nbsp;
+_Solutions:_
+# *Common* (for all languages): "FactoryMethod/Common":https://github.com/vadim-vj/gang-of-four/tree/master/FactoryMethod/Common
+# *Parametrized, based on naming convention* (PHP specific, only for certain class and file structure): "FactoryMethod/NameConvParam":https://github.com/vadim-vj/gang-of-four/tree/master/FactoryMethod/NameConvParam
+# Any variations for pp.1, 2
