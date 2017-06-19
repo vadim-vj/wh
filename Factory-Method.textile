@@ -1,0 +1,9 @@
+<meta name='keywords' content='factory method, php'>
+_Products:_ *AbstractProduct*, *ProductA* (-<- AbstractProduct), *ProductB* (-<- AbstractProduct)
+_Creators:_ *AbstractCreator*, *CreatorA* (-<- AbstractCreator), *CreatorB* (-<- AbstractCreator)
+AbstractCreator delegates product creation to its subclasees
+
+||*AbstractProduct*|*ProductA*|*ProductB*|
+|*CreatorA*||<code>new ProductA()</code>||
+|*AbstractCreator*|<code>ProductA</code> or <code>ProductB</code>|||
+|*CreatorB*|||<code>new ProductB</code>|
