@@ -23,6 +23,7 @@ $database = new MySQL\Database();```_Needed:_ select database type in runtime
 &nbsp;
 _Solutions:_
 # *Common* (for all languages): "AbstractFactory/Common":https://github.com/vadim-vj/gang-of-four/tree/master/AbstractFactory/Common
+<a name="prototype"/>
 # *Prototype-based*: "AbstractFactory/Prototype":https://github.com/vadim-vj/gang-of-four/tree/master/AbstractFactory/Prototype
 - object base (for all languages): "Factory/Object":https://github.com/vadim-vj/gang-of-four/blob/master/AbstractFactory/Prototype/Factory/Object.php
 - class name based (PHP specific): "Factory/Name":https://github.com/vadim-vj/gang-of-four/blob/master/AbstractFactory/Prototype/Factory/Name.php
