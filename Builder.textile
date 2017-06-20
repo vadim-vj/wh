@@ -22,6 +22,6 @@ _Code example:_ algorithm (director)
     }
 }</code></pre>_Needed:_ change document class in runtime
 &nbsp;
-_Solution:_
+_Solutions:_
 # Common (for all languages): "Builder":https://github.com/vadim-vj/gang-of-four/tree/master/Builder
 # For weakly typed languages (such as PHP): it's possible to add common getter (<code>getDocument()</code>) for all builders. Return type declaration for this getter must be omitted (or some common interface <code>IBase</code> should be implemented for all product classes)
