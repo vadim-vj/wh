@@ -6,7 +6,9 @@ _Code example:_<pre><code>function main(): void {
     $session->init();
     // ...
 }
-
+         
+        
+       
 function func1(): void {
     global $session;
     // ...
