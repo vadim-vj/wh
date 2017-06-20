@@ -20,4 +20,4 @@ function func2(): void {
 }</code></pre>_Needed:_ ensure a class only has one instance, and provide a global point of access to it
 &nbsp;
 _Solutions:_
-# PHP specific, with inheritance support and named class instances (Multiton): 
+# PHP specific, with inheritance support and named class instances (Multiton): "Singleton":https://github.com/vadim-vj/gang-of-four/tree/master/Singleton
