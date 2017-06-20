@@ -1,4 +1,3 @@
-<meta name='keywords' content='builder, php'>
 _Products:_ *A*, *B*, *C*
 _Algorithm (director):_ *Alg*
 Products have no common parent class
