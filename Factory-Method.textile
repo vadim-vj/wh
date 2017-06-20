@@ -1,4 +1,3 @@
-<meta name='keywords' content='factory method, php'>
 _Products:_ *AbstractProduct*, *ProductA* (-<- AbstractProduct), *ProductB* (-<- AbstractProduct)
 _Creators:_ *AbstractCreator*, *CreatorA* (-<- AbstractCreator), *CreatorB* (-<- AbstractCreator)
 AbstractCreator delegates product creation to its subclasees
