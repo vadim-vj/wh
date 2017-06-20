@@ -1,0 +1,28 @@
+<meta name='keywords' content='builder, php'>
+_Products:_ *A*, *B*, *C*
+_Algorithm (director):_ *Alg*
+Products have no common parent class
+
+||*A*|*B*|*C*|
+|*Alg*|-> <code>A(/* ... */)</code>|-> <code>B(/* ... */)</code>|-> <code>C(/* ... */)</code>|
+
+_Example:_ support for multiple document types
+
+||*PlainSQL*|*Excel*|
+|*ExportFromDatabase*|-> <code>new PlainSQL($data);</code>|-> <code>new Excel($data);</code>|
+
+_Code example:_ algorithm
+```class Director
+{
+    public function export(): void {
+        $document = new PlainSQL();
+
+        foreach ($data as $row) {
+            $this->exportRow($row, $document);
+        }
+        // ...
+    }
+}```_Needed:_ change document class in runtime
+&nbsp;
+_Solution:_
+# Common (for all languages): 
