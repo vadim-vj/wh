@@ -7,6 +7,10 @@ namespace Builder;
 class Database
 {
     public function getData(): iterable {
-        return ['wewdwedew', 'eefer'];
+        return [
+            'INSERT name = "A" INTO products',
+            'INSERT name = "B" INTO products',
+            'INSERT name = "B" INTO products',
+        ];
     }
 }
