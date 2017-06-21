@@ -1,0 +1,7 @@
+_Class:_ Adapter
+_Parent class:_ Target (our base class)
+_Third-party class:_ Adaptee (must be adopted to Target)
+Since PHP doesn't support multiple inheritance we use object-based version of the pattern
+
+||*Target*|*Adaptee*|
+|*Adapter*|<code>implements Target</code>|<code>__construct(Adaptee $adaptee)</code>|
