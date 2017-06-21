@@ -1,19 +1,16 @@
 _Class_: Singleton
 _Example:_ session global object
 
-_Code example:_<pre><code>function main(): void {
+_Code example:_
+<pre><code>function main(): void {
     $session = new Session();
     $session->init();
     // ...
 }
-         
-        
-       
 function func1(): void {
     global $session;
     // ...
 }
-
 function func2(): void {
     global $session;
     // ...
