@@ -2,4 +2,4 @@
 ## PHP
 - [Error handling](ErrorHandler.php)
 ## Markdown
-- [All](Markdown.md)
+- [Cheat sheet](Markdown.md)

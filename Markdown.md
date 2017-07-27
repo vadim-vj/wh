@@ -4,6 +4,7 @@
     ======
     Level2     or     ## Level2      -->    <h2>Level2</h2>
     ------
+    ...
     N/A               ###### Level6  -->    <h6>Level6</h6>
 ## Paragraph & line breaks
     Empty line                       -->    <p />
