@@ -1,14 +1,15 @@
 <?php
-
 /**
+ * PHP version 7.1
+ *
  * Error handling (debug)
- * 
- * @author Vadim Sannikov <vsj.vadim@gmail.com> 
+ *
+ * @author Vadim Sannikov <vsj.vadim@gmail.com>
  */
-
+declare(strict_types=1);
 // Report all PHP errors (from v5.4)
 error_reporting(E_ALL);
-ini_set('display_errors', true);
+ini_set('display_errors', '1');
 
 /**
  * ErrorHandler
@@ -16,33 +17,39 @@ ini_set('display_errors', true);
 abstract class ErrorHandler
 {
     /**
-     * handleError
-     * 
+     * Error handler
+     *
      * @param string $errno      Level of the error raised
      * @param string $errstr     Error message
      * @param string $errfile    (Optional) Filename that the error was raised in
      * @param int    $errline    (Optional) Line number the error was raised at
      * @param array  $errcontext (Optional) Aray of every variable in the scope the error was triggered in
-     * 
+     *
      * @return bool If the function returns FALSE then the normal error handler continues
      */
-    public static function handleError($errno, $errstr, $errfile = '', $errline = 0, array $errcontext = [])
-    {
+    public static function handleError(
+        string $errno,
+        string $errstr,
+        string $errfile = '',
+        int $errline = 0,
+        array $errcontext = []
+    ): bool {
         $result = error_reporting() & $errno;
 
         // This error code is included in error_reporting
         if ($result) {
             switch ($errno) {
-                case E_USER_ERROR:
+            case E_USER_ERROR:
                 break;
 
-                case E_USER_WARNING:
+            case E_USER_WARNING:
                 break;
 
-                case E_USER_NOTICE:
+            case E_USER_NOTICE:
                 break;
 
-                default:
+            default:
+                break;
             }
         }
 
@@ -50,13 +57,13 @@ abstract class ErrorHandler
     }
 
     /**
-     * handleException
-     * 
+     * Handle exception
+     *
      * @param \Exception|\Throwable $exception (Optional) Exception object (\Throwable since PHP7.0)
-     * 
+     *
      * @return void
      */
-    public static function handleException(\Exception $exception = null)
+    public static function handleException(\Exception $exception = null): void
     {
         echo 'Uncaught exception: ' . $exception->getMessage();
     }
@@ -64,9 +71,9 @@ abstract class ErrorHandler
 
 /**
  * Returns a string containing the previously defined error handler (if any).
- * If the built-in error handler is used NULL is returned. 
+ * If the built-in error handler is used NULL is returned.
  * NULL is also returned in case of an error such as an invalid callback.
- * If the previous error handler was a class method, 
+ * If the previous error handler was a class method,
  * this function will return an indexed array with the class and the method name
  */
 set_error_handler(['\ErrorHandler', 'handleError']);
