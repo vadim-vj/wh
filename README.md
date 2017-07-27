@@ -3,3 +3,5 @@
 - [Error handling](ErrorHandler.php)
 ## Markdown
 - [Cheat sheet](Markdown.md)
+## Git
+- [Cheat sheet](Git.md)
