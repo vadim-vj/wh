@@ -19,7 +19,7 @@
     `<div>`                          -->   <code>&lt;div&gt;</code>
     `&mdash;`                        -->   <code>&amp;mdash;</code>
     ``Escape backtick (`)``          -->   <code>Escape backtick (`)</code>
-    For spaces at the line begin     -->   <pre><code>Multiline</code></pre>
+    Four spaces at the line begin    -->   <pre><code>Multiline</code></pre>
 ## Blockquotes
     > Text1                          -->   <blockquote>Text1<p />Text2</blockquote>
     >
@@ -83,12 +83,13 @@
     Content from cell 1 | Content from cell 2
     Content in the first column | Content in the second column
 *There must be at least three hyphens in each column of the header row*  
+*The outer pipes (`|`) are optional, and you don't need to make the raw Markdown line up prettily*  
 *You can use formatting such as links, inline code blocks, and text styling within your table*
 
-    | Left-aligned | Center-aligned | Right-aligned |
-    | :---         |     :---:      |          ---: |
-    | git status   | git status     | git status    |
-    | git diff     | git diff       | \|            |
+     Left-aligned | Center-aligned | Right-aligned
+     :---         |     :---:      |          ---: 
+     git status   | git status     | git status    
+     git diff     | git diff       | \|            
 *To include a pipe `|` as content within your cell, use a `\` before the pipe*
 ### SHA references
     16c999e8c71134401a78d4d46435517b2271d6ac
