@@ -1,9 +1,10 @@
-# Useful code snippets & notes
-## PHP
-- [Error handling](ErrorHandler.php)
-## Markdown
-- [Cheat sheet](Markdown.md)
-## Cryptography, hashes & keys
+# Markdown
+- [Abstract](Markdown.md)
+- [Cheat sheet](Markdown/CheatSheet.md)
+# Cryptography, hashes & keys
 - stub
-## Git
-- [Cheat sheet](Git.md)
+# Git
+- [Abstract](Git.md)
+- [Cheat sheet](Git/CheatSheet.md)
+# PHP
+- [Error handling](PHP/ErrorHandler.php)
