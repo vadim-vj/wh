@@ -6,7 +6,7 @@
 - [GitHub](Git/GitHub.md)
 - [Cheat sheet](Git/CheatSheet.md)
 # Cryptography, hashes & keys
-- stub
+- [Abstract](Crypt.md)
 # PHP
 - [Abstract](PHP.md)
 - [Error handling](PHP/ErrorHandler.php)
