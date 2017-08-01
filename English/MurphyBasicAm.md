@@ -1,3 +1,5 @@
+[Test](#test)
+
 # Present
 1. ### am/is/are
     ewedewdwdewedwe
@@ -27,7 +29,8 @@ has|**’s**||he’s|she’s|it’s
 had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
 would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
----
-Do not use ’m/’s/’d, etc. at the end of a sentence (see Unit 41):
-* `"Are you tired?" "Yes, I am."` (not `Yes, I’m.`)
+Do not use ’m/’s/’d, etc. at the end of a sentence (see [Unit 41][]):
+* `"Are you tired?"` `"Yes, I am."` (not `Yes, I’m.`)
 * `She isn’t tired, but he is.` (not `he’s`)
+
+[Unit 41]: #u41
