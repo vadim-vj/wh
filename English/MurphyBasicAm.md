@@ -1,6 +1,6 @@
 # Table of contents
-1. [am / is / are](#1-am--is--are)
-2. [am / is / are (questions)](#2-am--is--are-questions)
+1. [am / is / are][u1]
+2. [am / is / are (questions)][u2]
 - [Unit 3](#unit-3)
 - [Unit 4](#unit-4)
 - [Unit 5](#unit-5)
@@ -12,23 +12,39 @@
 - [Unit 11](#unit-11)
 - [Unit 12](#unit-12)
 
+[u1]: #1-am--is--are
+[u2]: #2-am--is--are-questions
+[u41]: #stub
+[a4]: #appendix-4
+
 # Present
 ## 1. am / is / are
+|||
+|-|-
+|**`pronoun` + `to be` + `(not)`**|*(full form)*
+|`[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `(not)`
+|**`pronoun_to_be` + `(not)`**|*(short form 1)*
+|`[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `(not)`
+|**`pronoun` + `to_be_not`**|*(short form 2)*
+|`[he/she/it/we/you/they]` + `[isn/aren]` + `'t`|*(not used for `I`)*
 
-|  
-|---
-|**`(pro)noun` + `to be` + `(not)`**
+Also:  
+`that is` --> `that's`, `there is` --> `there's`, `here is` --> `here's`
 
-`[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `(not)`
-
-Short forms (see [Appendix 4](#appendix-4)):
-
-`[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `(not)`  
-*or*  
-`[he/she/it/we/you/they]` + `[isn/aren]` + `'t` (not used for `I`)
+See also [Appenix 4][a4]
 
 ---
 ## 2. am / is / are (questions)
+|
+|-
+|**`([adverb/pronoun])` + `to be` + `pronoun` ?**
+|`([where/what/who/how/why])` + `[am/is/are]` + `[I/you/he/she/it/we/you/they]` ?
+
+Answers (see [Unit 1][u1]):
+|
+|-
+|**`yes, ` + `full_form`**
+|**`no, ` + `[full_form/short_form_[1/2]]`**
 
 ---
 3. I am doing (present continuous)
@@ -69,6 +85,6 @@ is|are|was|were|has|have|had|do|does|did|can|could|will|would|should|must
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
 isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|don't|doesn't|didn't|can't|couldn't|won't|wouldn't|shouldn't|mustn't
 
-Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#unit-41)):
+Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41][u41]):
 * `"Are you tired?"` `"Yes, I am."` (not `Yes, I’m.`)
 * `She isn’t tired, but he is.` (not `he’s`)
