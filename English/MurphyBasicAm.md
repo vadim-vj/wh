@@ -68,16 +68,16 @@ Answers (see [Unit 1][u1]):
 15. I used to...
 # Appendix 4
 ### Short forms
-&nbsp;||I|he|she|it|we|you|they
--|-|-|-|-|-|-|-|-
-am|**’m**|I’m|
-is|**’s**||he’s|she’s|it’s
-are|**’re**|||||we’re|you’re|they’re
-have|**’ve**|I’ve||||we’ve|you’ve|they’ve
-has|**’s**||he’s|she’s|it’s
-had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
-will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
-would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
+|||I|he|she|it|we|you|they
+|-|-|-|-|-|-|-|-|-
+|am|**’m**|I’m|
+|is|**’s**||he’s|she’s|it’s
+|are|**’re**|||||we’re|you’re|they’re
+|have|**’ve**|I’ve||||we’ve|you’ve|they’ve
+|has|**’s**||he’s|she’s|it’s
+|had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
+|will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
+|would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 
 Negative:
 
