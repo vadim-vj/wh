@@ -1,15 +1,15 @@
 # Present
-1. ## am / is / are
-    <a name="u1"></a>
+## Unit 1
+|**am / is / are**
+|---
+|**`(pro)noun` + `to be` + (`not`)**
 
-    #### `(pro)noun` + `to be` + (`not`)
+[ `I / you / he / she / it / we / you / they` ] + [ `am / is / are` ] + (`not`)
 
-    [ `I` / `you` / `he` / `she` / `it` / `we` / `you` / `they` ] + [ `am` / `is` / `are` ] + (`not`)
-
-    *Short forms (see [Appendix 4](#a4)):*  
-    [ `I` / `he` / `she` / `it` / `we` / `you` / `they` ] + [ `'m` / `'s` / `'re` ] + (`not`)  
-    *or*  
-    [ `he` / `she` / `it` / `we` / `you` / `they` ] + [ `isn` / `arent` ] + `'t` *(not used for `I`)*
+*Short forms (see [Appendix 4](#Appendix--4)):*  
+[ `I / he / she / it / we / you / they` ] + [ `'m / 's / 're` ] + (`not`)  
+*or*  
+[ `he / she / it / we / you / they` ] + [ `isn / arent` ] + `'t` *(not used for `I`)*
 
 2. ## am / is / are (questions)
 3. I am doing (present continuous)
@@ -38,6 +38,6 @@ had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
 would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 
-Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#u41)):
+Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#Unit--41)):
 * `"Are you tired?"` `"Yes, I am."` (not `Yes, I’m.`)
 * `She isn’t tired, but he is.` (not `he’s`)
