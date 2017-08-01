@@ -1,6 +1,6 @@
 # Table of contents
-1. [am / is / are](#unit-1)
-2. [am / is / are (questions)](#unit-2)
+1. [am / is / are](#1-amisare)
+2. [am / is / are (questions)](#2-amisare-questions)
 - [Unit 3](#unit-3)
 - [Unit 4](#unit-4)
 - [Unit 5](#unit-5)
@@ -13,8 +13,7 @@
 - [Unit 12](#unit-12)
 
 # Present
-## Unit 1, `am/is/are`
-### am / is / are
+## 1. am / is / are
 
 |
 |---
@@ -29,8 +28,7 @@ Short forms (see [Appendix 4](#appendix-4)):
 `[he/she/it/we/you/they]` + `[isn/aren]` + `'t` (not used for `I`)
 
 ---
-## Unit 2
-### am / is / are (questions)
+## 2. am / is / are (questions)
 
 ---
 3. I am doing (present continuous)
