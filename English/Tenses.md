@@ -5,10 +5,10 @@ Legend: **S** = Subject, **O** = Object, **V** = Verb (**V1** = present, **V2** 
 
 ||Past|Present|Future
 |-|-|-|-
-|Simple|S + V2 + O|S + V1 + O|S + will + V + O
-|Continuous|S + was/were + (V + -ing) + O|S + am/are/is + (V + -ing) + O|S + will be + (V + -ing) + O
-|Perfect|S + had + V3 + O|S + have/has + V3 + O|S + will have + V3 + O
-|Perfect Continuous|S + had been + (V + -ing) + O|S + have/has been + (V + -ing) + O|S + will have been + (V +-ing) + O
+|Simple|`S + V2 + O`|`S + V1 + O`|`S + will + V + O`
+|Continuous|`S + was/were + (V + -ing) + O`|`S + am/are/is + (V + -ing) + O`|`S + will be + (V + -ing) + O`
+|Perfect|`S + had + V3 + O`|`S + have/has + V3 + O`|`S + will have + V3 + O`
+|Perfect Continuous|`S + had been + (V + -ing) + O`|`S + have/has been + (V + -ing) + O`|`S + will have been + (V +-ing) + O`
 |  
 |Simple|I ate pizza yesterday|I eat pizza everyday|I will eat pizza tomorrow
 |Continuous|I was eating pizza when you arrived|I am eating pizza right now|I will eating pizza when you arrive
