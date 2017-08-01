@@ -1,7 +1,8 @@
 # Present
 ## Unit 1
 **am / is / are**
-|
+
+|  
 |---
 |**`(pro)noun` + `to be` + `(not)`**
 
@@ -13,7 +14,9 @@
 *or*  
 `[he/she/it/we/you/they]` + `[isn/aren]` + `'t` *(not used for `I`)*
 
-2. ## am / is / are (questions)
+## Unit 2
+**am / is / are (questions)**
+
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
 5. I do/work/like, etc. (simple present)
