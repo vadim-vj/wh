@@ -1,7 +1,7 @@
 # Present
-1. ## am/is/are
+1. ### am/is/are
     ewedewdwdewedwe
-2. ## am/is/are (questions)
+2. ### am/is/are (questions)
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
 5. I do/work/like, etc. (simple present)
@@ -16,3 +16,14 @@
 13. I was doing (past continuous)
 14. I was doing (past continuous) and I did (simple past)
 15. I used to...
+# Appendix 4
+&nbsp;||I|he|she|it|we|you|they
+-|-|-|-|-|-|-|-|-
+am|**’m**|I’m|
+is|**’s**||he’s|she’s|it’s
+are|**’re**|||||we’re|you’re|they’re
+have|**’ve**|I’ve||||we’ve|you’ve|they’ve
+has|**’s**||he’s|she’s|it’s
+had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
+will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
+would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
