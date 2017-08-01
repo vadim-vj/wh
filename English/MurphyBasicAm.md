@@ -11,9 +11,10 @@
 Short forms (see [Appendix 4](#appendix-4)):
 
 `[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `(not)`  
-or  
+*or*  
 `[he/she/it/we/you/they]` + `[isn/aren]` + `'t` (not used for `I`)
 
+---
 ## Unit 2
 ### am / is / are (questions)
 
