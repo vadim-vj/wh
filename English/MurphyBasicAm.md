@@ -1,6 +1,6 @@
 # Present
 ## Unit 1
-**am / is / are**
+### am / is / are
 
 |  
 |---
@@ -8,14 +8,14 @@
 
 `[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `(not)`
 
-*Short forms (see [Appendix 4](#appendix-4)):*
+Short forms (see [Appendix 4](#appendix-4)):
 
 `[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `(not)`  
-*or*  
-`[he/she/it/we/you/they]` + `[isn/aren]` + `'t` *(not used for `I`)*
+or  
+`[he/she/it/we/you/they]` + `[isn/aren]` + `'t` (not used for `I`)
 
 ## Unit 2
-**am / is / are (questions)**
+### am / is / are (questions)
 
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
