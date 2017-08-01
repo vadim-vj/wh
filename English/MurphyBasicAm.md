@@ -1,15 +1,17 @@
 # Present
 ## Unit 1
-|**am / is / are**
+**am / is / are**
+|
 |---
 |**`(pro)noun` + `to be` + `(not)`**
 
 `[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `(not)`
 
-*Short forms (see [Appendix 4](#appendix-4)):*  
+*Short forms (see [Appendix 4](#appendix-4)):*
+
 `[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `(not)`  
 *or*  
-`[he/she/it/we/you/they]` + `[isn/arent]` + `'t` *(not used for `I`)*
+`[he/she/it/we/you/they]` + `[isn/aren]` + `'t` *(not used for `I`)*
 
 2. ## am / is / are (questions)
 3. I am doing (present continuous)
