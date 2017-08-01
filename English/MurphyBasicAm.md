@@ -1,9 +1,7 @@
-[Test](#test)
-
 # Present
-1. ### am/is/are <a name="test"></a>
+1. ### `am/is/are` <a name="u1"></a>
     ewedewdwdewedwe
-2. ### am/is/are (questions)
+2. ### `am/is/are` (questions)
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
 5. I do/work/like, etc. (simple present)
@@ -29,8 +27,7 @@ has|**’s**||he’s|she’s|it’s
 had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
 would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
-Do not use ’m/’s/’d, etc. at the end of a sentence (see [Unit 41][]):
+
+Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#u41)):
 * `"Are you tired?"` `"Yes, I am."` (not `Yes, I’m.`)
 * `She isn’t tired, but he is.` (not `he’s`)
-
-[Unit 41]: #u41
