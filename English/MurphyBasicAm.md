@@ -1,0 +1,17 @@
+# Present
+1. #### am/is/are
+2. #### am/is/are (questions)
+3. I am doing (present continuous)
+4. are you doing? (present continuous questions)
+5. I do/work/like, etc. (simple present)
+6. I don’t... (simple present negative)
+7. Do you...? (simple present questions)
+8. I am doing (present continuous) and I do (simple present)
+9. I have... and I’ve got...
+# Past
+10. was/were
+11. worked/got/went, etc. (simple past)
+12. I didn’t... Did you...?  (simple past negative and questions)
+13. I was doing (past continuous)
+14. I was doing (past continuous) and I did (simple past)
+15. I used to...
