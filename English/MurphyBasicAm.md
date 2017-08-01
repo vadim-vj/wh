@@ -1,6 +1,15 @@
 # Present
 1. ### `am/is/are` <a name="u1"></a>
-    ewedewdwdewedwe
+
+    **[(pro)noun] + [to be] + ([not])**
+
+    `I/you/he/she/it/we/you/they` + `am/is/are` + (`not`)
+
+    Short forms (see [Appendix 4](#a4)):
+
+    `I/he/she/it/we/you/they` + `'m/'s/'re` + (`not`)
+    `he/she/it/we/you/they` + `isn/arent` + `'t` (not used for `I`)
+
 2. ### `am/is/are` (questions)
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
@@ -16,7 +25,7 @@
 13. I was doing (past continuous)
 14. I was doing (past continuous) and I did (simple past)
 15. I used to...
-# Appendix 4
+# Appendix 4 <a name="a4"></a>
 &nbsp;||I|he|she|it|we|you|they
 -|-|-|-|-|-|-|-|-
 am|**’m**|I’m|
