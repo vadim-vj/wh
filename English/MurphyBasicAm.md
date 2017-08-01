@@ -35,16 +35,21 @@ See also [Appenix 4][a4]
 
 ---
 ## 2. am / is / are (questions)
-|
+||
 |-
 |**`([adverb/pronoun])` + `to be` + `pronoun` ?**
 |`([where/what/who/how/why])` + `[am/is/are]` + `[I/you/he/she/it/we/you/they]` ?
 
 Answers (see [Unit 1][u1]):
-|
+
+||
 |-
 |**`yes, ` + `full_form`**
+|`yes, ` + `[I/you/he/she/it/we/you/they]` + `[am/is/are]`
 |**`no, ` + `[full_form/short_form_[1/2]]`**
+|`no, ` + `[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `not`
+|`no, ` + `[I/he/she/it/we/you/they]` + `['m/'s/'re]` + `not`
+|`no, ` + `[he/she/it/we/you/they]` + `[isn/aren]` + `'t` *(not used for `I`)*
 
 ---
 3. I am doing (present continuous)
