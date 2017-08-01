@@ -1,6 +1,6 @@
 # Table of contents
-1. [am / is / are](#1-amisare)
-2. [am / is / are (questions)](#2-amisare-questions)
+1. [am / is / are](#1-am--is--are)
+2. [am / is / are (questions)](#2-am--is--are-questions)
 - [Unit 3](#unit-3)
 - [Unit 4](#unit-4)
 - [Unit 5](#unit-5)
@@ -15,7 +15,7 @@
 # Present
 ## 1. am / is / are
 
-|
+|  
 |---
 |**`(pro)noun` + `to be` + `(not)`**
 
