@@ -9,7 +9,7 @@ Legend: **S** = Subject, **O** = Object, **V** = Verb (**V1** = present, **V2** 
 |Continuous|S + was/were + (V + -ing) + O|S + am/are/is + (V + -ing) + O|S + will be + (V + -ing) + O
 |Perfect|S + had + V3 + O|S + have/has + V3 + O|S + will have + V3 + O
 |Perfect Continuous|S + had been + (V + -ing) + O|S + have/has been + (V + -ing) + O|S + will have been + (V +-ing) + O
-|
+|  
 |Simple|I ate pizza yesterday|I eat pizza everyday|I will eat pizza tomorrow
 |Continuous|I was eating pizza when you arrived|I am eating pizza right now|I will eating pizza when you arrive
 |Perfect|I had eaten all of the pizza when ypu arrived|I have eaten all of the pizza|I will have eaten all of the pizza by the time you arrive
