@@ -6,7 +6,7 @@
 
 [ `I / you / he / she / it / we / you / they` ] + [ `am / is / are` ] + (`not`)
 
-*Short forms (see [Appendix 4](#Appendix--4)):*  
+*Short forms (see [Appendix 4](#appendix-4)):*  
 [ `I / he / she / it / we / you / they` ] + [ `'m / 's / 're` ] + (`not`)  
 *or*  
 [ `he / she / it / we / you / they` ] + [ `isn / arent` ] + `'t` *(not used for `I`)*
@@ -26,7 +26,7 @@
 13. I was doing (past continuous)
 14. I was doing (past continuous) and I did (simple past)
 15. I used to...
-# Appendix 4 <a name="a4"></a>
+# Appendix 4
 &nbsp;||I|he|she|it|we|you|they
 -|-|-|-|-|-|-|-|-
 am|**’m**|I’m|
@@ -38,6 +38,6 @@ had|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 will|**’ll**|I’ll|he’ll|she’ll||we’ll|you’ll|they’ll
 would|**’d**|I’d|he’d|she’d||we’d|you’d|they’d
 
-Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#Unit--41)):
+Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41](#unit-41)):
 * `"Are you tired?"` `"Yes, I am."` (not `Yes, I’m.`)
 * `She isn’t tired, but he is.` (not `he’s`)
