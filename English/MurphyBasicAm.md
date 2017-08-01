@@ -1,6 +1,7 @@
 # Present
-1. #### am/is/are
-2. #### am/is/are (questions)
+1. ## am/is/are
+    ewedewdwdewedwe
+2. ## am/is/are (questions)
 3. I am doing (present continuous)
 4. are you doing? (present continuous questions)
 5. I do/work/like, etc. (simple present)
