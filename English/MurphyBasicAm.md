@@ -140,3 +140,22 @@ Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41][u41]):
 |-----------|----------------|------------------------------------------------------------------------|
 | **`-e`**  | ~~e~~**`ing`** | make --> making, write --> writing, come --> coming, dance --> dancing |
 | **`-ie`** | **`ying`**     | lie --> lying, die --> dying, tie --> tying                            |
+
+## 4. doubling
+
+|                    |                                                                           |
+|--------------------|---------------------------------------------------------------------------|
+| Vowels     (**V**) | `a`, `e`, `i`, `o`, `u`                                                   |
+| Consonants (**C**) | `b`, `c`, `d`, `f`, `g`, `k`, `l`, `m`, `n`, `p`, `r`, `s`, `t`, `w`, `y` |
+
+| Word ends in a vowel + a consonant |
+|------------------------------------|
+| **`V` + `C`** --> **`V` + `CC`**       |
+|`stop` -> `sto`*`pp`*`ing`, `sto`*`pp`*`ed`; `big` --> `bi`*`gg`*`er`, `bi`*`gg`*`est`
+
+| This does not happen |||
+|------------|------------------|---------|
+| ends in two consonants | **C** + **C** | `help` --> `helping`, `helped`; `fast` --> `faster`, `fastest`|
+| ends in two vowels & consonant | **V** + **V** + **C** | `need` -> `needing`, `needed`; `cheap` --> `cheaper`, `cheapest` |
+| two syllables or more + last syllable is not stressed | **SYL1** + SYL2 | `happen` --> `happening`, `happened`; `visit` --> `visiting`, `visited` |
+| ends in `-y` or `-w` | **`Y`** or **`W`** | `enjoy` --> `enjoying`, `enjoyed`; `few` --> `fewer`, `fewest` |
