@@ -44,6 +44,22 @@
 [a5]: #appendix-5-spelling
 [a5-3]: #3--ing
 
+# Legend
+
+|    |  |
+|----|---|
+| subject | **S**  |
+| object  | **O**  |
+| verb    | **V**  |
+| verb_1  | **V1** |
+| verb_2  | **V2** |
+| verb_3  | **V3** |
+| to be   |        |
+| (not)   |        |
+
+
+---
+
 # Present
 
 ## 1. am / is / are
