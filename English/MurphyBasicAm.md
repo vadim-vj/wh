@@ -5,12 +5,12 @@
   1. [am / is / are][u1]
   1. [am / is / are (questions)][u2]
   1. [I am doing (present continuous)][u3]
-  1. [Unit 4](#unit-4)
-  1. [Unit 5](#unit-5)
-  1. [Unit 6](#unit-6)
-  1. [Unit 7](#unit-7)
-  1. [Unit 8](#unit-8)
-  1. [Unit 9](#unit-9)
+  1. [are you doing? (present continuous questions)][u4]
+  1. [I do/work/like, etc. (simple present)][u5]
+  1. [I don't... (simple present negative)][u6]
+  1. [Do you...? (simple present questions)][u7]
+  1. [I am doing (present continuous) and I do (simple present)][u8]
+  1. [I have... and I've got...][u9]
 
 * Past
 
@@ -30,6 +30,13 @@
 [u1]: #1-am--is--are
 [u2]: #2-am--is--are-questions
 [u3]: #3-i-am-doing-present-continuous
+[u4]: #4-are-you-doing-present-continuous-questions
+[u5]: #5-i-doworklike-etc-simple-present
+[u6]: #6-i-dont-simple-present-negative
+[u7]: #7-do-you-simple-present-questions
+[u8]: #8-i-am-doing-present-continuous-and-i-do-simple-present
+[u9]: #9-i-have-and-ive-got
+
 [u41]: #stub
 [a4]: #appendix-4-short-forms
 [a4-2]: #2-with-pronouns
@@ -85,6 +92,35 @@ Answers (see [Unit 1][u1]):
 | `[I/you/he/she/it/we/you/they]` + `[am/is/are]` + `(not)` + `verb` + `ing` |
 
 See also [Appendix 5][a5]
+
+---
+
+## 4. are you doing?
+
+|                                                                                  |
+|----------------------------------------------------------------------------------|
+| **`([adverb/pronoun])` + `to be` + `pronoun` + `verb` + `-ing`?**                                 |
+| `([where/what/who/how/why])` + `[am/is/are]` + `[I/you/he/she/it/we/you/they]` + `verb` + `ing`? |
+
+---
+
+## 5. I do/work/like, etc. (simple present)
+
+---
+
+## 6. I don't... (simple present negative)
+
+---
+
+## 7. Do you...? (simple present questions)
+
+---
+
+## 8. I am doing (present continuous) and I do (simple present)
+
+---
+
+## 9. I have... and I've got...
 
 ---
 
@@ -153,9 +189,9 @@ Do not use `’m/’s/’d, etc.` at the end of a sentence (see [Unit 41][u41]):
 | **`V` + `C`** --> **`V` + `CC`**       |
 |`stop` -> `sto`*`pp`*`ing`, `sto`*`pp`*`ed`; `big` --> `bi`*`gg`*`er`, `bi`*`gg`*`est`
 
-| This does not happen |||
-|------------|------------------|---------|
-| ends in two consonants | **C** + **C** | `help` --> `helping`, `helped`; `fast` --> `faster`, `fastest`|
-| ends in two vowels & consonant | **V** + **V** + **C** | `need` -> `needing`, `needed`; `cheap` --> `cheaper`, `cheapest` |
-| two syllables or more + last syllable is not stressed | **SYL1** + SYL2 | `happen` --> `happening`, `happened`; `visit` --> `visiting`, `visited` |
-| ends in `-y` or `-w` | **`Y`** or **`W`** | `enjoy` --> `enjoying`, `enjoyed`; `few` --> `fewer`, `fewest` |
+| This does not happen when                    |                       |                                                                         |
+|----------------------------------------------|-----------------------|-------------------------------------------------------------------------|
+| ends in two consonants                       | **C** + **C**         | `help` --> `helping`, `helped`; `fast` --> `faster`, `fastest`          |
+| ends in two vowels & consonant               | **V** + **V** + **C** | `need` -> `needing`, `needed`; `cheap` --> `cheaper`, `cheapest`        |
+| two syllables or more + last isn't stressed  | **SYL1** + SYL2       | `happen` --> `happening`, `happened`; `visit` --> `visiting`, `visited` |
+| ends in `-y` or `-w`                         | **`Y`** or **`W`**    | `enjoy` --> `enjoying`, `enjoyed`; `few` --> `fewer`, `fewest`          |
