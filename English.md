@@ -10,19 +10,25 @@
 | **Adjective**    | `some`, `good`, `big`, `red`, `well`, `interesting`            |
 | **Adverb**       | `quickly`, `silently`, `well`, `badly`, `very`, `really`       |
 | **Preposition**  | `to`, `at`, `after`, `on`, `but`                               |
+| **Articles**     | `a/an`, `the`                                                  |
 | **Conjunction**  | `and`, `but`, `when`, `or`                                     |
 | **Interjection** | `oh!`, `ouch!`, `hi!`, `well`                                  |
+
+# Grammar
+
+|             | Legend |                   | |
+|-------------|--------|-------------------|---|
+| **Subject** | `S`    | noun, pronoun     | *agent (the "doer") in an active sentence*
+| **Object**  | `O`    | adjective, adverb | *target of an action*
+| **Predicate**|       |   |  |
+| **Verb**    | `V`    |                   | **
+|             | `V1`   | present           |
+|             | `V2`   | past              |
+|             | `V3`   | past participle   |
 
 # Tenses
 
 *Example is from https://www.easypacelearning.com/all-lessons/grammar/1198-12-verb-tenses-table-learning-english-grammar-tenses*
-
-|            | Subject       | Object            | Verb       |         |      |                 |
-|------------|---------------|-------------------|------------|---------|------|-----------------|
-| **Legend** | `S`           | `O`               | `V`        | `V1`    | `V2` | `V3`            |
-|            | noun, pronoun | adjective, adverb | infinitive | present | past | past participle |
-
----
 
 |                        | Past                                                 | Present                              | Future
 |------------------------|------------------------------------------------------|--------------------------------------|---------
