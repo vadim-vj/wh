@@ -9,3 +9,4 @@ output
 
 # Diary
 *.diary.~previousversion~
+*.diary.~LOCK~
