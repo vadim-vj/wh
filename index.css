@@ -1,0 +1,12 @@
+button#tmap {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    outline: none;
+}
+
+button#tmap > img {
+    width: inherit;
+    height: inherit;
+}
