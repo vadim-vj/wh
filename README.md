@@ -1,2 +1,2 @@
 # ai-ml-overview
-Overview of moder AI &amp; ML technologies
+Overview of modern AI &amp; ML technologies
