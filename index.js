@@ -7,7 +7,7 @@ class MenuItem {
   }
 
   toString() {
-    return '<a href="' + this.href + '">' + this.title + '</a>';
+    return '<a href="' + (this.href ? 'page/' + this.href + '.html' : '') + '">' + this.title + '</a>';
   }
 }
 
@@ -15,7 +15,8 @@ class Menu {
   get items() {
     return [
       new MenuItem('Главная', ''),
-      new MenuItem('Литература', 'page/literature.html'),
+      new MenuItem('Литература', 'literature'),
+      new MenuItem('Проекты', 'projects'),
     ];
   }
 
@@ -25,5 +26,9 @@ class Menu {
 }
 
 document.addEventListener('DOMContentLoaded', event => {
-  document.body.insertAdjacentHTML('afterbegin', '<div class="left">' + new Menu() + '</div>');
+  document.body.innerHTML = '<div class="main">\n<h1>' + document.title + '</h1>' + document.body.innerHTML.trim() + '</div>';
+
+  const menu = new Menu();
+  document.body.insertAdjacentHTML('afterbegin', '<div class="left">' + menu + '</div>');
+  document.body.querySelector('div.main > div.menu').innerHTML = menu;
 }, false);

@@ -1,17 +1,26 @@
 html,
 body {
-  height: 100%;
   padding: 0;
   margin: 0;
 }
 
+html{
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   display: flex;
 }
 
 div.left,
 div.main {
-  padding: 5px;
+  padding: 15px;
+}
+
+h1 {
+  margin-top: 0;
+  border-bottom: 1px solid black;
 }
 
 div.left {
@@ -20,7 +29,12 @@ div.left {
 }
 
 div.main {
-  background-color: gray;
   width: 100%;
   padding-left: 10px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
 }
