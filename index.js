@@ -17,6 +17,7 @@ class Menu {
       new MenuItem('Главная', ''),
       new MenuItem('Литература', 'literature'),
       new MenuItem('Проекты', 'projects'),
+      new MenuItem('Словарь', 'dictionary'),
     ];
   }
 
@@ -30,5 +31,9 @@ document.addEventListener('DOMContentLoaded', event => {
 
   const menu = new Menu();
   document.body.insertAdjacentHTML('afterbegin', '<div class="left">' + menu + '</div>');
-  document.body.querySelector('div.main > div.menu').innerHTML = menu;
+
+  const divMenu = document.body.querySelector('div.main > div.menu');
+  if (divMenu) {
+    divMenu.innerHTML = menu;
+  }
 }, false);
