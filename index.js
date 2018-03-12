@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', event => {
 
   const menu = new Menu([
     new MenuItem('Главная', ''),
-    new MenuItem('Литература', 'literature'),
+    new MenuItem('Ресурсы', 'resources'),
     new MenuItem('Проекты', 'projects', new Menu([
       new MenuItem('OpenWorm', 'projects/openworm'),
       new MenuItem('Numenta', 'projects/numenta'),
     ])),
-    new MenuItem('Словарь', 'dictionary'),
+    new MenuItem('Темы', 'themes'),
   ]);
   document.body.insertAdjacentHTML('afterbegin', '<div class="left">' + menu + '</div>');
 
