@@ -6,4 +6,5 @@ namespace Singleton;
 
 class Session extends ASingleton
 {
+    // ...
 }
