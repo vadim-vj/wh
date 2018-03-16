@@ -1,0 +1,3 @@
+resm source: dh-make-template-in-source
+resm source: debian-watch-file-is-missing
+resm source: maintainer-script-lacks-debhelper-token

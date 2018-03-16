@@ -1,0 +1,58 @@
+#!@INTERPRETER_PATH@ -q
+<?php
+// vim: set ts=4 sw=4 sts=4 et:
+
+/**
+ * Executable wrapper
+ *
+ * @author  Vadim Sannikov <vsj.vadim@gmail.com> 
+ * @version $id$
+ * @link    ____link____
+ */
+
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', true);
+
+/**
+ * shutdown
+ *
+ * @param \Exception $exception Catched exception
+ *
+ * @return void
+ */
+function shutdown(\Exception $exception = null)
+{
+    if (isset($exception)) {
+        $message = $exception->getMessage();
+
+    } elseif (is_array($error = error_get_last())) {
+        $message = $error['message'];
+    }
+
+    if (!empty($message)) {
+        echo PHP_EOL . 'Error: "' . $message . '"';
+        exit(1);
+    }
+}
+
+register_shutdown_function('shutdown');
+set_exception_handler('shutdown');
+
+if (!is_array($options = getopt('', array('help', 'version', 'local', 'config:')))) {
+    throw new \Exception('Unable to parse command line');
+}
+
+define('DIR_DATA', isset($options['local']) ? (__DIR__ . '/data')          : '@RESM_DATA@');
+define('DIR_LIB',  isset($options['local']) ? (__DIR__ . '/php')           : '@RESM_LIB@');
+define('DIR_CONF', isset($options['local']) ? (dirname(__DIR__) . '/conf') : '@RESM_SYSCONF@');
+
+if (isset($options['help'])) {
+    echo file_get_contents(DIR_DATA . '/HELP');
+
+} elseif (isset($options['version'])) {
+    echo file_get_contents(DIR_DATA . '/VERSION');
+
+} else {
+    require_once DIR_LIB . '/Application.php';
+    \Resm\Application::getInstance(isset($options['config']) ? $options['config'] : DIR_CONF . '/resm.conf')->run();
+}

@@ -1,0 +1,229 @@
+Installation Instructions
+*************************
+
+Author: Vadim Sannikov <vsj.vadim@gmail.com>, 2015
+
+
+Basic Installation
+=====================================================================
+
+   Briefly, the shell commands `./configure; make; make install' should
+configure, build, and install this package.  Also, some details can be 
+found in the `README' file.
+
+   The file `configure.ac' is used to create `configure' by a program 
+called `autoconf'.  You need `configure.ac' if you want to change it or 
+regenerate `configure' using a newer version of `autoconf'.
+
+   The simplest way to compile this package is:
+
+  1. `cd' to the directory containing the package's source code and type
+     `./configure' to configure the package for your system.
+
+     Running `configure' might take a while.  While running, it prints
+     some messages telling which features it is checking for.
+
+  2. Type `make' to compile the package.
+
+  3. Optionally, type `make check' to run any self-tests that come with
+     the package, generally using the just-built uninstalled binaries.
+
+  4. Type `make install' to install the programs and any data files and
+     documentation.  When installing into a prefix owned by root, it is
+     recommended that the package be configured and built as a regular
+     user, and only the `make install' phase executed with root
+     privileges.
+
+  5. There are three targets to clean source code tree: `make clean', 
+     `make distclean' and `make maintainer-clean'. These targets are 
+     generally not run by end users. 
+
+  6. You can also type `make uninstall' to remove the installed files.
+
+  7. It's recommended to `make distclean' between `./configure' runs.
+
+
+Configure Options
+=====================================================================
+
+   In some cases it's needed to provide the unusual options that
+the `configure' script does not know about.  Run `./configure --help'
+for details on some of the pertinent environment variables.
+
+   Most configuration options can be changed via config file (see below).
+
+   You can give `configure' initial values for configuration parameters
+by setting variables in the command line or in the environment.  Here
+is an example:
+
+     ./configure --sysconfdir=/etc RESM_SRC=php
+
+   List of options and variables:
+
+  1. `--prefix=...': prefix for all installation paths. Default value is 
+     `/usr/local'. It must be changed on Debian systems to install package
+     as a service (see below).
+
+  2. `--sysconfdir=...': system config dir. Default value is $(prefix)/etc
+     (`/usr/local/etc', if the previous option has its default value). It 
+     must be changed on Debian systems to install package as a service (see 
+     below).
+
+  3. `RESM_SRC={py|php}': scripting language which the executables will be 
+     generated from. Choices are Python2 and PHP, default is Python. If
+     the option is omitted, the default value will be set.
+
+  4. `RESM_ADDR=...': IP address which the server will be binded to. Default 
+     value is so called "any IPv4 address at all" or INADDR_ANY. It is better 
+     to not change this option.
+
+  5. `RESM_PORT=...': port which the server will be binded to. Default value is 
+     10000.
+
+  6. `RESM_RCNT=...': resources number. Default value is 10.
+
+  7. `RESM_RPREF=...': resource name prefix (e.g. 't'7). Default value is 'r'.
+
+  8. `RESM_TMOD={On|Off}': test mode; ability to display some additional info.
+     Enabled by default. Must be disabled for `make check' (it will be done 
+     automatically). There is the difference in HTTP headers for this option:
+     if it's enabled, the 'Content-Type' header is 'text/plain';
+     'application/json' otherwise.
+
+
+Files to Install
+=====================================================================
+
+   Package will install the following files:
+
+  - `$(sysconfdir)/resm.conf':
+    main config (e.g. `/etc/resm.conf')
+
+  - `$(sysconfdir)/init.d/resm':
+    helper to start utility as service (e.g. `/etc/init.d/resm')
+
+  - `$(prefix)/bin/resm':
+    main executable file (e.g. `/usr/bin/resm')
+
+  - `$(prefix)/share/man/man1/resm.1':
+    man page
+
+  - `$(prefix)/share/resm/Application.{py|php}':
+    application class; source file (e.g. /usr/share/resm/Application.php)
+
+  - `$(prefix)/share/resm/HELP':
+  - `$(prefix)/share/resm/VERSION':
+  - `$(prefix)/share/doc/resm/INSTALL':
+  - `$(prefix)/share/doc/resm/README':
+    info files
+
+
+Install as Service on Debian System(s)
+=====================================================================
+
+   On Debian system(s) it's possible to install the package as a service.
+For that, must be performed some actions:
+
+  1. Set certain params to configure. Call must be 
+     `./configure --prefix=/usr --sysconfdir=/etc'
+
+  2. After `make install', insure that there is the `/etc/init.d/resm'
+     script, it's executable, and has right paths defined.
+
+  3. If yes, execute the `conf/debian/install.sh' script. Path is related
+     to the root of the package source tree directory.
+
+   After that you will be able to manage `resm' service by running
+`service resm (start|stop|restart|status)'. Restart is needed in case if the
+config file was changed.
+
+   Before uninstal package you should run the `conf/debian/uninstall.sh'
+script, as in p.3 in previous section.
+
+   Note, that the binary package install it as service automatically.
+
+
+Run the manager
+=====================================================================
+
+   If package was installed as service (as described in previous section),
+you can start it by `service resm start'. If not, simple run it as background
+process: `resm &'.
+
+   Also, it's possible to start manager with the different (than the default
+one) config file. There is the option `--config=...', so you can pass a path
+to any valid config. Also, it's possible to pass it as third argument to the
+`service' command. But please note - path must be absolute, not relative.
+So, type it full, or use some other method to canonicalize, e.g. the
+`realpath' shell utility:
+
+  - `service resm start $(realpath ./resm.conf)'
+or
+  - `resm --config=$(realpath ./resm.conf) &'
+
+   Remember: if config file has been changed manually, it's needed to restart
+service:
+
+  `service resm restart'
+
+
+Testing
+=====================================================================
+
+   There are several ways to use (and test) the manager. Of course, the 
+`resm' process must be run in background, and properly configured. Here 
+is some of them (for default address and port):
+
+  1. Via browser. Just type URLs like
+     `http://0.0.0.0:10000/allocate/alice'
+
+  2. Using NetCat:
+     `echo "GET /allocate/alice" | nc 0.0.0.0 10000'
+
+  3. Via virtual device(s) `/dev/tcp/0.0.0.0/10000':
+     `(echo "GET /allocate/alice" 1>&3 && cat 0<&3) 3<> /dev/tcp/0.0.0.0/10000'
+
+  4. In some other way?
+
+
+Build .deb Package
+=====================================================================
+
+   Package already contains the `debian' folder with all needed files, so it's
+possible to build binary from it. You will need:
+
+  - `resm_1.orig.tar.gz' archive
+  - `resm-1' folder in the same dir (unpacked .tar.gz)
+  - `cd' to the `resm-1' and run all utilities from there
+
+   Since there is the ability to build package from different sources (Python 
+or PHP), and set up config params, it's needed to perform some action before
+run build process:
+
+  1. Select source. In `debian' folder there is the `control' file and two 
+templates: `control.py.ex' and `control.php.ex'. You need to 
+`cp debian/control.<source>.ex debian/control'. Or you can skip this step to
+build package from Python scripts: the default `control' file is already
+contains all needed definitions.
+
+  2. Set up the environment variables. They are described in above section
+'Configure Options' (pp.3-8). You can check anyone by e.g. `echo $RESM_SRC',
+set new value by e.g. `export RESM_PORT=9999' or unset by e.g. 
+`unset RESM_TMOD'. Also there is the small script in root directory: 
+`helper.sh'. If run without arguments (`./helper.sh'), it simple prints all
+these vars. If run as `./helper.sh unset_all', it will clear all the variables.
+
+   After that you can build binary package. There are some utilities for it, 
+and the easiest is the `dpkg-buildpackage'. Simple run:
+
+  `dpkg-buildpackage -us -uc'
+
+in the root folder, and it will build package, and place it into the parent
+directory. To build the pack in chroot environment, use the:
+
+  `sudo pbuilder create'
+  `sudo pbuilder --update'
+  `pdebuild'
+
+   More details about how to build .dep packages you can find in the 'Debian 
+New Maintainers' Guide': https://www.debian.org/doc/manuals/maint-guide
