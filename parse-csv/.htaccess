@@ -1,0 +1,6 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<Files README.txt>
+  Deny from all
+</Files>
