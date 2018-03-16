@@ -1,0 +1,7 @@
+{
+  "html": {
+    "snippets": {
+      "aa": "a[href=\"$#\"]*[target=\"_blank\"]{$#}"
+    }
+  }
+}
