@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', event => {
       new MenuItem('Numenta', 'projects/numenta'),
     ])),
     new MenuItem('Темы', 'themes'),
+    new MenuItem('Люди', 'people'),
+    new MenuItem('Организации', 'organizations'),
   ]);
   document.body.insertAdjacentHTML('afterbegin', '<div class="left">' + menu + '</div>');
 
