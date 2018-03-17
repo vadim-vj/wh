@@ -1,0 +1,1 @@
+RedirectMatch 301 /(.+)/docs(/.*) /$1/ai-ml-overview$2
