@@ -7,4 +7,4 @@ do
     ddjvu -format=tiff -page=$i $f `printf "pg%04d.tiff" $i`
 done
 pdfbeads -o ${f/djvu/pdf};
-rm ./pg*.html ./pg*.tiff ./pg*.jbig2 ./pg*.sym
+rm ./pg*.html ./pg*.tiff ./pg*.jbig2 ./pg*.jpg ./pg*.sym
