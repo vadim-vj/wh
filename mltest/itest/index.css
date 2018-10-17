@@ -1,0 +1,8 @@
+div#data {
+  font-family: monospace;
+}
+
+div#data > canvas.loaded {
+  border: 1px solid black;
+  margin-right: 10px;
+}
