@@ -2,11 +2,12 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "promptOnClose": false,
     "tasks": [
         {
             "label": "compile & run",
             "type": "shell",
-            "command": "make -s; ./a.out",
+            "command": "make -s; [ -f a.out ] && ./a.out",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared",
@@ -17,6 +18,18 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "echo": false
+            },
+            "problemMatcher": []
         }
     ]
 }
