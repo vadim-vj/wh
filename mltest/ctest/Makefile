@@ -1,7 +1,7 @@
 CC=g++-8
-CFLAGS=-Wall -ggdb3 -pedantic -std=c++2a -Ofast
+CFLAGS=-Wall -ggdb3 -pedantic -std=c++2a -Ofast -iquote.
 LIBS=#-lm
-SOURCES=*.cpp
+SOURCES=*.cc lib/*.cc
 
 all: $(SOURCES)
 	$(CC) $(CFLAGS) $(SOURCES) $(LIBS)
