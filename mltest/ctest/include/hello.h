@@ -6,7 +6,7 @@ namespace ctest {
 
 class Hello {
  public:
-    void test() const;
+  void test() const;
 };
 
 }  // namespace ctest

@@ -2,7 +2,13 @@
 #include "include/hello.h"
 
 int main(int argc, char *argv[]) {
-    ctest::Hello h;
+  ctest::Hello h;
 
-    h.test();
+  h.test();
 }
+
+namespace Te {
+
+
+
+}  // namespace Te

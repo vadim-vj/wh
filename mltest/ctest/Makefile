@@ -1,5 +1,5 @@
 CC=g++-8
-CFLAGS=-Wall -ggdb3 -pedantic -std=c++2a -Ofast -iquote.
+CFLAGS=-Wall -ggdb3 -pedantic -std=c++2a -Ofast -iquote. -Weffc++
 LIBS=#-lm
 SOURCES=*.cc lib/*.cc
 
