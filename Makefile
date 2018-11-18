@@ -1,10 +1,13 @@
 CC=g++-8
-CFLAGS=-Wall -Weffc++ -ggdb3 -pedantic -std=c++2a -iquote.
+CF=-iquote. -Wall -Wextra -pedantic -fdiagnostics-color=always
+CPPF=-Wvector-operation-performance -Weffc++ -pedantic -std=c++2a
+DEBUGF=-ggdb3
+OPTF=#-Ofast
 LIBS=
-SOURCES=src/*.cc
+SOURCES=$(shell find src -type f -name *.cc)
 
 all: $(SOURCES)
-	$(CC) $(CFLAGS) $(SOURCES) $(LIBS)
+	$(strip $(CC) $(CF) $(CPPF) $(DEBUGF) $(OPTF) $(SOURCES) $(LIBS))
 
 clean:
 	rm -f *.о
