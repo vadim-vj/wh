@@ -13,7 +13,8 @@
         "panel": "shared",
         "showReuseMessage": false,
         "echo": false
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "clean",

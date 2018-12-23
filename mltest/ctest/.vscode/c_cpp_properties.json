@@ -3,7 +3,7 @@
     {
       "name": "Linux",
       "includePath": [
-        "${workspaceFolder}/**",
+        "${workspaceFolder}",
         "/usr/lib/gcc/x86_64-linux-gnu/8/include"
       ],
       "defines": [

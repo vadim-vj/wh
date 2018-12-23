@@ -7,6 +7,8 @@ namespace ctest {
 class Hello {
  public:
   void test() const;
+  virtual void test1() {}
+  virtual ~Hello() {}
 };
 
 }  // namespace ctest
