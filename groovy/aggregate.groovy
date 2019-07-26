@@ -16,11 +16,15 @@ if (options) {
   } else if (options.t) {
     try {
       def className = "classes.Dataset.${options.t}"
+      Class.forName(className); // throw if not exists
 
-      Class.forName(className);
-      def dataset = this.getClass().classLoader.loadClass(className)?.newInstance()
+      def classLoaded = this.getClass().classLoader.loadClass(className);
 
-      dataset.process()
+      if (!classLoaded || java.lang.reflect.Modifier.isAbstract(classLoaded.getModifiers())) {
+        throw new ClassNotFoundException();
+      }
+
+      classLoaded.newInstance().process()
 
     } catch (ClassNotFoundException e) {
       println "Unknown dataset type: ${options.t}"
