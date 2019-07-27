@@ -1,4 +1,4 @@
-package classes.Dataset
+package classes.dataset
 
 abstract class Grad extends classes.Dataset {
   def getTsvPath() {

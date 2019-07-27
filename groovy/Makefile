@@ -2,7 +2,7 @@
 
 BUILD_DIR		:= build
 MAIN_SCRIPT	:= aggregate
-SCRIPT_OPTS	:= --type=Grad.Two
+SCRIPT_OPTS	:= --type=grad.Two
 EXTENSION   := groovy
 
 all: clean compile run-java run-groovy

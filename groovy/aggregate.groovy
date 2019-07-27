@@ -1,11 +1,9 @@
-import classes.*
-
 def scriptName = this.getClass().getName()
 
-def cli = new CliBuilder(usage: """groovy ${scriptName} [options]
-  OR java -classpath \"build:<groovy-libdir>\" ${scriptName} [options]""")
-cli.t(longOpt: "type", args: 1, "dataset type")
-cli.h(longOpt: "help", "display usage")
+def cli = new CliBuilder(usage: """groovy $scriptName [options]
+  OR java -classpath \"build:<groovy-libdir>\" $scriptName [options]""")
+cli.t(longOpt: 'type', args: 1, 'dataset type')
+cli.h(longOpt: 'help', 'display usage')
 
 def options = cli.parse(args)
 
@@ -15,23 +13,27 @@ if (options) {
 
   } else if (options.t) {
     try {
-      def className = "classes.Dataset.${options.t}"
-      Class.forName(className); // throw if not exists
+      def className = "classes.dataset.$options.t"
+      Class.forName(className); // throw ClassNotFoundException if not exists
 
       def classLoaded = this.getClass().classLoader.loadClass(className);
 
-      if (!classLoaded || java.lang.reflect.Modifier.isAbstract(classLoaded.getModifiers())) {
+      if (
+        !classLoaded
+        || !(classLoaded in classes.Dataset)
+        || java.lang.reflect.Modifier.isAbstract(classLoaded.getModifiers())
+      ) {
         throw new ClassNotFoundException();
       }
 
       classLoaded.newInstance().process()
 
     } catch (ClassNotFoundException e) {
-      println "Unknown dataset type: ${options.t}"
+      println "Unknown dataset type: $options.t"
     }
 
   } else {
-    println "Unknown options"
+    println 'Unknown options'
     System.exit(-1)
   }
 }
