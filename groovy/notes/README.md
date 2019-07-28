@@ -5,10 +5,10 @@
 - поддерживает перегрузку методов и операторов
 - объекты присваиваются/передаются по ссылке
 - допустимо сравнение объектов через `==` и ссылок через `A.is(B)`
-- множественное наследование (стандартно) поддерживается только для интерфейсов
+- множественное наследование (стандартно) поддерживается только для интерфейсов; для классов только через trait-ы
 
 ## Style guide
-<a href="https://groovy-lang.org/style-guide.html" target="_blank">https://groovy-lang.org/style-guide.html</a>
+[https://groovy-lang.org/style-guide.html](https://groovy-lang.org/style-guide.html)
 - не ставить `;`
 - не использовать `return` по возможности
 - не использовать `def` с типом: ~~`def String name = ...`~~
@@ -43,7 +43,7 @@
 - shebang line: исполняемый `./test.sh` запустит скрипт
 
 ## Ключевые слова
-<a href="https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_keywords" target="_blank">https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_keywords</a>
+[https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#\_keywords](https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_keywords)
 
 ## Имена переменных
 - могут начинаться с `[a-zA-z_$]` (и буквы юникода), не могут начинаться с цифры
@@ -170,7 +170,7 @@
 - оператор вызова `()`, эквивалент `.call()`: `assert mc(2) == mc.call(2)`
 
 ## Приоритет операторов
-<a href="https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_operator_precedence" target="_blank">https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_operator_precedence</a>
+[https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#\_operator\_precedence"](https://docs.groovy-lang.org/docs/groovy-3.0.0-beta-2/html/documentation/#_operator_precedence)
 
 ## Пакеты и импорт
 - имена пакетов совпадают с `<имя-директории>.<имя-класса>`, указываются первой строчкой в файле класса
