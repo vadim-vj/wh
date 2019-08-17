@@ -1,0 +1,40 @@
+Книги
+=====
+<p>Систематическое изложение материала по Git-у есть в книгах, на начальном этапе очень желательно начать с них. Что-то вроде официального руководства - книга ProGit, доступная на официальном сайте, как для онлайн-чтения, так и для скачивания в pdf, epub и mobi форматах.</p>
+<ul>
+  <li>Английская версия на оф. сайте: <a href="https://git-scm.com/book/en/v2" target="_blank">https://git-scm.com/book/en/v2</a></li>
+  <li>Русская версия на оф. сайте переведена не до конца, но довольно много: <a href="https://git-scm.com/book/ru/v2" target="_blank"></a></li>
+  <li>Есть полностью переведенная русская версия, доступна в сети: <a href="https://www.piter.com/collection/all/product/git-dlya-professionalnogo-programmista-2" target="_blank">https://www.piter.com/collection/all/product/git-dlya-professionalnogo-programmista-2</a></li>
+  <li>Исходники книги постоянно обновляются, доступны на GitHub-е. Можно клонировать репозиторий себе и собирать html/pdf/прочее самому: <a href="https://github.com/progit/progit2" target="_blank">https://github.com/progit/progit2</a>
+  </li>
+</ul>
+<p>Подборка других книг есть на оф. сайте: <a href="https://git-scm.com/doc/ext" target="_blank">https://git-scm.com/doc/ext</a>, да и вообще книг по нему в сети достаточно много.</p>
+
+<h1>Man-страницы</h1>
+<!-- TODO: упростить и вынести часть в ссылки/всплывающие подсказки -->
+<p>Наиболее полным источником материала по Git-у являются его man-страницы. Идут вместе с самой системой. Есть их html-версии, и я рекомендую пользоваться именно ими. Включается при помощи <code>git config --global help.format web</code>, после чего страницы помощи начнут открываться в браузере. Вызов помощи идет через <code>git help &lt;command|guide&gt;</code>. Другие варианты менее предпочтительней: <code>man git-&lt;command|guid&gt;</code> не позволяет просматривать страницы через браузер и открывать ссылки, а <code>git --help</code> требует помнить порядок следования команды/гайда и опции <code>--help</code> (<code>git &lt;guide&gt; --help</code> выдаст ошибку, произвольный порядок работает только для команды).</p>
+<ul>
+  <li><code>git help</code> без аргументов выдаст краткую справку со списком команд и подсказками</li>
+  <li>Вызов справки по команде: <code>git help &lt;command&gt;</code></li>
+  <li>У помощи Git-а есть несколько тематических разделов, т.н. "гайдов" (guides). Полный их список можно получить через <code>git help -g | --guides</code></li>
+  <li>Вызов любого гайда из списка осуществляется так же, как и для команды: <code>git help guide</code></li>
+  <li>Два особых случая: <code>git help help</code> покажет справочную страницу для команды <code>help</code>, а <code>git help git</code> выдаст главную справочную страницу программы</li>
+  <li>С этой главной страницы можно перейти, например, на страницу Git User Manual (<a href="file:///usr/share/doc/git-doc/user-manual.html" target="_blank"><code>/usr/share/doc/git-doc/user-manual.html</code></a>), а также в такие специфические разделы как Git Howto Index (<a href="file:///usr/share/doc/git-doc/howto-index.html" target="_blank"><code>git-doc/howto-index.html</code></a><code> -&gt; </code><a href="file:///usr/share/doc/git-doc/howto/" target="_blank"><code>git-doc/howto/</code></a>) и Git API Documents (internal Git API, <a href="file:///usr/share/doc/git-doc/technical/api-index.html" target="_blank"><code>git-doc/technical/api-index.html</code></a><code> -&gt; </code><a href="file:///usr/share/doc/git-doc/technical/" target="_blank"><code>git-doc/technical/</code></a>)</li>
+</ul>
+<p>Страницы команд и гайдов есть и в сети, в html-формате: <a href="https://git-scm.com/docs" target="_blank">https://git-scm.com/docs</a></p>
+
+<h1>Чит-листы (cheat sheet)</h1>
+<p>Могут иногда пригодиться:</p>
+<ul>
+  <li>Интерактивный (en): <a href="http://ndpsoftware.com/git-cheatsheet.html" target="_blank">http://ndpsoftware.com/git-cheatsheet.html</a></li>
+  <li>От GitHub-а (ru): <a href="https://github.github.com/training-kit/downloads/ru/github-git-cheat-sheet/" target="_blank">https://github.github.com/training-kit/downloads/ru/github-git-cheat-sheet/</a></li>
+</ul>
+
+<h1>Прочее</h1>
+<p>Ресурсов по Гиту в сети очень много, перечислить все просто невозможно, так что только некоторые:</p>
+<ul>
+  <li>Справочные материалы от ГитХаба: <a href="http://try.github.io" target="_blank">http://try.github.io</a></li>
+  <li>Вики на kernel.org: <a href="http://git.wiki.kernel.org" target="_blank">http://git.wiki.kernel.org</a></li>
+  <li>Git Developer Pages - домашняя страница о разработке Git-а. Можно подписаться на ежемесячные рассылки: <a href="https://git.github.io" target="_blank">https://git.github.io</a></li>
+  <li>Мейл-листы разработчиков и irc-каналы. Выглядит немного устаревшим, но там самая актуальная инфа. Нужны лишь для тех, кто пишет сам Git. См. <a href="https://git-scm.com/community" target="_blank">https://git-scm.com/community</a></li>
+</ul>
