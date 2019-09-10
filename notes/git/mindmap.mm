@@ -1,0 +1,688 @@
+<map version="freeplane 1.7.0">
+<!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
+<node TEXT="Git" FOLDED="false" ID="ID_1802525651" CREATED="1568064012860" MODIFIED="1568066421898" STYLE="oval">
+<font SIZE="18"/>
+<hook NAME="MapStyle">
+    <conditional_styles>
+        <conditional_style ACTIVE="true" STYLE_REF="Command" LAST="false">
+            <node_matches_regexp SEARCH_PATTERN="^\[\w{2}\]\s+" MATCH_CASE="false" ITEM="filter_node"/>
+        </conditional_style>
+        <conditional_style ACTIVE="true" STYLE_REF="Used" LAST="false">
+            <hyper_link_exists/>
+        </conditional_style>
+    </conditional_styles>
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false" show_icon_for_attributes="true"/>
+
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" ICON_SIZE="12.0 pt" COLOR="#000000" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+<hook NAME="NodeConditionalStyles">
+    <conditional_style ACTIVE="true" LOCALIZED_STYLE_REF="default" LAST="false">
+        <node_matches_regexp SEARCH_PATTERN="^\[\w{2}\]\s+" MATCH_CASE="false" ITEM="filter_node"/>
+    </conditional_style>
+</hook>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.note" COLOR="#000000" BACKGROUND_COLOR="#ffffff" TEXT_ALIGN="LEFT"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge STYLE="hide_edge"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subtopic" COLOR="#cc3300" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon BUILTIN="yes"/>
+</stylenode>
+<stylenode TEXT="Used" COLOR="#000000" BACKGROUND_COLOR="#ff9999" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+<stylenode TEXT="Command" COLOR="#000000" BACKGROUND_COLOR="#ffffcc" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="10.0 pt" SHAPE_VERTICAL_MARGIN="10.0 pt">
+<font SIZE="18"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,1" COLOR="#0033ff">
+<font SIZE="16"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,2" COLOR="#00b439">
+<font SIZE="14"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,3" COLOR="#990000">
+<font SIZE="12"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,4" COLOR="#111111">
+<font SIZE="10"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,5"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,6"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,7"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,8"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,9"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,10"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,11"/>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<hook NAME="AutomaticEdgeColor" COUNTER="187" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="&#x421;&#x43f;&#x438;&#x441;&#x43a;&#x438; &#x43a;&#x43e;&#x43c;&#x430;&#x43d;&#x434;" POSITION="right" ID="ID_1449490288" CREATED="1568066335424" MODIFIED="1568066341711">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x41c;&#x430;&#x442;&#x435;&#x440;&#x438;&#x430;&#x43b;&#x44b;" POSITION="right" ID="ID_169581974" CREATED="1568066346837" MODIFIED="1568072099791">
+<edge COLOR="#ff0000"/>
+<node TEXT="&#x41e;&#x43d;&#x43b;&#x430;&#x439;&#x43d;-&#x440;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44b;" ID="ID_1602546914" CREATED="1568071409161" MODIFIED="1568071690245"/>
+<node TEXT="&#x41a;&#x43d;&#x438;&#x433;&#x438;" ID="ID_1062861952" CREATED="1568067068094" MODIFIED="1568067073902"/>
+<node TEXT="&#x412;&#x43d;&#x443;&#x442;&#x440;&#x435;&#x43d;&#x43d;&#x44f;&#x44f; &#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x430;&#x446;&#x438;&#x44f;" ID="ID_1484589041" CREATED="1568067090025" MODIFIED="1568070222057"/>
+<node TEXT="&#x427;&#x438;&#x442;-&#x43b;&#x438;&#x441;&#x442;&#x44b; (cheat sheets)" ID="ID_1866902358" CREATED="1568067111219" MODIFIED="1568067125387"/>
+<node TEXT="&#x41f;&#x440;&#x43e;&#x447;&#x435;&#x435;" ID="ID_869323739" CREATED="1568067128607" MODIFIED="1568067137296"/>
+<node TEXT="[ai] help" ID="ID_12190137" CREATED="1568066473189" MODIFIED="1568066481034"/>
+</node>
+<node TEXT="&#x41e;&#x431;&#x44a;&#x435;&#x43a;&#x442;&#x43d;&#x430;&#x44f; &#x431;&#x430;&#x437;&#x430;" POSITION="right" ID="ID_312271028" CREATED="1568064040243" MODIFIED="1568064052943">
+<edge COLOR="#ff0000"/>
+<node TEXT="&#x41e;&#x431;&#x44a;&#x435;&#x43a;&#x442;&#x44b; &#x432; &#x440;&#x435;&#x43f;&#x43e;&#x437;&#x438;&#x442;&#x43e;&#x440;&#x438;&#x438;" ID="ID_852425055" CREATED="1568069550526" MODIFIED="1568069564409"/>
+<node TEXT="[pm] hash-object" ID="ID_730608541" CREATED="1568073041160" MODIFIED="1568073048788"/>
+<node TEXT="[pi] cat-file" ID="ID_1976276628" CREATED="1568073092368" MODIFIED="1568073098928"/>
+<node TEXT="[pi] ls-tree" ID="ID_350717940" CREATED="1568073132748" MODIFIED="1568073141222"/>
+<node TEXT="[pi] unpack-file" ID="ID_1840263479" CREATED="1568074406035" MODIFIED="1568074417708"/>
+</node>
+<node TEXT="&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441; &#x438; &#x43a;&#x43e;&#x43c;&#x43c;&#x438;&#x442;&#x44b;" POSITION="right" ID="ID_282702160" CREATED="1568064224145" MODIFIED="1568064238248">
+<edge COLOR="#ff0000"/>
+<node TEXT="&#x424;&#x43e;&#x440;&#x43c;&#x430;&#x442; &#x438;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#x430;" ID="ID_150211366" CREATED="1568075071620" MODIFIED="1568075078535"/>
+<node TEXT="[pi] ls-files" ID="ID_291508348" CREATED="1568075744549" MODIFIED="1568075753272"/>
+</node>
+<node TEXT="&#x421;&#x441;&#x44b;&#x43b;&#x43a;&#x438; &#x438; &#x432;&#x435;&#x442;&#x432;&#x43b;&#x435;&#x43d;&#x438;&#x435;" POSITION="right" ID="ID_1559301301" CREATED="1568064305741" MODIFIED="1568064313991">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x41a;&#x43e;&#x43d;&#x444;&#x438;&#x433;" POSITION="right" ID="ID_1715151493" CREATED="1568064876546" MODIFIED="1568064880474">
+<edge COLOR="#ff0000"/>
+<node TEXT="&#x424;&#x43e;&#x440;&#x43c;&#x430;&#x442; &#x444;&#x430;&#x439;&#x43b;&#x43e;&#x432;" ID="ID_1379695342" CREATED="1568069051124" MODIFIED="1568069062470"/>
+</node>
+<node TEXT="&#x421;&#x440;&#x430;&#x432;&#x43d;&#x435;&#x43d;&#x438;&#x435;" POSITION="right" ID="ID_1887956413" CREATED="1568064358891" MODIFIED="1568064363780">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x421;&#x43b;&#x438;&#x44f;&#x43d;&#x438;&#x435;" POSITION="right" ID="ID_1055822659" CREATED="1568064366308" MODIFIED="1568064380219">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x418;&#x441;&#x442;&#x43e;&#x440;&#x438;&#x44f;" POSITION="right" ID="ID_490610015" CREATED="1568064397398" MODIFIED="1568064401838">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x421;&#x435;&#x442;&#x44c;" POSITION="right" ID="ID_1495965761" CREATED="1568064597430" MODIFIED="1568064601187">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x418;&#x43c;&#x43f;&#x43e;&#x440;&#x442; &#x438; &#x44d;&#x43a;&#x441;&#x43f;&#x43e;&#x440;&#x442;" POSITION="right" ID="ID_1230979028" CREATED="1568064601763" MODIFIED="1568064613235">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x41f;&#x43e;&#x447;&#x442;&#x430; &#x438; &#x43f;&#x430;&#x442;&#x447;&#x438;" POSITION="right" ID="ID_683367619" CREATED="1568064613689" MODIFIED="1568064619270">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x420;&#x435;&#x43f;&#x43e;&#x437;&#x438;&#x442;&#x43e;&#x440;&#x438;&#x439;" POSITION="right" ID="ID_1258613396" CREATED="1568064660483" MODIFIED="1568064666091">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x410;&#x442;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x44b; &#x438; &#x444;&#x438;&#x43b;&#x44c;&#x442;&#x440;&#x44b;" POSITION="right" ID="ID_570683218" CREATED="1568064893386" MODIFIED="1568064900250">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x414;&#x438;&#x441;&#x442;&#x440;&#x438;&#x431;&#x443;&#x446;&#x438;&#x44f;" POSITION="right" ID="ID_1316826706" CREATED="1568064789593" MODIFIED="1568064794004">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x413;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43a;&#x438;&#x439; &#x438;&#x43d;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441;" POSITION="right" ID="ID_1595372313" CREATED="1568064865707" MODIFIED="1568064874512">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x41f;&#x43e;&#x434;&#x43c;&#x43e;&#x434;&#x443;&#x43b;&#x438; &#x438; &#x434;&#x435;&#x440;&#x435;&#x432;&#x44c;&#x44f;" POSITION="right" ID="ID_1459911238" CREATED="1568064799523" MODIFIED="1568064807204">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x425;&#x443;&#x43a;&#x438;" POSITION="right" ID="ID_444762847" CREATED="1568064808052" MODIFIED="1568064812889">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="&#x41f;&#x440;&#x43e;&#x447;&#x435;&#x435;" POSITION="right" ID="ID_714314151" CREATED="1568064813712" MODIFIED="1568064816603">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1639742140" CREATED="1568066103992" MODIFIED="1568066104004">
+<edge COLOR="#00007c"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="cat-file" LOCALIZED_STYLE_REF="default" POSITION="left" ID="ID_756503724" CREATED="1568064082581" MODIFIED="1568074747084" LINK="#ID_1976276628">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="cherry" POSITION="left" ID="ID_354620254" CREATED="1568064082581" MODIFIED="1568064082585">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="diff-files" POSITION="left" ID="ID_70955187" CREATED="1568064082584" MODIFIED="1568064082586">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="diff-index" POSITION="left" ID="ID_550340532" CREATED="1568064082585" MODIFIED="1568064082588">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="diff-tree" POSITION="left" ID="ID_142931378" CREATED="1568064082587" MODIFIED="1568064082590">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="for-each-ref" POSITION="left" ID="ID_810629329" CREATED="1568064082589" MODIFIED="1568064082592">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="get-tar-commit-id" POSITION="left" ID="ID_1397379723" CREATED="1568064082591" MODIFIED="1568064082593">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="ls-files" POSITION="left" ID="ID_1009794586" CREATED="1568064082592" MODIFIED="1568075766877" LINK="#ID_291508348">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="ls-remote" POSITION="left" ID="ID_1956192331" CREATED="1568064082594" MODIFIED="1568064082597">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="ls-tree" LOCALIZED_STYLE_REF="default" POSITION="left" ID="ID_182583445" CREATED="1568064082595" MODIFIED="1568074737530" LINK="#ID_350717940">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="merge-base" POSITION="left" ID="ID_51859590" CREATED="1568064082598" MODIFIED="1568064082599">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="name-rev" POSITION="left" ID="ID_408709176" CREATED="1568064082599" MODIFIED="1568064082600">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="pack-redundant" POSITION="left" ID="ID_350388324" CREATED="1568064082600" MODIFIED="1568064082602">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="rev-list" POSITION="left" ID="ID_505686469" CREATED="1568064082601" MODIFIED="1568064082603">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="rev-parse" POSITION="left" ID="ID_1956099819" CREATED="1568064082602" MODIFIED="1568064082606">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="show-index" POSITION="left" ID="ID_1684228892" CREATED="1568064082604" MODIFIED="1568064082607">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="show-ref" POSITION="left" ID="ID_1563870654" CREATED="1568064082606" MODIFIED="1568064082608">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="unpack-file" LOCALIZED_STYLE_REF="default" POSITION="left" ID="ID_1985913507" CREATED="1568064082607" MODIFIED="1568074785401" LINK="#ID_1840263479">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="var" POSITION="left" ID="ID_1954693303" CREATED="1568064082609" MODIFIED="1568064082612">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="verify-pack" POSITION="left" ID="ID_1163741911" CREATED="1568064082611" MODIFIED="1568064082614">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_553295739" CREATED="1568066103936" MODIFIED="1568068340841">
+<edge COLOR="#7c0000"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<hook NAME="FirstGroupNode"/>
+<node TEXT="pi" ID="ID_847666059" CREATED="1568066104008" MODIFIED="1568066145226"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1264227669" CREATED="1568066134719" MODIFIED="1568066134723">
+<edge COLOR="#7c007c"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="apply" POSITION="left" ID="ID_1068161522" CREATED="1568064082613" MODIFIED="1568064082615">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="checkout-index" POSITION="left" ID="ID_1191799828" CREATED="1568064082614" MODIFIED="1568064082621">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="commit-graph" POSITION="left" ID="ID_1196216960" CREATED="1568064082616" MODIFIED="1568064082623">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="commit-tree" POSITION="left" ID="ID_930175603" CREATED="1568064082621" MODIFIED="1568064082624">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="hash-object" LOCALIZED_STYLE_REF="default" POSITION="left" ID="ID_1113681413" CREATED="1568064082624" MODIFIED="1568074742159" LINK="#ID_730608541">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="index-pack" POSITION="left" ID="ID_1078022627" CREATED="1568064082625" MODIFIED="1568064082628">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="merge-file" POSITION="left" ID="ID_151396754" CREATED="1568064082627" MODIFIED="1568064082630">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="merge-index" POSITION="left" ID="ID_364613585" CREATED="1568064082629" MODIFIED="1568064082631">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="multi-pack-index" POSITION="left" ID="ID_1157705386" CREATED="1568064082630" MODIFIED="1568064082634">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="mktag" POSITION="left" ID="ID_1372105519" CREATED="1568064082632" MODIFIED="1568064082635">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="mktree" POSITION="left" ID="ID_991233046" CREATED="1568064082634" MODIFIED="1568064082637">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="pack-objects" POSITION="left" ID="ID_871567645" CREATED="1568064082636" MODIFIED="1568064082639">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="prune-packed" POSITION="left" ID="ID_1824493804" CREATED="1568064082637" MODIFIED="1568064082642">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="read-tree" POSITION="left" ID="ID_152528131" CREATED="1568064082641" MODIFIED="1568064082644">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="symbolic-ref" POSITION="left" ID="ID_1413043884" CREATED="1568064082643" MODIFIED="1568064082645">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="unpack-objects" POSITION="left" ID="ID_1828979613" CREATED="1568064082644" MODIFIED="1568064082647">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="update-index" POSITION="left" ID="ID_1138856837" CREATED="1568064082646" MODIFIED="1568064082650">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="update-ref" POSITION="left" ID="ID_1884097150" CREATED="1568064082648" MODIFIED="1568064082651">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="write-tree" POSITION="left" ID="ID_900405894" CREATED="1568064082650" MODIFIED="1568064082652">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_192510855" CREATED="1568066134714" MODIFIED="1568066134718">
+<edge COLOR="#007c00"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="pm" ID="ID_1771170988" CREATED="1568066134725" MODIFIED="1568066140063"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_75680643" CREATED="1568066207360" MODIFIED="1568066207366">
+<edge COLOR="#ff00ff"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="check-attr" POSITION="left" ID="ID_681418493" CREATED="1568064082696" MODIFIED="1568064082699">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="check-ignore" POSITION="left" ID="ID_888220068" CREATED="1568064082698" MODIFIED="1568064082701">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="check-mailmap" POSITION="left" ID="ID_694368885" CREATED="1568064082700" MODIFIED="1568064082704">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="check-ref-format" POSITION="left" ID="ID_120618883" CREATED="1568064082702" MODIFIED="1568064082705">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="column" POSITION="left" ID="ID_685494230" CREATED="1568064082704" MODIFIED="1568064082707">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="credential" POSITION="left" ID="ID_1916901723" CREATED="1568064082706" MODIFIED="1568064082709">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="credential-cache" POSITION="left" ID="ID_283381412" CREATED="1568064082708" MODIFIED="1568064082710">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="credential-store" POSITION="left" ID="ID_1433044606" CREATED="1568064082710" MODIFIED="1568064082712">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="fmt-merge-msg" POSITION="left" ID="ID_1380985363" CREATED="1568064082711" MODIFIED="1568064082713">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="interpret-trailers" POSITION="left" ID="ID_975132374" CREATED="1568064082712" MODIFIED="1568064082716">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="mailinfo" POSITION="left" ID="ID_281944224" CREATED="1568064082714" MODIFIED="1568064082717">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="mailsplit" POSITION="left" ID="ID_933676382" CREATED="1568064082716" MODIFIED="1568064082719">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="merge-one-file" POSITION="left" ID="ID_1389948086" CREATED="1568064082718" MODIFIED="1568064082720">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="patch-id" POSITION="left" ID="ID_55891172" CREATED="1568064082719" MODIFIED="1568064082723">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="sh-i18n" POSITION="left" ID="ID_434935727" CREATED="1568064082721" MODIFIED="1568064082724">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="sh-setup" POSITION="left" ID="ID_760468971" CREATED="1568064082723" MODIFIED="1568064082725">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="stripspace" POSITION="left" ID="ID_1578853621" CREATED="1568064082724" MODIFIED="1568064082728">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_133028191" CREATED="1568066207349" MODIFIED="1568066207358">
+<edge COLOR="#00ff00"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="ph" ID="ID_1211419803" CREATED="1568066207368" MODIFIED="1568066209637"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_127755657" CREATED="1568066234477" MODIFIED="1568066234483">
+<edge COLOR="#7c0000"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="http-fetch" POSITION="left" ID="ID_968775148" CREATED="1568064082726" MODIFIED="1568064082730">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="http-push" POSITION="left" ID="ID_732941249" CREATED="1568064082729" MODIFIED="1568064082731">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="parse-remote" POSITION="left" ID="ID_1427278739" CREATED="1568064082730" MODIFIED="1568064082733">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="receive-pack" POSITION="left" ID="ID_1283931544" CREATED="1568064082732" MODIFIED="1568064082734">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="shell" POSITION="left" ID="ID_254493054" CREATED="1568064082733" MODIFIED="1568064082735">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="upload-archive" POSITION="left" ID="ID_651577454" CREATED="1568064082734" MODIFIED="1568064082736">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="upload-pack" POSITION="left" ID="ID_1339847672" CREATED="1568064082735" MODIFIED="1568064082738">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1411203106" CREATED="1568066234468" MODIFIED="1568066234475">
+<edge COLOR="#00ffff"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="sh" ID="ID_237504005" CREATED="1568066234485" MODIFIED="1568066238899"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_64840931" CREATED="1568066274650" MODIFIED="1568066274652">
+<edge COLOR="#007c00"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="daemon" POSITION="left" ID="ID_1845462021" CREATED="1568064082737" MODIFIED="1568064082740">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="fetch-pack" POSITION="left" ID="ID_521476062" CREATED="1568064082739" MODIFIED="1568064082741">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="http-backend" POSITION="left" ID="ID_881800032" CREATED="1568064082740" MODIFIED="1568064082743">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="send-pack" POSITION="left" ID="ID_1492161463" CREATED="1568064082741" MODIFIED="1568064082745">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="update-server-info" POSITION="left" ID="ID_191451565" CREATED="1568064082744" MODIFIED="1568064082747">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_547485693" CREATED="1568066274647" MODIFIED="1568066274649">
+<edge COLOR="#00007c"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="sr" ID="ID_514578343" CREATED="1568066274653" MODIFIED="1568066279743"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1285652127" CREATED="1568068340836" MODIFIED="1568068340841">
+<edge COLOR="#007c7c"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="plumbing" ID="ID_1571596338" CREATED="1568068340842" MODIFIED="1568068353994"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_905578967" CREATED="1568068209227" MODIFIED="1568068209228">
+<edge COLOR="#00007c"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="annotate" POSITION="left" ID="ID_1284015420" CREATED="1568064082652" MODIFIED="1568064082654">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="blame" POSITION="left" ID="ID_773792268" CREATED="1568064082653" MODIFIED="1568064082657">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="count-objects" POSITION="left" ID="ID_314793576" CREATED="1568064082655" MODIFIED="1568064082658">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="difftool" POSITION="left" ID="ID_392557605" CREATED="1568064082657" MODIFIED="1568064082660">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="fsck" POSITION="left" ID="ID_935338891" CREATED="1568064082659" MODIFIED="1568064082661">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="help" LOCALIZED_STYLE_REF="default" POSITION="left" ID="ID_1610834197" CREATED="1568064082660" MODIFIED="1568074755975" LINK="#ID_12190137">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="instaweb" POSITION="left" ID="ID_1937651912" CREATED="1568064082661" MODIFIED="1568064082665">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="merge-tree" POSITION="left" ID="ID_1233038073" CREATED="1568064082664" MODIFIED="1568064082666">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="rerere" POSITION="left" ID="ID_1179623627" CREATED="1568064082665" MODIFIED="1568064082668">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="show-branch" POSITION="left" ID="ID_1396689327" CREATED="1568064082667" MODIFIED="1568064082670">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="verify-commit" POSITION="left" ID="ID_520652289" CREATED="1568064082668" MODIFIED="1568064082672">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="verify-tag" POSITION="left" ID="ID_808288988" CREATED="1568064082671" MODIFIED="1568064082673">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="gitweb" POSITION="left" ID="ID_1710272004" CREATED="1568064082672" MODIFIED="1568064082675">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="whatchanged" POSITION="left" ID="ID_215193718" CREATED="1568064082674" MODIFIED="1568064082677">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_587594822" CREATED="1568068209222" MODIFIED="1568068434843">
+<edge COLOR="#7c0000"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<hook NAME="FirstGroupNode"/>
+<node TEXT="ai" ID="ID_237430224" CREATED="1568068209228" MODIFIED="1568068211599"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_4148933" CREATED="1568068218166" MODIFIED="1568068218169">
+<edge COLOR="#7c007c"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="config" POSITION="left" ID="ID_1129575607" CREATED="1568064082675" MODIFIED="1568064082679">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="fast-export" POSITION="left" ID="ID_1191842375" CREATED="1568064082678" MODIFIED="1568064082680">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="fast-import" POSITION="left" ID="ID_1088197089" CREATED="1568064082679" MODIFIED="1568064082682">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="filter-branch" POSITION="left" ID="ID_843619776" CREATED="1568064082681" MODIFIED="1568064082683">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="mergetool" POSITION="left" ID="ID_1878046204" CREATED="1568064082682" MODIFIED="1568064082686">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="pack-refs" POSITION="left" ID="ID_1706433962" CREATED="1568064082684" MODIFIED="1568064082687">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="prune" POSITION="left" ID="ID_1075483312" CREATED="1568064082686" MODIFIED="1568064082689">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="reflog" POSITION="left" ID="ID_1000861870" CREATED="1568064082688" MODIFIED="1568064082691">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="remote" POSITION="left" ID="ID_1720833113" CREATED="1568064082690" MODIFIED="1568064082693">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="repack" POSITION="left" ID="ID_13832673" CREATED="1568064082691" MODIFIED="1568064082695">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="replace" POSITION="left" ID="ID_1641969026" CREATED="1568064082694" MODIFIED="1568064082697">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1279387554" CREATED="1568068218161" MODIFIED="1568068218165">
+<edge COLOR="#007c00"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="am" ID="ID_307023343" CREATED="1568068218171" MODIFIED="1568068220141"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_23444967" CREATED="1568066322739" MODIFIED="1568066322740">
+<edge COLOR="#ff0000"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="add" POSITION="left" ID="ID_1290944398" CREATED="1568064082762" MODIFIED="1568064082764">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="am" POSITION="left" ID="ID_75241211" CREATED="1568064082763" MODIFIED="1568064082767">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="archive" POSITION="left" ID="ID_1114980655" CREATED="1568064082764" MODIFIED="1568064082768">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="bisect" POSITION="left" ID="ID_1986166117" CREATED="1568064082767" MODIFIED="1568064082769">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="branch" POSITION="left" ID="ID_799381161" CREATED="1568064082768" MODIFIED="1568064082769">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="bundle" POSITION="left" ID="ID_100852120" CREATED="1568064082769" MODIFIED="1568064082771">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="checkout" POSITION="left" ID="ID_822580377" CREATED="1568064082770" MODIFIED="1568064082772">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="cherry-pick" POSITION="left" ID="ID_244880180" CREATED="1568064082771" MODIFIED="1568064082774">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="citool" POSITION="left" ID="ID_531338345" CREATED="1568064082773" MODIFIED="1568064082776">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="clean" POSITION="left" ID="ID_180561774" CREATED="1568064082775" MODIFIED="1568064082777">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="clone" POSITION="left" ID="ID_543544065" CREATED="1568064082777" MODIFIED="1568064082778">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="commit" POSITION="left" ID="ID_1619877541" CREATED="1568064082778" MODIFIED="1568064082779">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="describe" POSITION="left" ID="ID_1229022190" CREATED="1568064082778" MODIFIED="1568064082780">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="diff" POSITION="left" ID="ID_1280771201" CREATED="1568064082779" MODIFIED="1568064082782">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="fetch" POSITION="left" ID="ID_652977942" CREATED="1568064082781" MODIFIED="1568064082783">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="format-patch" POSITION="left" ID="ID_1691433568" CREATED="1568064082782" MODIFIED="1568064082785">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="gc" POSITION="left" ID="ID_1486260373" CREATED="1568064082784" MODIFIED="1568064082786">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="grep" POSITION="left" ID="ID_593429713" CREATED="1568064082785" MODIFIED="1568064082788">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="gui" POSITION="left" ID="ID_946427146" CREATED="1568064082786" MODIFIED="1568064082790">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="init" POSITION="left" ID="ID_124015393" CREATED="1568064082789" MODIFIED="1568064082791">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="gitk" POSITION="left" ID="ID_396935218" CREATED="1568064082790" MODIFIED="1568064082793">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="log" POSITION="left" ID="ID_618238732" CREATED="1568064082792" MODIFIED="1568064082795">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="merge" POSITION="left" ID="ID_434751585" CREATED="1568064082793" MODIFIED="1568064082801">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="mv" POSITION="left" ID="ID_1168507575" CREATED="1568064082800" MODIFIED="1568064082802">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="notes" POSITION="left" ID="ID_1523158765" CREATED="1568064082801" MODIFIED="1568064082803">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="pull" POSITION="left" ID="ID_1268605027" CREATED="1568064082802" MODIFIED="1568064082804">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="push" POSITION="left" ID="ID_1437561948" CREATED="1568064082803" MODIFIED="1568064082805">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="range-diff" POSITION="left" ID="ID_274176297" CREATED="1568064082804" MODIFIED="1568064082806">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="rebase" POSITION="left" ID="ID_601517750" CREATED="1568064082805" MODIFIED="1568064082808">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="reset" POSITION="left" ID="ID_471414649" CREATED="1568064082807" MODIFIED="1568064082809">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="revert" POSITION="left" ID="ID_511611132" CREATED="1568064082808" MODIFIED="1568064082811">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="rm" POSITION="left" ID="ID_910644723" CREATED="1568064082810" MODIFIED="1568064082813">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="shortlog" POSITION="left" ID="ID_769801318" CREATED="1568064082812" MODIFIED="1568064082814">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="show" POSITION="left" ID="ID_1928383608" CREATED="1568064082813" MODIFIED="1568064082816">
+<edge COLOR="#7c0000"/>
+</node>
+<node TEXT="stash" POSITION="left" ID="ID_401202869" CREATED="1568064082815" MODIFIED="1568064082817">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="status" POSITION="left" ID="ID_1904374638" CREATED="1568064082816" MODIFIED="1568064082819">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="submodule" POSITION="left" ID="ID_263535678" CREATED="1568064082818" MODIFIED="1568064082820">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="tag" POSITION="left" ID="ID_1195358897" CREATED="1568064082819" MODIFIED="1568064082822">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="worktree" POSITION="left" ID="ID_1555646029" CREATED="1568064082821" MODIFIED="1568064082829">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1903587703" CREATED="1568066322737" MODIFIED="1568066322738">
+<edge COLOR="#7c7c00"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="mp" ID="ID_424550997" CREATED="1568066322741" MODIFIED="1568066325004"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1748956923" CREATED="1568068043632" MODIFIED="1568068043632">
+<edge COLOR="#00ffff"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="archimport" POSITION="left" ID="ID_420989892" CREATED="1568064082746" MODIFIED="1568064082748">
+<edge COLOR="#00007c"/>
+</node>
+<node TEXT="cvsexportcommit" POSITION="left" ID="ID_327406875" CREATED="1568064082747" MODIFIED="1568064082750">
+<edge COLOR="#007c00"/>
+</node>
+<node TEXT="cvsimport" POSITION="left" ID="ID_664190200" CREATED="1568064082749" MODIFIED="1568064082752">
+<edge COLOR="#7c007c"/>
+</node>
+<node TEXT="cvsserver" POSITION="left" ID="ID_1863200391" CREATED="1568064082750" MODIFIED="1568064082753">
+<edge COLOR="#007c7c"/>
+</node>
+<node TEXT="imap-send" POSITION="left" ID="ID_71153667" CREATED="1568064082752" MODIFIED="1568064082755">
+<edge COLOR="#7c7c00"/>
+</node>
+<node TEXT="p4" POSITION="left" ID="ID_1076984584" CREATED="1568064082754" MODIFIED="1568064082756">
+<edge COLOR="#ff0000"/>
+</node>
+<node TEXT="quiltimport" POSITION="left" ID="ID_1665363944" CREATED="1568064082755" MODIFIED="1568064082759">
+<edge COLOR="#0000ff"/>
+</node>
+<node TEXT="request-pull" POSITION="left" ID="ID_541922099" CREATED="1568064082757" MODIFIED="1568064082761">
+<edge COLOR="#00ff00"/>
+</node>
+<node TEXT="send-email" POSITION="left" ID="ID_1703094685" CREATED="1568064082760" MODIFIED="1568064082762">
+<edge COLOR="#ff00ff"/>
+</node>
+<node TEXT="svn" POSITION="left" ID="ID_799495168" CREATED="1568064082761" MODIFIED="1568064082763">
+<edge COLOR="#00ffff"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_1623556137" CREATED="1568068043631" MODIFIED="1568068043632">
+<edge COLOR="#ff00ff"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="fi" ID="ID_740784152" CREATED="1568068043632" MODIFIED="1568068047654"/>
+</node>
+<node TEXT="" POSITION="left" ID="ID_529317322" CREATED="1568068434840" MODIFIED="1568068434843">
+<edge COLOR="#7c7c00"/>
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="porcelain" ID="ID_152493967" CREATED="1568068434844" MODIFIED="1568068438522"/>
+</node>
+</node>
+</map>
