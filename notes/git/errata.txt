@@ -1,4 +1,7 @@
 - адрес репозитория для миграции с Mercurial в русской версии не обновлен (см. англ. версию): https://git-scm.com/book/ru/v2/Git-и-другие-системы-контроля-версий-Миграция-на-Git
 - в мане к rev-list лишние кавычки "^'<commit1>' <commit2>".
 - устаревший фомат update-index --cacheinfo в самом скрипте merge-one-file
-- в мена к commit опция core.editor в блоке про редактор не подсвечена
+- в мане к commit опция core.editor в блоке про редактор не подсвечена
+- в мане к status куча опций конфига не подсвечена. Следующее после column.status предложение не имеет пробела после точки. Опция `--ignore-submodules=dirty` тоже не подсвечена
+- в гайде attributes имя файла technical/long-running-process-protocol.txt не выделено
+- в большом user manual - "git fsck --full --no-dangling". Но --full теперь по дефолту, лишняя
