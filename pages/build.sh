@@ -10,6 +10,8 @@ else
   POST_HTML_INTENDED=temp.html
   INTEND_PATTER='s/^/    /'
 
+  . ./tags.sh
+
   for d in $POSTS_PATH/*; do
     if [ -d "$d" ]; then
       POST_MD=$d/index.md
