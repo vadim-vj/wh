@@ -14,14 +14,14 @@ else
     if [ -d "$d" ]; then
       POST_MD=$d/index.md
       POST_HTML=$d/index.html
-      POST_JSON=$d/settings.json
+      POST_SETTINGS=$d/settings.sh
       GENERATED_HTML=$BUILD_PATH/`basename $d`.html
 
-      if [ -s $POST_HTML ]; then
+      if [ -s "$POST_HTML" ]; then
         sed "$INTEND_PATTER" $POST_HTML > $POST_HTML_INTENDED
 
       else
-        if [ -s $POST_MD ]; then
+        if [ -s "$POST_MD" ]; then
           markdown $POST_MD | sed '/^$/d' | sed "$INTEND_PATTER" > $POST_HTML_INTENDED
 
         else
@@ -29,9 +29,17 @@ else
         fi
       fi
 
-      sed -e "/<div id=\"content\">/r$POST_HTML_INTENDED" index.html > $GENERATED_HTML
-      sed -i "s/####TITLE####/`./jq -r '.title // empty' $POST_JSON`/" $GENERATED_HTML
-      sed -i "s/####DATE####/`./jq -r '.date // empty' $POST_JSON`/" $GENERATED_HTML
+      sed "/<div id=\"content\">/r$POST_HTML_INTENDED" index.html > $GENERATED_HTML
+
+      title=
+      date=
+
+      if [ -f "$POST_SETTINGS" ]; then
+        . $d/settings.sh
+      fi
+
+      sed -i "s/####TITLE####/$title/" $GENERATED_HTML
+      sed -i "s/####DATE####/`LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R"`/" $GENERATED_HTML
     fi
   done
 
