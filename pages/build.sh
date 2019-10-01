@@ -4,6 +4,8 @@ BUILD_PATH=../docs
 
 if [ "$1" == "clean" ]; then
   rm $BUILD_PATH/*.html
+  rm $BUILD_PATH/*.css
+  rm $BUILD_PATH/*.js
 
 else
   POSTS_PATH=posts
@@ -78,4 +80,5 @@ else
   sed -i "/<ul id=\"nav-main\">/r$POST_HTML_INTENDED" ${INDEX_FILE}
 
   rm $POST_HTML_INTENDED
+  cp index.css index.js $BUILD_PATH/
 fi
