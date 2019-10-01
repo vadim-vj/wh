@@ -1,0 +1,37 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Локально игнорируемые паттерны</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="index.js" type="module"></script>
+</head>
+
+<body>
+  <aside>
+    <ul id="nav-left">
+      <li><a href=".">Main page</a></li>
+    </ul>
+    <ul id="nav">
+    <li><a href="git-rev-news-55.html">Git Rev News: Edition 55</a></li>
+    <li><a href="templates-dir.html">Папка шаблонов</a></li>
+    <li><a href="local-ignores.html">Локально игнорируемые паттерны</a></li>
+    </ul>
+  </aside>
+  <section>
+    <article>
+      <header>
+        <h1>Локально игнорируемые паттерны</h1>
+        <small>Sun 29 Sep 2019, 06:13</small>
+      </header>
+      <div id="content">
+    <p>Общая информация: <code>git help ignore</code>, <code>git help repository-layout</code>, <code>git help init</code></p>
+    <p>Паттерны/имена файлов, которые необходимо игнорировать всем, распространяются через <code>.gitignore</code>. Паттерны, игнорируемые локально, не должны попадать в общие репозитории. Это, как правило, файлы, связанные с особенностями работы каждого конкретного разработчика, такие как конфиги IDE (напр., <code>.vscode/*</code>) или локальные скрипты. У меня это еще и папка <code>_trees</code> с развернутыми деревьями гита.</p>
+    <p>Такие локальные паттерны можно хранить в файле <code>$GIT_DIR/info/exclude</code> или в файле, на который указывает переменная конфига <code>core.excludesFile</code>. Первый приоритетней.</p>
+    <p>Можно построить несколько вариантов использования этих файлов для игнорирования локальных паттернов. Так, <code>info/exclude</code> всегда может быть подтянут в репозиторий через <code>git init --template=&lt;path&gt;</code>, если есть кастомная папка шаблонов. Или создан/отредактирован вручную. Переменную конфига можно задавать как на глобальном уровне (per user, <code>git config --global</code>), так и для каждого репозитория отдельно (<code>git config --local</code>). Это дает возможность использовать сразу несколько файлов, свой для каждого уровня.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>
