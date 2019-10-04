@@ -13,7 +13,11 @@
       <li><a href=".">Main page</a></li>
     </ul>
     <ul id="nav">
+    <li><a href="git-materials.html">Git, материалы</a></li>
+    <li><a href="vscode-materials.html">VSCode, материалы</a></li>
+    <li><a href="git-commands.html">Git, списки команд</a></li>
     <li><a href="git-rev-news-55.html">Git Rev News: Edition 55</a></li>
+    <li><a href="cmake-materials.html">CMake, материалы</a></li>
     <li><a href="templates-dir.html">Папка шаблонов</a></li>
     <li><a href="local-ignores.html">Локально игнорируемые паттерны</a></li>
     </ul>
@@ -22,10 +26,10 @@
     <article>
       <header>
         <h1>Папка шаблонов</h1>
-        <small>Sun 29 Sep 2019, 06:54</small>
+        <small class="date">Sun 29 Sep 2019, 06:54</small>
       </header>
       <div id="content">
-    <p>Общая информация: <code>git help init</code>, <code>git clone</code>, <code>git help repository-layout</code></p>
+    <p>Общая информация: <code>[mp] init</code>, <code>[mp] clone</code>, <code>[guide] repository-layout</code></p>
     <p>При клонировании/инициализации репозитория гит смотрит в переменную конфига <code>init.templateDir</code>, и копирует в <code>$GIT_DIR</code> содержимое папки, на которую она указывает. Вполне безопасно задать ей пустое значение: <code>git config --global init.templateDir ""</code>. В этом случае ничего копироваться не будет.</p>
     <p>По умолчанию <code>init.templateDir = /usr/share/git-core/templates/</code>. Содержимое:</p>
     <ul>
@@ -34,7 +38,7 @@
     <li><code>branches/</code> - пустая <code>&lt;!-- TODO: уточнить --&gt;</code></li>
     <li><code>description</code> - текстовый файл с описанием репозитория <code>&lt;!-- TODO: уточнить --&gt;</code></li>
     </ul>
-    <p>В хелпе к <code>git init</code> есть секция &ldquo;Template directory&rdquo;, описывает порядок поиска папки для <code>clone/init</code>: <code>--template=&lt;path&gt; --&gt; $GIT_TEMPLATE_DIR --&gt; init.templateDir --&gt; /usr/share/git-core/templates/</code>.</p>
+    <p>В хелпе к <code>[mp] init</code> есть секция &ldquo;Template directory&rdquo;, описывает порядок поиска папки для <code>clone/init</code>: <code>--template=&lt;path&gt; --&gt; $GIT_TEMPLATE_DIR --&gt; init.templateDir --&gt; /usr/share/git-core/templates/</code>.</p>
     <p>Основной (кроме перемещения <code>$GIT_DIR</code>) смысл выполнения <code>git init</code> на существуем репозитории - это как раз подтягивание шаблонов, из обновившейся дефолтной папки или указанной кастомной.</p>
       </div>
     </article>

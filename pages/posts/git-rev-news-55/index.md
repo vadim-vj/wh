@@ -20,7 +20,7 @@
 
 ## Releases
 
-Текущая версия гит - 2.23, в августе на обновлялся. Вышли релизы Gerrit Code Review, GitHub Enterprise, GitLab, Bitbucket Server, GitKraken и GitHub Desktop.
+Текущая версия гит - 2.23, в августе не обновлялся. Вышли релизы Gerrit Code Review, GitHub Enterprise, GitLab, Bitbucket Server, GitKraken и GitHub Desktop.
 
 ## Other News
 

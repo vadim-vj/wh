@@ -5,3 +5,4 @@
 - в мане к status куча опций конфига не подсвечена. Следующее после column.status предложение не имеет пробела после точки. Опция `--ignore-submodules=dirty` тоже не подсвечена
 - в гайде attributes имя файла technical/long-running-process-protocol.txt не выделено
 - в большом user manual - "git fsck --full --no-dangling". Но --full теперь по дефолту, лишняя
+- для `git help subtree` нет html-версии, только текстовая

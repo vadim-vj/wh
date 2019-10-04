@@ -1,4 +1,4 @@
-Общая информация: `git help init`, `git clone`, `git help repository-layout`
+Общая информация: `[mp] init`, `[mp] clone`, `[guide] repository-layout`
 
 При клонировании/инициализации репозитория гит смотрит в переменную конфига `init.templateDir`, и копирует в `$GIT_DIR` содержимое папки, на которую она указывает. Вполне безопасно задать ей пустое значение: `git config --global init.templateDir ""`. В этом случае ничего копироваться не будет.
 
@@ -9,6 +9,6 @@
 - `branches/` - пустая `<!-- TODO: уточнить -->`
 - `description` - текстовый файл с описанием репозитория `<!-- TODO: уточнить -->`
 
-В хелпе к `git init` есть секция "Template directory", описывает порядок поиска папки для `clone/init`: `--template=<path> --> $GIT_TEMPLATE_DIR --> init.templateDir --> /usr/share/git-core/templates/`.
+В хелпе к `[mp] init` есть секция "Template directory", описывает порядок поиска папки для `clone/init`: `--template=<path> --> $GIT_TEMPLATE_DIR --> init.templateDir --> /usr/share/git-core/templates/`.
 
 Основной (кроме перемещения `$GIT_DIR`) смысл выполнения `git init` на существуем репозитории - это как раз подтягивание шаблонов, из обновившейся дефолтной папки или указанной кастомной.

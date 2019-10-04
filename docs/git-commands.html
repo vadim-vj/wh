@@ -1,0 +1,60 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Git, списки команд</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="index.js" type="module"></script>
+</head>
+
+<body>
+  <aside>
+    <ul id="nav-left">
+      <li><a href=".">Main page</a></li>
+    </ul>
+    <ul id="nav">
+    <li><a href="git-materials.html">Git, материалы</a></li>
+    <li><a href="vscode-materials.html">VSCode, материалы</a></li>
+    <li><a href="git-commands.html">Git, списки команд</a></li>
+    <li><a href="git-rev-news-55.html">Git Rev News: Edition 55</a></li>
+    <li><a href="cmake-materials.html">CMake, материалы</a></li>
+    <li><a href="templates-dir.html">Папка шаблонов</a></li>
+    <li><a href="local-ignores.html">Локально игнорируемые паттерны</a></li>
+    </ul>
+  </aside>
+  <section>
+    <article>
+      <header>
+        <h1>Git, списки команд</h1>
+        <small class="date">Wed 02 Oct 2019, 00:37</small>
+      </header>
+      <div id="content">
+    <h2>Plumbing</h2>
+    <ul>
+    <li><code>[pi]</code> = <code>plumbinginterrogators</code></li>
+    <li><code>[pm]</code> = <code>plumbingmanipulators</code></li>
+    <li><code>[ph]</code> = <code>purehelpers</code></li>
+    <li><code>[sh]</code> = <code>synchelpers</code></li>
+    <li><code>[sr]</code> = <code>synchingrepositories</code></li>
+    </ul>
+    <h2>Porcelain</h2>
+    <ul>
+    <li><code>[ai]</code> = <code>ancillaryinterrogators</code></li>
+    <li><code>[am]</code> = <code>ancillarymanipulators</code></li>
+    <li><code>[mp]</code> = <code>mainporcelain</code></li>
+    <li><code>[fi]</code> = <code>foreignscminterface</code></li>
+    </ul>
+    <p><code>&lt;!-- TODO: там еще есть списки, типа "builtins" и "nohelpers --&gt;</code></p>
+    <h2>Misc</h2>
+    <ul>
+    <li><code>ls -la /usr/share/doc/git-doc/cmds-*</code> - все списки</li>
+    <li><code>git --list-cmds=list-&lt;list&gt;</code> - получение списка</li>
+    <li><code>git config --global alias.list-mp '--list-cmds=list-mainporcelain'</code> - добавление алиаса</li>
+    <li><code>ls -la /usr/lib/git-core/</code> - папка с бинарниками</li>
+    </ul>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

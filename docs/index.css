@@ -1,10 +1,11 @@
-html, body {
+html {
   height: 100%;
 }
 
 body {
   display: flex;
   font-family: sans-serif;
+  min-height: 100%;
 }
 
 aside {
@@ -21,4 +22,8 @@ section {
 
 header > h1 {
   font-size: x-large;
+}
+
+.date {
+  font-family: monospace;
 }
