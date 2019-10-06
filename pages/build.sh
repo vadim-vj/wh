@@ -10,7 +10,7 @@ if [ "$1" == "clean" ]; then
 else
   POSTS_PATH=posts
   POST_HTML_INTENDED=temp.html
-  INTEND_PATTER='s/^/    /'
+  INTEND_PATTERN='s|^|    |'
   declare -A TITLES
   declare -A DATES
   declare -a GENERATED
@@ -26,11 +26,11 @@ else
       GENERATED_HTML=$BUILD_PATH/$GENERATED_NAME
 
       if [ -s "$POST_HTML" ]; then
-        sed "$INTEND_PATTER" $POST_HTML > $POST_HTML_INTENDED
+        sed "$INTEND_PATTERN" $POST_HTML > $POST_HTML_INTENDED
 
       else
         if [ -s "$POST_MD" ]; then
-          markdown $POST_MD | sed '/^$/d' | sed "$INTEND_PATTER" > $POST_HTML_INTENDED
+          markdown $POST_MD | sed '/^$/d' | sed "$INTEND_PATTERN" > $POST_HTML_INTENDED
 
         else
           continue
@@ -56,8 +56,8 @@ else
         fi
       fi
 
-      sed -i "s/####TITLE####/$title/" $GENERATED_HTML
-      sed -i "s/####DATE####/`[[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R"`/" $GENERATED_HTML
+      sed -i "s|####TITLE####|$title|" $GENERATED_HTML
+      sed -i "s|####DATE####|`[[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R"`|" $GENERATED_HTML
 
       GENERATED+=($GENERATED_HTML)
     fi
@@ -70,13 +70,13 @@ else
     echo "<li><a href=\"$KEY\">${TITLES[$KEY]}</a></li>" >> $POST_HTML_INTENDED
   done
 
-  sed -i "$INTEND_PATTER" $POST_HTML_INTENDED
+  sed -i "$INTEND_PATTERN" $POST_HTML_INTENDED
   for FILE in "${GENERATED[@]}"; do
     sed -i "/<ul id=\"nav\">/r$POST_HTML_INTENDED" $FILE
-    sed -i "s/####MAIN_TITLE####/$INDEX_TITLE/" $FILE
+    sed -i "s|####MAIN_TITLE####|$INDEX_TITLE|" $FILE
   done
 
-  sed -i 's/^/  /' $POST_HTML_INTENDED
+  sed -i 's|^|  |' $POST_HTML_INTENDED
   sed -i "/<ul id=\"nav-main\">/r$POST_HTML_INTENDED" ${INDEX_FILE}
 
   rm $POST_HTML_INTENDED

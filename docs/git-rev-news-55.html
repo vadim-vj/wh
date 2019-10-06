@@ -13,10 +13,14 @@
       <li><a href=".">Main page</a></li>
     </ul>
     <ul id="nav">
+    <li><a href="git-2.23.html">GIt v2.23</a></li>
+    <li><a href="vscode-timeline.html">VSCode timeline</a></li>
     <li><a href="git-materials.html">Git, материалы</a></li>
     <li><a href="vscode-materials.html">VSCode, материалы</a></li>
     <li><a href="git-commands.html">Git, списки команд</a></li>
     <li><a href="git-rev-news-55.html">Git Rev News: Edition 55</a></li>
+    <li><a href="cmake-timeline.html">CMake timeline</a></li>
+    <li><a href="git-timeline.html">Git/GitHub timeline</a></li>
     <li><a href="cmake-materials.html">CMake, материалы</a></li>
     <li><a href="templates-dir.html">Папка шаблонов</a></li>
     <li><a href="local-ignores.html">Локально игнорируемые паттерны</a></li>
@@ -34,16 +38,16 @@
     <h3>General</h3>
     <ul>
     <li>Закончился Google Summer of Code 2019. Оба гитовских студента представили свои проекты</li>
-    <li>Johannes &ldquo;Dscho&rdquo; Schindelin организовал Virtual Git Contributor Summit, который прошел 12-13 сентября по Zoom-у</li>
+    <li>Johannes &ldquo;Dscho&rdquo; Schindelin организовал Virtual Git Contributor Summit, который прошел 12-13 сентября по Zoom-у (отчет прилагается)</li>
     <li>Emily Shaffer в мейл-листах разработчиков гита спрашивает, интересно ли будет создание блога по Git, который будут вести разработчики. Цель - сделать гит более понятным для остального мира. Ее поддержали и согласились писать иногда статьи. Jeff King, админ оф. сайта, выделил поддомен <a href="https://blog.git-scm.com">https://blog.git-scm.com</a> (пока не работает). Репозиторий блога - <a href="https://gitlab.com/git-scm/blog/">https://gitlab.com/git-scm/blog/</a>. Будут делать на движке Hugo (markdown)</li>
     </ul>
     <h3>Support</h3>
     <ul>
-    <li><p>diff.renames not working?</p>
-    <p><code>&lt;!-- TODO: разобрать --&gt;</code></p></li>
+    <li>diff.renames not working?</li>
     </ul>
+    <p>Обсуждение детектов переименований с участием Jeff King и Junio Hamano, историческая справка от последнего.</p>
     <h2>Developer Spotlight: Emily Shaffer</h2>
-    <p>Дамочка живет в Калифорнии, работает в Гугле, и постоянно контрибутит в гит. Автор мануала по засыланию патчей в гит: <a href="https://git-scm.com/docs/MyFirstContribution.html">https://git-scm.com/docs/MyFirstContribution.html</a>. Последнее время работает над Git to Googlers (gee) (?), над тулзой по генерации репортов об ошибках. Планирует скоро заняться хуками, мечтает заняться сабмодулями. Восхищается системой алиасов, сама для себя настроила многие; также ей нравится использование mutt-а для мейл-листов гита и возможность отправки почты прямо из vim.</p>
+    <p>Дамочка живет в Калифорнии, работает в Гугле, и постоянно контрибутит в гит. Автор мануала по засыланию патчей в гит: <a href="https://git-scm.com/docs/MyFirstContribution.html">https://git-scm.com/docs/MyFirstContribution.html</a>. Последнее время делает что-то с гитом в гугле (?). Работает над тулзой по генерации репортов об ошибках. Планирует скоро заняться хуками, мечтает заняться сабмодулями. Восхищается системой алиасов, сама для себя настроила многие; также ей нравится использование mutt-а для мейл-листов гита и возможность отправки почты прямо из Vim.</p>
     <h2>Releases</h2>
     <p>Текущая версия гит - 2.23, в августе не обновлялся. Вышли релизы Gerrit Code Review, GitHub Enterprise, GitLab, Bitbucket Server, GitKraken и GitHub Desktop.</p>
     <h2>Other News</h2>
@@ -54,7 +58,14 @@
     <li>BitBucket объявляет о прекращении поддержки Mercurial к 1 июня 2020 года: <a href="https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket">https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket</a></li>
     </ul>
     <h2>Light reading</h2>
-    <p><code>&lt;!-- TODO: разобрать --&gt;</code></p>
+    <ul>
+    <li><a href="https://stackoverflow.blog/2019/09/05/they-didnt-teach-us-this-a-crash-course-for-your-first-job-in-software/">“They Didn’t Teach Us This”: A Crash Course for Your First Job in Software</a> от Max Pekarsky, секция &ldquo;Git Workflow&rdquo;</li>
+    <li><a href="https://matheustavares.gitlab.io/posts/first-steps-contributing-to-git">First Steps Contributing to Git</a> от Matheus Tavares (GSoC 2019 student)</li>
+    <li><a href="https://lwn.net/Articles/798230/">Maintaining the kernel’s web of trust</a> от Jonathan Corbet, предложение по хранению GPG-ключей</li>
+    <li><a href="https://lwn.net/Articles/799134/">Defragmenting the kernel development process</a> от Jonathan Corbet, секция про контроль версий и Git</li>
+    <li><a href="https://dev.to/glsolaria/gitlens-where-have-you-been-all-my-life-1c2d">GitLens: where have you been all my life!</a> от G.L Solaria, про аддон к VSCode</li>
+    <li><a href="https://docs.google.com/presentation/d/1xbzgdj_gnUSEvpTedoyJXVvREwOxBi1amm7A_FdMFCc/edit">Git Can Do That?</a> от Pratik Karki, неформальная презентация с общими сведениями о Git</li>
+    </ul>
     <h2>Git tools and sites</h2>
     <ul>
     <li>patchew, система работы с патчами по почте: <a href="https://github.com/patchew-project/patchew">https://github.com/patchew-project/patchew</a></li>
