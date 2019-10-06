@@ -1,0 +1,46 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Git, локально игнорируемые паттерны</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="index.js" type="module"></script>
+</head>
+
+<body>
+  <aside>
+    <ul id="nav-left">
+      <li><a href=".">Main page</a></li>
+    </ul>
+    <ul id="nav">
+    <li><a href="git-2.23.html">GIt v2.23 (July 2019)</a></li>
+    <li><a href="vscode-timeline.html">VSCode timeline</a></li>
+    <li><a href="git-materials.html">Git, материалы</a></li>
+    <li><a href="vscode-materials.html">VSCode, материалы</a></li>
+    <li><a href="git-commands.html">Git, списки команд</a></li>
+    <li><a href="git-rev-news-55.html">Git Rev News 55 (August 2019)</a></li>
+    <li><a href="vscode-1.38.html">VSCode v1.38 (August 2019)</a></li>
+    <li><a href="cmake-timeline.html">CMake timeline</a></li>
+    <li><a href="git-local-ignores.html">Git, локально игнорируемые паттерны</a></li>
+    <li><a href="git-timeline.html">Git/GitHub timeline</a></li>
+    <li><a href="git-templates-dir.html">Git, папка шаблонов</a></li>
+    <li><a href="cmake-materials.html">CMake, материалы</a></li>
+    </ul>
+  </aside>
+  <section>
+    <article>
+      <header>
+        <h1>Git, локально игнорируемые паттерны</h1>
+        <small class="date">Sun 29 Sep 2019, 06:13</small>
+      </header>
+      <div id="content">
+    <p>Общая информация: <code>[guide] ignore</code>, <code>[guide] repository-layout</code>, <code>[mp] init</code></p>
+    <p>Паттерны/имена файлов, которые необходимо игнорировать всем, распространяются через <code>.gitignore</code>. Паттерны, игнорируемые локально, не должны попадать в общие репозитории. Это, как правило, файлы, связанные с особенностями работы каждого конкретного разработчика, такие как конфиги IDE (напр., <code>.vscode/*</code>) или локальные скрипты. У меня это еще и папка <code>_trees</code> с развернутыми деревьями гита.</p>
+    <p>Такие локальные паттерны можно хранить в файле <code>$GIT_DIR/info/exclude</code> или в файле, на который указывает переменная конфига <code>core.excludesFile</code>. Первый приоритетней.</p>
+    <p>Можно построить несколько вариантов использования этих файлов для игнорирования локальных паттернов. Так, <code>info/exclude</code> всегда может быть подтянут в репозиторий через <code>git init --template=&lt;path&gt;</code>, если есть кастомная папка шаблонов. Или создан/отредактирован вручную. Переменную конфига можно задавать как на глобальном уровне (per user, <code>git config --global</code>), так и для каждого репозитория отдельно (<code>git config --local</code>). Это дает возможность использовать сразу несколько файлов, свой для каждого уровня.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

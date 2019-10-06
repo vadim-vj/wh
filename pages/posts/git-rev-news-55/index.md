@@ -1,4 +1,4 @@
-<https://git.github.io/rev_news/2019/09/25/edition-55/> (September 25th, 2019). Что произошло в мире Git в августе 2019го.
+- <https://git.github.io/rev_news/2019/09/25/edition-55/>
 
 ## Discussions
 
@@ -27,7 +27,7 @@
 ### Various
 
 - в блоге GitHub-а появился пост про фичи v2.23: <https://github.blog/2019-08-16-highlights-from-git-2-23/>
-- выступления разработчиков (Git standup on IRC) в #git-devel на irc.freenode.net каждые две недели (?)
+- выступления разработчиков (Git standup on IRC) в #git-devel на irc.freenode.net каждые две недели
 - BitBucket объявляет о прекращении поддержки Mercurial к 1 июня 2020 года: <https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket>
 
 ## Light reading

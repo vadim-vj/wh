@@ -47,6 +47,7 @@ ProGit:
 ## Прочее
 
 - справочные материалы от ГитХаба: <http://try.github.io>
+- от БитБакета: <https://www.atlassian.com/git/tutorials>
 - вики на kernel.org: <http://git.wiki.kernel.org>
 - мейл-листы разработчиков и irc-каналы, ссылки есть на <https://git-scm.com/community>
 

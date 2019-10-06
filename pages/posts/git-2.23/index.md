@@ -1,5 +1,5 @@
-<https://github.com/git/git/blob/master/Documentation/RelNotes/2.23.0.txt>
-<https://github.blog/2019-08-16-highlights-from-git-2-23/>
+- <https://github.com/git/git/blob/master/Documentation/RelNotes/2.23.0.txt>
+- <https://github.blog/2019-08-16-highlights-from-git-2-23/>
 
 ## `mp [checkout]` --> `[mp] switch` + `[mp] restore`
 
