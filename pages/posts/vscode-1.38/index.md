@@ -53,8 +53,8 @@
 ## Расширения
 
 - открыт тикет для всех расширений, использующих webview. Должны следовать Content Security Policy (CSP), хоть это и не срочно. Также добавлено предупреждение для разработчиков в консоли
-- улучшения расширений GitHub Pull Requests, Remote Development
-- создан репозиторий всех иконок, используемых в VSCode: <https://github.com/microsoft/vscode-icons>. Авторы расширений могут их использовать
+- улучшения расширений [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github), [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+- создан репозиторий всех иконок VSCode: <https://github.com/microsoft/vscode-icons>. Авторы расширений могут их использовать
 
 ## Команды
 

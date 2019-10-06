@@ -2,12 +2,11 @@
 
 BUILD_PATH=../docs
 
-if [ "$1" == "clean" ]; then
-  rm $BUILD_PATH/*.html
-  rm $BUILD_PATH/*.css
-  rm $BUILD_PATH/*.js
+rm -f $BUILD_PATH/*.html
+rm -f $BUILD_PATH/*.css
+rm -f $BUILD_PATH/*.js
 
-else
+if [ ! "$1" == "clean" ]; then
   POSTS_PATH=posts
   POST_HTML_INTENDED=temp.html
   INTEND_PATTERN='s|^|    |'
@@ -22,7 +21,8 @@ else
       POST_MD=$d/index.md
       POST_HTML=$d/index.html
       POST_SETTINGS=$d/settings.sh
-      GENERATED_NAME=`basename $d`.html
+      GENERATED_ID=`basename $d`
+      GENERATED_NAME=$GENERATED_ID.html
       GENERATED_HTML=$BUILD_PATH/$GENERATED_NAME
 
       if [ -s "$POST_HTML" ]; then
@@ -46,7 +46,7 @@ else
       if [ -f "$POST_SETTINGS" ]; then
         . $d/settings.sh
 
-        if [ "$GENERATED_NAME" == "index.html" ]; then
+        if [ "$GENERATED_ID" == "index" ]; then
           INDEX_FILE=$GENERATED_HTML
           INDEX_TITLE=$title
 
@@ -55,6 +55,8 @@ else
           DATES[$GENERATED_NAME]=$date
         fi
       fi
+
+      sed -i "s|####ID####|$GENERATED_ID|" $GENERATED_HTML
 
       sed -i "s|####TITLE####|$title|" $GENERATED_HTML
       sed -i "s|####DATE####|`[[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R"`|" $GENERATED_HTML

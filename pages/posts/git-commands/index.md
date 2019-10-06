@@ -13,7 +13,7 @@
 - `[mp]` = `mainporcelain`
 - `[fi]` = `foreignscminterface`
 
-`<!-- TODO: там еще есть списки, типа "builtins" и "nohelpers -->`
+`<!-- TODO: там еще есть списки, типа "builtins" и "nohelpers" -->`
 
 ## Misc
 

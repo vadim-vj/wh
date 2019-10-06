@@ -9,7 +9,7 @@ body {
 }
 
 aside {
-  flex: 0.18;
+  flex: 0.2;
   padding-right: 10px;
   border-right: 1px solid darkgray;
   font-size: small;
@@ -26,4 +26,12 @@ header > h1 {
 
 .date {
   font-family: monospace;
+}
+
+code {
+  color: maroon;
+}
+
+[id$="timeline"] #content > ul > li > p:first-child {
+  font-weight: bold;
 }
