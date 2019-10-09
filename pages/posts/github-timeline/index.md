@@ -1,3 +1,31 @@
+## Tue Oct 08 2019
+
+- [blog, twitter] Результаты восьмых [js13kGames](https://js13kgames.com)-игр
+
+  Это такие ежегодные игры, где нужно написать JS-игру размером не более 13kB за 31 день. В посте описываются десять лучших участников, все хостят код игр на ГитХабе.
+
+  <https://github.blog/2019-10-08-js13k-2019-highlights/>
+
+- [blog, twitter] Несколько примеров GitHub Actions от пользователей
+
+  Т.к. Actions это просто код в репозитории, пользователи могут ими делиться; выкладывать на [GitHub Marketplace](https://github.com/marketplace?type=actions) свои и использовать чужие. В посте дается несколько примеров. Найти больше можно через [Explore/Topics/Actions](https://github.com/topics/actions)
+
+  <https://github.blog/2019-10-08-github-actions-from-open-source-maintainers/>
+
+- [twitter] Реклама GitHub Universe
+
+  Как коммерческие организации, вроде Shopify или IBM работают с opensource-ом и пул реквестами, предлагается [послушать 13-14 Nov 2019](https://githubuniverse.com/schedule/).
+
+  <https://twitter.com/github/status/1181313292276510724>
+
+## Mon Oct 07 2019
+
+- [twitter] Опрос от компании [The Case Foundation](https://casefoundation.org)
+
+  GitHub сотрудничает с ними, и предлагает пройти [опрос про opensource-ПО](https://www.surveymonkey.com/r/JRY5HWN?organization_name=github) всем разработчикам, связанным с социальной сферой.
+
+  <https://twitter.com/github/status/1181264185616936965>
+
 ## Thu Oct 03 2019
 
 - [blog, twitter] Новые роли для членов команд/организаций
