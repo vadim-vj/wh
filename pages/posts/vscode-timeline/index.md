@@ -1,5 +1,15 @@
 ## Wed Oct 09 2019
 
+- [twitter, [updates](vscode-1.39.html)] Релиз v1.39
+
+  <https://twitter.com/code/status/1182021573907083265>
+
+- [twitter (re)] Использование мультикурсоров
+
+  Кратко, про `Ctrl + Click` с небольшим видео.
+
+  <https://twitter.com/bcye_tw/status/1182009067851669508>
+
 - [twitter] Новый член команды
 
   [Eric Amodio](https://twitter.com/eamodio) получил blue badge, пишет как он доволен.

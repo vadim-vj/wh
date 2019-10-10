@@ -1,0 +1,133 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>VSCode v1.39 (September 2019)</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <script src="index.js" type="module"></script>
+</head>
+
+<body id="vscode-1.39">
+  <aside>
+    <ul id="nav-left">
+      <li><a href=".">Main page</a></li>
+    </ul>
+    <ul id="nav">
+    <li><a href="git-2.23.html">GIt v2.23 (July 2019)</a></li>
+    <li><a href="vscode-timeline.html">VSCode, timeline</a></li>
+    <li><a href="git-materials.html">Git, материалы</a></li>
+    <li><a href="github-timeline.html">GitHub, timeline</a></li>
+    <li><a href="vscode-materials.html">VSCode, материалы</a></li>
+    <li><a href="git-commands.html">Git, списки команд</a></li>
+    <li><a href="git-rev-news-55.html">Git Rev News 55 (August 2019)</a></li>
+    <li><a href="vscode-1.38.html">VSCode v1.38 (August 2019)</a></li>
+    <li><a href="cmake-timeline.html">CMake, timeline</a></li>
+    <li><a href="cmake-materials.html">CMake, материалы</a></li>
+    <li><a href="vscode-1.39.html">VSCode v1.39 (September 2019)</a></li>
+    </ul>
+  </aside>
+  <section>
+    <article>
+      <header>
+        <h1>VSCode v1.39 (September 2019)</h1>
+        <small class="date">Thu 10 Oct 2019, 04:28</small>
+      </header>
+      <div id="content">
+    <ul>
+    <li><a href="https://code.visualstudio.com/updates/v1_39">https://code.visualstudio.com/updates/v1_39</a></li>
+    </ul>
+    <h2>Workbench</h2>
+    <ul>
+    <li>переключение вида tree/list во вкладке &ldquo;Source control&rdquo;. Также управляется опцией <code>scm.defaultViewMode</code></li>
+    <li>в той же панели теперь есть поиск по файлам, нужно просто начать печатать</li>
+    <li>фича управления переходами по внешним ссылкам (попап подтверждения) была введена в <a href="vscode-1.38">v1.38</a>. Теперь команда <code>Manage Trusted Domains</code> открывает JSON-файл настроек, где можно редактировать список доверенных доменов</li>
+    <li>текст из подсказок автодополнения теперь можно копировать</li>
+    <li>улучшена поддержка японских шрифтов для Windows</li>
+    <li>улучшенные моноширные шрифты во всплывающих подсказках</li>
+    <li>схема валидации настроек типа массив теперь поддерживает <code>uniqueItems</code></li>
+    <li>подсветка синтаксиса в блоках кода в README-страницах</li>
+    </ul>
+    <h2>Редактор</h2>
+    <ul>
+    <li>команда <code>Toggle Fold (Ctrl+K Ctrl+L)</code></li>
+    <li>подсветка текущего выделения в миникарте</li>
+    <li>поддержка перетаскивания в миникарте через касание (?, &ldquo;The minimap slider can now be dragged with touch.&rdquo;)</li>
+    <li>вставка из буфера для мультикурсоров теперь настраивается через <code>editor.multiCursorPaste: (spread|full)</code> (построчная вставка или весь текст сразу)</li>
+    </ul>
+    <h2>Терминал</h2>
+    <ul>
+    <li>команда <code>workbench.action.terminal.newWithCwd</code> позволяет в аргументах указывать стартовую директорию для открываемого терминала (полезно, напр., для хоткеев)</li>
+    <li>улучшено определение локали, замена команды: <code>terminal.integrated.setLocaleVariables --&gt; terminal.integrated.detectLocale</code></li>
+    </ul>
+    <h2>Языки</h2>
+    <ul>
+    <li>во всплывающих подсказках для HTML ARIA теперь показываться ссылки на w3.org</li>
+    <li>автодополнение CSS теперь вставляет точку с запятой в конце строки. Поведение управляется настройкой <code>[css|scss|less].completion.completePropertyWithSemicolon</code></li>
+    <li>квадратики с цветом для цветовых свойств CSS теперь показываются и во всплывающих подсказках</li>
+    <li>настройка <code>markdown.links.openLocation: (currentGroup|beside)</code> определяет, где открывать ссылки из markdown-документов: в текущей группе редакторов или рядом</li>
+    </ul>
+    <h2>Отладчик</h2>
+    <ul>
+    <li>теперь показываются возможные позиции для breakpoint-ов внутри строки</li>
+    <li>в панели &ldquo;Call stack&rdquo; кнопки действий теперь показываются при наведении</li>
+    <li>другие улучшения панели &ldquo;Call stack&rdquo;: раскрытие тредов и фокус</li>
+    <li>ссылки теперь распознаются в выводе Debug Console</li>
+    <li>переменная конфига тасков <code>${defaultBuildTask}</code> (то, что запускается по команде <code>Tasks: Run Build Task</code>). Может быть использована, например, в <code>"preLaunchTask": "${defaultBuildTask}"</code></li>
+    <li>в случае ошибок во время <code>preLaunchTask</code> выбор действия теперь можно сохранять. Настройка <code>debug.onTaskErrors: (prompt|debugAnyway|showErrors)</code></li>
+    </ul>
+    <h2>Расширения</h2>
+    <ul>
+    <li>улучшения расширения <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a></li>
+    </ul>
+    <h2>Новые фичи</h2>
+    <ul>
+    <li>хотя VSCode не будет интегрировать TypeScript v3.7 до официального релиза, некоторе его фичи можно потестить уже сейчас</li>
+    </ul>
+    <h2>Для разработчиков расширений</h2>
+    <ul>
+    <li>терминал для Extension API</li>
+    <li>показ устаревших тегов в подсказках</li>
+    <li>редактирование имени отладочной сессии (<code>DebugSession</code>)</li>
+    <li>предупреждения для WebView</li>
+    <li>API для сообщений в режиме TreeView</li>
+    <li>обновление стиля иконок</li>
+    <li>возможность направлять команды в отдельную папку в режиме дерева в панели SCM</li>
+    </ul>
+    <h2>Протокол языкового сервера</h2>
+    <ul>
+    <li>версия 3.15.0 доступна, хотя работа над ней еще на полностью завершена</li>
+    </ul>
+    <h2>Протокол отладчика</h2>
+    <ul>
+    <li>поддержка отмены запросов (запрос <code>cancel</code>)</li>
+    <li>поиск всех возможных breakpoint-ов в диапазоне кода (запрос <code>breakpointLocations</code>)</li>
+    </ul>
+    <h2>Предложенные API для расширений</h2>
+    <ul>
+    <li>тип UI, в котором запускается VSCode: <code>vscode.env.uiKind: (UIKind.Desktop|UIKind.Web)</code></li>
+    <li><code>vscode.env.asExternalUri</code>, что-то с разбором внешних урлов в рамках нового <code>vscode.env.openExternal</code> API</li>
+    <li>нативная поддержка редакторов для любого типа файлов (т.н. Custom Editor API)</li>
+    <li>редактируемый заголовок для TreeView</li>
+    <li>улучшения для иерархических сессий отладчика</li>
+    <li>удаллено устаревшее API терминала <code>Terminal.onDidWriteData</code></li>
+    </ul>
+    <h2>Проектирование и разработка</h2>
+    <ul>
+    <li>улучшены иконки и цвета сайта</li>
+    <li>минификатор JS сменен с uglify-es на <a href="https://github.com/terser/terser">terser</a></li>
+    <li>обработчик событий от файловой системы (filewatcher) Chokidar обновлен до v3.x</li>
+    <li>интеграционные тесты теперь запускаются на реальной сборке</li>
+    <li>VSCode и расширения теперь собираются с TypeScript v3.6</li>
+    <li>функционал предпросмотра изображений вынесен из ядра во встроенное расширение Image Preview</li>
+    </ul>
+    <h2>Новая документация</h2>
+    <ul>
+    <li>руководство по деплою на Node.js перемещено на <a href="https://docs.microsoft.com/azure/javascript">https://docs.microsoft.com/azure/javascript</a></li>
+    </ul>
+    <p>И около десятка фиксов.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>
