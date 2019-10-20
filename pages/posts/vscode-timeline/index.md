@@ -1,3 +1,11 @@
+## Fri Oct 18 2019
+
+- [twitter] Новое окно для workspace
+
+  Товарищ загадал рождественское желание - поддержку нескольких окон для одного workspace, и VSCode ответил, что это делается через `F1 --> "Duplicate workspace in new window"`.
+
+  <https://twitter.com/a__pay/status/1184247434756722688>
+
 ## Wed Oct 09 2019
 
 - [twitter, [updates](vscode-1.39.html)] Релиз v1.39

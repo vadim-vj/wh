@@ -1,3 +1,51 @@
+## Fri Oct 18 2019
+
+- [blog, twitter] Анонс игр Game Off
+
+  Game off - это ежегодные соревнования по созданию игр. Длятся месяц, начинаются Nov 1, проводятся на [itch.io](https://itch.io/jam/game-off-2019). Приводятся некоторые полезные ссылки для участников-новичков. GitHub обещает освещать игры в своем блоге и предлагает делиться своими репозитоиями и руководствами по разработке в Твиттере (тег #GitHubGameOff).
+
+  <https://github.blog/2019-10-18-get-ready-for-game-off/>
+
+## Thu Oct 17 2019
+
+- [universe, twitter] Анонс выступления об автоматизации действий при помощи GitHub GraphQL API
+
+  Day 1: Nov 13, 2:10pm. От Rea Loretta.
+
+  <https://githubuniverse.com/schedule/#advanced-patterns-for-github-s-graphql-api>
+
+## Wed Oct 16 2019
+
+- [twitter] Некоторые игры с js13kGames
+
+  <https://twitter.com/github/status/1184530032162676736>
+
+## Tue Oct 15 2019
+
+- [universe, twitter] Анонс выступления об автоматизации действий на GitHub
+
+  От Mariatta Wijaya, при разработке на Python.
+
+  <https://twitter.com/github/status/1184152032531435521>
+
+- [twitter] Пример игры с js13kGames
+
+  <https://twitter.com/github/status/1183865118486085637>
+
+## Mon Oct 14 2019
+
+- [blog, twitter] Авто-линковщик для внешних ресурсов
+
+  Теперь в настройках можно задать урл другой системы (например, Jira) и префикс, по которому GitHub будет отличать ссылки на эту систему (например, `TICKET-`). Встретив где-либо (в "Issues", пул реквестах, комментариях или сообщениях коммитов) слова с таким префиксом, система преобразует их в ссылки на внешнюю систему. Доступно на планах Pro, Team и Enterprise.
+
+  <https://github.blog/2019-10-14-introducing-autolink-references/>
+
+- [blog, twitter] Как различные компании используют GitHub Actions
+
+  В статье даются краткие описания и ссылки на код Actons таких участников, как Mabl, Codefresh, GorillaStack и GitKraken.
+
+  <https://github.blog/2019-10-14-how-partners-like-gitkraken-use-github-actions/>
+
 ## Wed Oct 09 2019
 
 - [blog] Манифест против ущемления прав мигрантов
