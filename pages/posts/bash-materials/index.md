@@ -3,7 +3,7 @@
 - оф. сайт: <https://www.gnu.org/software/bash/>
 - страница разработчика: <https://tiswww.case.edu/php/chet/bash/bashtop.html>
 - документация на сайте GNU: <https://www.gnu.org/software/bash/manual/>
-- тот же мануал на странице разработчика: <https://tiswww.case.edu/php/chet/bash/bashref.html>
+- тот же мануал на странице разработчика: <https://tiswww.case.edu/php/chet/bash/bashref.html> (удобней)
 
 ## Книги
 
@@ -20,3 +20,13 @@
 - статья о bash от разработчика: <https://tiswww.case.edu/php/chet/bash/rose94.pdf>
 - еще похожая статья: <https://tiswww.case.edu/php/chet/bash/article.pdf>
 - раздел в книге "Architecture of Open Source Applications": <http://aosabook.org/en/bash.html>
+- гугловый styleguide: <https://google.github.io/styleguide/shell.xml>
+- вики по сабжу: <https://wiki.bash-hackers.org/start>
+
+## Best practices
+
+- <https://kvz.io/blog/2013/11/21/bash-best-practices/>
+- <https://sap1ens.com/blog/2017/07/01/bash-scripting-best-practices/>
+- <https://github.com/progrium/bashstyle>
+- <https://bertvv.github.io/cheat-sheets/Bash.html>
+- ... и дальше по выдаче гугла
