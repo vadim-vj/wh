@@ -2,6 +2,7 @@
 
 - оф. сайт (там есть актуальная документация): <https://cmake.org>
 - блог/новости (рассылка только общая): <https://blog.kitware.com/tag/cmake/>
+- документация: <https://cmake.org/cmake/help/latest/>
 
 ## Книги
 
