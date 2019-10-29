@@ -15,3 +15,4 @@
 
 - репа: <https://gitlab.kitware.com/cmake/cmake>
 - ее зеркало: <https://github.com/Kitware/CMake>
+- о выборе минимальной версии: <https://stackoverflow.com/questions/40844358/finding-which-cmake-version-a-feature-was-introduced-in>
