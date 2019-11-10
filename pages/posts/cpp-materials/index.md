@@ -2,7 +2,7 @@
 
 - вводная: <https://github.com/sosachbot/cppthreadhat/wiki>
 - справочник: <https://en.cppreference.com/w/>
-- большой сайт по теме: <http://www.cplusplus.com>
+- большой сайт по теме: <http://www.cplusplus.com> (UPD: Reddit не рекомендует)
 
 ## Книги
 
