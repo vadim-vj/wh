@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dir=$(dirname "$(realpath "$0")")
+source "$dir"/common.sh
+
+if [[ $branch_curr == $branch_temp ]]; then
+  source "$dir"/"$1".sh
+
+else
+  echo "[$branch_curr]: non-temporary branch"
+  exit 1
+fi

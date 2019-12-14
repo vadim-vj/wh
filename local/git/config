@@ -1,0 +1,37 @@
+#!/bin/bash
+
+dir_git_backup=~/.git
+file_gitconfig=~/.gitconfig
+header_gitconfig='# auto-generated'
+command_template_path='"$(dirname "$(git config --get commit.template)")"'
+
+# if readable and not auto-generated (no corresponding header)
+if [[ -r $file_gitconfig && $(head -1 "$file_gitconfig") != $header_gitconfig ]]; then
+  mkdir --parents "$dir_git_backup"
+  cp "$file_gitconfig" "$dir_git_backup"      # backup
+  echo "$header_gitconfig" >"$file_gitconfig" # truncate
+fi
+
+git config --global user.name "Vadim Sannikov"
+git config --global user.email "vsj.vadim@gmail.com"
+git config --global user.signingkey "A59F6CDCA63A30B1774AE26C8688DDF0EA096358"
+git config --global help.format "web"
+git config --global init.templateDir ""
+git config --global commit.template "$(dirname "$(realpath "$0")")/commit.template"
+git config --global core.quotePath false
+git config --global feature.experimental true
+git config --global index.version 4
+
+git config --global alias.init-expl-workflow "!$command_template_path/init"
+git config --global alias.save "!$command_template_path/commit push"
+
+git config --global alias.list-pi "--list-cmds=list-plumbinginterrogators"
+git config --global alias.list-pm "--list-cmds=list-plumbingmanipulators"
+git config --global alias.list-ph "--list-cmds=list-purehelpers"
+git config --global alias.list-sh "--list-cmds=list-synchelpers"
+git config --global alias.list-sr "--list-cmds=list-synchingrepositories"
+git config --global alias.list-ai "--list-cmds=list-ancillaryinterrogators"
+git config --global alias.list-am "--list-cmds=list-ancillarymanipulators"
+git config --global alias.list-mp "--list-cmds=list-mainporcelain"
+git config --global alias.list-fi "--list-cmds=list-foreignscminterface"
+git config --global alias.list-all "--list-cmds=list-plumbinginterrogators,list-plumbingmanipulators,list-purehelpers,list-synchelpers,list-synchingrepositories,list-ancillaryinterrogators,list-ancillarymanipulators,list-mainporcelain,list-foreignscminterface"

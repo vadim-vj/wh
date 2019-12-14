@@ -1,0 +1,80 @@
+#!/bin/bash
+
+dir=$(dirname "$(realpath "$0")")
+source "$dir"/common.sh
+
+check_if_branch_exists() {
+  git rev-parse --verify --quiet "$1" >/dev/null
+}
+
+if ! check_if_branch_exists HEAD; then
+  echo "No initial commit"
+  exit 1
+fi
+
+dir_info=$dir_git/info
+dir_vscode=.vscode
+exclude_local=$dir_info/exclude
+origin=origin
+
+manage_branch() {
+  local branch=$1
+  local start_point=$2
+
+  if ! check_if_branch_exists "$branch"; then
+    branch_remote=$origin/$branch
+
+    if check_if_branch_exists "$branch_remote"; then
+      git branch --track "$branch" "$branch_remote"
+
+    else
+      if [[ -z $start_point ]]; then
+        git branch "$branch"
+
+      else
+        git branch "$branch" "$start_point"
+      fi
+
+      if git ls-remote --exit-code "$origin" &>/dev/null; then
+        git push --set-upstream "$origin" "$branch"
+      fi
+    fi
+  fi
+}
+
+manage_worktree() {
+  local worktree=$1
+
+  if ! git worktree list | grep --quiet "$worktree"; then
+    mkdir --parents "$dir_worktrees"
+    git worktree add -f "$dir_worktrees"/"$worktree" "$worktree"
+  fi
+}
+
+mkdir --parents "$dir_info"
+touch "$exclude_local"
+
+# for pattern in "$dir_worktrees" "$dir_vscode"; do
+for pattern in "$dir_worktrees"; do
+  pattern=/$pattern/
+
+  if ! grep --quiet "^$pattern$" "$exclude_local"; then
+    echo "$pattern" >>"$exclude_local"
+  fi
+done
+
+manage_branch "$branch_main"
+manage_branch "$branch_dev" "$branch_main"
+
+manage_branch "$branch_temp" "$branch_dev"
+
+if [[ $branch_curr != $branch_temp ]]; then
+  git switch "$branch_temp"
+fi
+
+manage_worktree "$branch_main"
+manage_worktree "$branch_dev"
+
+command_template_path='"$(dirname "$(git config --get commit.template)")"'
+git config --local alias.save "!$command_template_path/wrapper save"
+git config --local alias.backup "!$command_template_path/wrapper backup"

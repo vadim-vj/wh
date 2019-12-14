@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git add --all
+git commit --file="$(git config --get commit.template)"
+result=$?
+
+if [[ "push" == $1 ]]; then
+  git push
+fi
+
+exit $result
