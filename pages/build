@@ -1,86 +1,142 @@
 #!/bin/bash
 
-BUILD_PATH=../docs
+if [[ -n $1 && ! $1 == "clean" ]]; then
+  echo "Unknown command: '"$1"'"
+  exit 1
+fi
 
-rm -f $BUILD_PATH/*.html
-rm -f $BUILD_PATH/*.css
-rm -f $BUILD_PATH/*.js
+path_build=../docs
+rm -rf $path_build/*
 
-if [ ! "$1" == "clean" ]; then
-  POSTS_PATH=posts
-  POST_HTML_INTENDED=temp.html
-  INTEND_PATTERN='s|^|    |'
-  declare -A TITLES
-  declare -A DATES
-  declare -a GENERATED
+indent() {
+  local file=$1
+  local indent=$2
+  local indentSize=2
 
-  . ./tags.sh
+  temp=$(mktemp)
+  cat $file | pr -to $(($indent * $indentSize)) | sed "s/^\s\+$//" >$temp
+  mv $temp $file
+}
 
-  for d in $POSTS_PATH/*; do
-    if [ -d "$d" ]; then
-      POST_MD=$d/index.md
-      POST_HTML=$d/index.html
-      POST_SETTINGS=$d/settings.sh
-      GENERATED_ID=`basename $d`
-      GENERATED_NAME=$GENERATED_ID.html
-      GENERATED_HTML=$BUILD_PATH/$GENERATED_NAME
+process_html_file() {
+  local file=$1
 
-      if [ -s "$POST_HTML" ]; then
-        sed "$INTEND_PATTERN" $POST_HTML > $POST_HTML_INTENDED
+  local id=$2
+  local title=$3
+  local date=$4
+  local file_base=$5
 
-      else
-        if [ -s "$POST_MD" ]; then
-          markdown $POST_MD | sed '/^$/d' | sed "$INTEND_PATTERN" > $POST_HTML_INTENDED
+  if [[ -z $date ]]; then
+    date=now
+  fi
 
-        else
-          continue
+  sed -i "s|{{id}}|$generated_id|" $file
+  sed -i "s|{{title}}|$title|" $file
+  sed -i "s|{{date}}|$([[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R")|" $file
+  sed -i "s|{{file_base}}|$file_base|" $file
+}
+
+if [[ -z $1 ]]; then
+  path_posts=posts
+  declare -a generated
+
+  index_html_indented=$(mktemp)
+
+  for subject in $path_posts/*; do
+    if [[ -d $subject ]]; then
+      subject=$(basename $subject)
+      mkdir $path_build/$subject
+
+      index_subject=$(mktemp)
+      index_subject_full=$(mktemp)
+      generated_index=$path_build/$subject/index.html
+
+      for d in $path_posts/$subject/*; do
+        if [[ -d $d ]]; then
+          post_md=$d/index.md
+          post_html=$d/index.html
+          post_settings=$d/settings.sh
+
+          generated_id=$(basename $d)
+          generated_name=$subject/$generated_id.html
+          generated_html=$path_build/$generated_name
+
+          post_html_indented=$(mktemp)
+
+          if [[ -s $post_html ]]; then
+            cat $post_html >$post_html_indented
+          else
+            if [[ -s $post_md ]]; then
+              markdown $post_md | sed "/^$/N;/^\n$/D" >$post_html_indented
+
+              #if command -v tidy &>/dev/null; then
+              #  temp=$(mktemp)
+              #  cat $post_html_indented >$temp
+
+              #  tidy -xml -indent -quiet <$temp | sed 's|\s*$||' >$post_html_indented
+              #  rm $temp
+              #fi
+            else
+              continue
+            fi
+          fi
+
+          title=
+          date=
+
+          if [[ -f $post_settings ]]; then
+            source $d/settings.sh
+            echo "<li><a href=\"{{file_base}}$subject/$generated_id.html\">$title</a></li>" >>$index_subject
+          fi
+
+          indent $post_html_indented 4
+          sed -e "/{{content}}/{r $post_html_indented" -e "d}" index.html >$generated_html
+          process_html_file $generated_html $generated_id "$title" "$date" "../"
+
+          generated+=($generated_html)
+          rm $post_html_indented
         fi
-      fi
+      done
 
-      sed "/<div id=\"content\">/r$POST_HTML_INTENDED" index.html > $GENERATED_HTML
+      echo "<ul class=\"nav\">" >>$index_subject_full
+      echo "  <li><a href=\"{{file_base}}$subject\">$subject</a></li>" >>$index_subject_full
+      echo "  <li><ul>" >>$index_subject_full
 
-      title=
-      date=
+      indent $index_subject 2
+      cat $index_subject >>$index_subject_full
+      rm $index_subject
 
+      echo "  </ul></li>" >>$index_subject_full
+      echo "</ul>" >>$index_subject_full
 
-      if [ -f "$POST_SETTINGS" ]; then
-        . $d/settings.sh
+      cat $index_subject_full >>$index_html_indented
 
-        if [ "$GENERATED_ID" == "index" ]; then
-          INDEX_FILE=$GENERATED_HTML
-          INDEX_TITLE=$title
+      indent $index_subject_full 4
+      sed -e "/{{content}}/{r $index_subject_full" -e "d}" index.html >$generated_index
+      process_html_file $generated_index $subject "Index" "" "../"
 
-        else
-          TITLES[$GENERATED_NAME]=$title
-          DATES[$GENERATED_NAME]=$date
-        fi
-      fi
-
-      sed -i "s|####ID####|$GENERATED_ID|" $GENERATED_HTML
-
-      sed -i "s|####TITLE####|$title|" $GENERATED_HTML
-      sed -i "s|####DATE####|`[[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R"`|" $GENERATED_HTML
-
-      GENERATED+=($GENERATED_HTML)
+      generated+=($generated_index)
+      rm $index_subject_full
     fi
   done
 
-  # TODO: sort DATES
+  index=$path_build/index.html
+  cp index.html $index
+  generated+=($index)
 
-  truncate -s0 $POST_HTML_INTENDED
-  for KEY in "${!DATES[@]}"; do
-    echo "<li><a href=\"$KEY\">${TITLES[$KEY]}</a></li>" >> $POST_HTML_INTENDED
+  indent $index_html_indented 2
+  for file in "${generated[@]}"; do
+    sed -i -e "/{{links}}/{r $index_html_indented" -e "d}" $file
+    
+    if [[ ! $(basename $(dirname $file)) == "docs" ]]; then
+      process_html_file $file "" "" "" "../"
+    fi
   done
 
-  sed -i "$INTEND_PATTERN" $POST_HTML_INTENDED
-  for FILE in "${GENERATED[@]}"; do
-    sed -i "/<ul id=\"nav\">/r$POST_HTML_INTENDED" $FILE
-    sed -i "s|####MAIN_TITLE####|$INDEX_TITLE|" $FILE
-  done
+  indent $index_html_indented 2
+  sed -i -e "/{{content}}/{r $index_html_indented" -e "d}" $index
+  process_html_file $index "index" "Index"
 
-  sed -i 's|^|  |' $POST_HTML_INTENDED
-  sed -i "/<ul id=\"nav-main\">/r$POST_HTML_INTENDED" ${INDEX_FILE}
-
-  rm $POST_HTML_INTENDED
-  cp index.css index.js $BUILD_PATH/
+  rm $index_html_indented
+  cp index.js index.css $path_build
 fi

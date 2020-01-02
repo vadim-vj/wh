@@ -1,0 +1,117 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Git, материалы</title>
+  <link rel="stylesheet" href="../index.css" type="text/css">
+  <script src="../index.js"></script>
+</head>
+
+<body id="materials">
+  <aside>
+    <ul id="nav-left">
+      <li><a href="../">Index</a></li>
+    </ul>
+
+    <ul class="nav">
+      <li><a href="../cpp">cpp</a></li>
+      <li><ul>
+        <li><a href="../cpp/materials.html">C++, материалы</a></li>
+      </ul></li>
+    </ul>
+    <ul class="nav">
+      <li><a href="../git">git</a></li>
+      <li><ul>
+        <li><a href="../git/commands.html">Git, списки команд</a></li>
+        <li><a href="../git/materials.html">Git, материалы</a></li>
+      </ul></li>
+    </ul>
+  </aside>
+
+  <section>
+    <article>
+      <header>
+        <h1>Git, материалы</h1>
+        <small class="date">Wed 02 Oct 2019, 00:30</small>
+      </header>
+
+      <div id="content">
+        <h2>Онлайн-ресурсы</h2>
+
+        <ul>
+        <li>оф. сайт: <a href="https://git-scm.com">https://git-scm.com</a></li>
+        <li>репозиторий: <a href="https://github.com/git/git">https://github.com/git/git</a></li>
+        <li>Git Developer Pages: <a href="https://git.github.io">https://git.github.io</a></li>
+        <li>GitHub (+ твиттер): <a href="https://github.com">https://github.com</a> (<a href="https://twitter.com/github">https://twitter.com/github</a>)</li>
+        <li>BitBucket (+ твиттер): <a href="https://bitbucket.org/product/">https://bitbucket.org/product/</a> (<a href="https://twitter.com/bitbucket">https://twitter.com/bitbucket</a>)</li>
+        </ul>
+
+        <h2>Книги</h2>
+
+        <p>ProGit:</p>
+
+        <ul>
+        <li>en: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+        <li>ru: <a href="https://git-scm.com/book/ru/v2">https://git-scm.com/book/ru/v2</a></li>
+        <li>ru (полный перевод): <a href="https://www.piter.com/collection/all/product/git-dlya-professionalnogo-programmista-2">https://www.piter.com/collection/all/product/git-dlya-professionalnogo-programmista-2</a></li>
+        <li>исходники: <a href="https://github.com/progit/progit2">https://github.com/progit/progit2</a></li>
+        </ul>
+
+        <p>Другие: <a href="https://git-scm.com/doc/ext">https://git-scm.com/doc/ext</a>, + сеть.</p>
+
+        <p><code>&lt;!-- TODO: нужно дополнить список русскими и английскими. И прочитать их --&gt;</code></p>
+
+        <h2>Внутренняя документация</h2>
+
+        <p>Спец. разделы (ссылки есть в секции &ldquo;Further documentation&rdquo; в <code>git help git</code>):</p>
+
+        <ul>
+        <li>Git User Manual (<a href="file:///usr/share/doc/git-doc/user-manual.html">/usr/share/doc/git-doc/user-manual.html</a>)</li>
+        <li>Git Howto Index (<a href="file:///usr/share/doc/git-doc/howto-index.html">git-doc/howto-index.html</a> -> <a href="file:///usr/share/doc/git-doc/howto/">git-doc/howto/</a>)</li>
+        <li>Git API Documents (<a href="file:///usr/share/doc/git-doc/technical/api-index.html">git-doc/technical/api-index.html</a> -> <a href="file:///usr/share/doc/git-doc/technical/">git-doc/technical/</a>)</li>
+        </ul>
+
+        <p>Папка документации: <code>ls -la /usr/share/doc/git-doc/</code>.</p>
+
+        <p><code>&lt;!-- Разобрать содержимое полностью --&gt;</code></p>
+
+        <p>Онлайн: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></p>
+
+        <h2>Чит-листы (cheat sheets)</h2>
+
+        <ul>
+        <li>интерактивный (en): <a href="http://ndpsoftware.com/git-cheatsheet.html">http://ndpsoftware.com/git-cheatsheet.html</a></li>
+        <li>от GitHub-а (ru): <a href="https://github.github.com/training-kit/downloads/ru/github-git-cheat-sheet/">https://github.github.com/training-kit/downloads/ru/github-git-cheat-sheet/</a></li>
+        </ul>
+
+        <h2>Прочее</h2>
+
+        <ul>
+        <li>справочные материалы от ГитХаба: <a href="http://try.github.io">http://try.github.io</a></li>
+        <li>от БитБакета: <a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></li>
+        <li>вики на kernel.org: <a href="http://git.wiki.kernel.org">http://git.wiki.kernel.org</a></li>
+        <li>мейл-листы разработчиков и irc-каналы, ссылки есть на <a href="https://git-scm.com/community">https://git-scm.com/community</a></li>
+        </ul>
+
+        <h2>[ai] help</h2>
+
+        <p>Показ справки по команде или гайдлайна.</p>
+
+        <ul>
+        <li><code>git help [ --web | --man ] &lt;command|guide&gt;</code> - страница справки</li>
+        <li><code>git help --guides | -g</code> - список гайдов</li>
+        </ul>
+
+        <p>Включение просмотра через браузер: <code>git config --global help.format web</code> (+ есть выбор браузера, <code>web.browser firefox</code>). Интересные случаи:</p>
+
+        <ul>
+        <li><code>git help git</code></li>
+        <li><code>git help help</code></li>
+        </ul>
+
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

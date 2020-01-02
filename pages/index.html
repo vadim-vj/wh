@@ -2,26 +2,29 @@
 
 <head>
   <meta charset="utf-8">
-  <title>####TITLE####</title>
-  <link rel="stylesheet" href="index.css" type="text/css">
-  <script src="index.js"></script>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="{{file_base}}index.css" type="text/css">
+  <script src="{{file_base}}index.js"></script>
 </head>
 
-<body id="####ID####">
+<body id="{{id}}">
   <aside>
     <ul id="nav-left">
-      <li><a href=".">####MAIN_TITLE####</a></li>
+      <li><a href="{{file_base}}">Index</a></li>
     </ul>
-    <ul id="nav">
-    </ul>
+
+    {{links}}
   </aside>
+
   <section>
     <article>
       <header>
-        <h1>####TITLE####</h1>
-        <small class="date">####DATE####</small>
+        <h1>{{title}}</h1>
+        <small class="date">{{date}}</small>
       </header>
+
       <div id="content">
+        {{content}}
       </div>
     </article>
   </section>

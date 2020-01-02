@@ -131,9 +131,9 @@
 <edge COLOR="#ff0000"/>
 <node TEXT="&#x43f;&#x438;&#x448;&#x443;&#x442; &#x447;&#x442;&#x43e; &#x43e;&#x43d;&#x438; - &#x43a;&#x440;&#x443;&#x43f;&#x43d;&#x435;&#x439;&#x448;&#x435;&#x435; &#x43e;&#x43f;&#x435;&#x43d;&#x441;&#x443;&#x440;&#x441;&#x43d;&#x43e;&#x435; &#x43a;&#x43e;&#x43c;&#x44c;&#x44e;&#x43d;&#x438;&#x442;&#x438; &#x432; &#x43c;&#x438;&#x440;&#x435;" ID="ID_1984980429" CREATED="1568982903140" MODIFIED="1568982921556"/>
 <node TEXT="&#x441;&#x441;&#x44b;&#x43b;&#x43a;&#x438; &#x43d;&#x430;" ID="ID_218946723" CREATED="1568982976902" MODIFIED="1568982981056">
-<node TEXT="opensource.guide" ID="ID_348741824" CREATED="1568968859824" MODIFIED="1568982996747"/>
-<node TEXT="opensourcefriday.com" ID="ID_446057596" CREATED="1568982982951" MODIFIED="1568982985009"/>
-<node TEXT="opensourcesurvey.org" ID="ID_1730783172" CREATED="1568983012765" MODIFIED="1568983014279"/>
+<node TEXT="opensource.guide" ID="ID_348741824" CREATED="1568968859824" MODIFIED="1576296918165" LINK="https://opensource.guide"/>
+<node TEXT="opensourcefriday.com" ID="ID_446057596" CREATED="1568982982951" MODIFIED="1576296927174" LINK="https://opensourcefriday.com"/>
+<node TEXT="opensourcesurvey.org" ID="ID_1730783172" CREATED="1568983012765" MODIFIED="1576296934748" LINK="https://opensourcesurvey.org"/>
 </node>
 <node TEXT="&#x432;&#x43e;&#x43e;&#x434;&#x443;&#x449;&#x435;&#x432;&#x43b;&#x44f;&#x44e;&#x449;&#x438;&#x435; &#x440;&#x435;&#x447;&#x438; &#x438; &#x432;&#x438;&#x434;&#x435;&#x43e;" ID="ID_796710812" CREATED="1568983117861" MODIFIED="1568983127558"/>
 <node TEXT="&#x43c;&#x43e;&#x436;&#x43d;&#x43e; &#x43f;&#x43e;&#x434;&#x43f;&#x438;&#x441;&#x430;&#x442;&#x44c;&#x441;&#x44f; &#x43d;&#x430; &#x440;&#x430;&#x441;&#x441;&#x44b;&#x43b;&#x43a;&#x443;" ID="ID_1558796695" CREATED="1568983128138" MODIFIED="1568983139108"/>
