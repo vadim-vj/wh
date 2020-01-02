@@ -8,26 +8,35 @@
 </head>
 
 <body id="{{id}}">
-  <aside>
-    <ul id="nav-left">
-      <li><a href="{{file_base}}">Index</a></li>
-    </ul>
-
-    {{links}}
-  </aside>
-
   <section>
-    <article>
+    <main>
       <header>
         <h1>{{title}}</h1>
-        <small class="date">{{date}}</small>
+        <time datetime="{{date}}">{{date}}</time>
       </header>
 
-      <div id="content">
+      <article>
         {{content}}
-      </div>
-    </article>
+      </article>
+    </main>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="{{file_base}}">Index</a></li>
+        </ul>
+
+        {{links}}
+      </nav>
+    </aside>
   </section>
+
+  <footer>
+    <a href="https://github.com/vadim-vj" class="github">
+      <img src="{{file_base}}github.svg">
+      My GitHub profile
+    </a>
+  </footer>
 </body>
 
 </html>

@@ -1,37 +1,60 @@
-html {
-  height: 100%;
+body {
+  width: calc(100vw - 20px);
 }
 
-body {
+body>section>*, body>footer {
+  margin: 10px;
+  padding: 0 10px;
+  border: 1px solid lightgray;
+  background-color: #fdfdfd;
+}
+
+body>section {
   display: flex;
-  font-family: sans-serif;
-  min-height: 100%;
+  flex-wrap: wrap;
+}
+
+main {
+  flex: 10 600px;
 }
 
 aside {
-  flex: 0.2;
-  padding-right: 10px;
-  border-right: 1px solid darkgray;
-  font-size: small;
-}
-
-section {
   flex: 1;
-  padding-left: 15px;
+  min-width: 250px;
 }
 
-header > h1 {
-  font-size: x-large;
+body>footer {
+  padding: 10px;
 }
 
-.date {
+ul {
+  padding-left: 20px;
+}
+
+nav>ul>li:not(:first-child) {
+  list-style: none;
+}
+
+nav>ul>li:not(:first-child)>ul {
+  padding-left: 20px;
+  margin-top: 7px;
+}
+
+time {
   font-family: monospace;
 }
 
-code {
-  color: maroon;
+a {
+  word-break: break-all;
 }
 
-[id$="timeline"] #content > ul > li > p:first-child {
-  font-weight: bold;
+a.github {
+  display: flex;
+  align-items: center;
+  font-size: small;
+}
+
+a.github>img {
+  width: 16px;
+  margin-right: 10px;
 }
