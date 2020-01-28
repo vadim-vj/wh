@@ -121,13 +121,11 @@ if [[ -z $1 ]]; then
             cp -r $assets $generated_dir
 
             if [[ -f $assets/index.css ]]; then
-              css_link="<link rel=\"stylesheet\" href=\"$assets_dir_name/index.css\" type=\"text/css\">"
-              sed -i "/<\/head>/i \  $css_link" $generated_html
+              sed -i "/<\/head>/i \  <link rel=\"preload\" href=\"$assets_dir_name\/index.css\" as=\"style\" onload=\"this.onload = null; this.rel = 'stylesheet'\">\n  <noscript>\n    <link rel=\"stylesheet\" href=\"$assets_dir_name/index.css\">\n  </noscript>" $generated_html
             fi
 
             if [[ -f $assets/index.js ]]; then
-              js_link="<script src=\"$assets_dir_name/index.js\"></script>"
-              sed -i "/<\/head>/i \  $css_link" $generated_html
+              sed -i "/<\/head>/i \  <script defer src=\"$assets_dir_name\/index.js\"></script>" $generated_html
             fi
           fi
 
