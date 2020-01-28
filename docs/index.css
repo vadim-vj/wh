@@ -26,21 +26,18 @@ body {
   aside>nav {
     display: grid;
     grid-gap: 0.1em;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   aside>nav>ul {
-    border-bottom: 1px solid lightgray;
-    margin-top: -10px;
+    border-bottom: var(--border);
   }
-  aside>nav>ul:nth-child(odd) {
-    border-right: 1px solid lightgray;
-  }
-  aside>nav li {
+  aside>nav li>ul {
+    display: none;
   }
 }
 
 body>* {
-  border: 1px solid lightgray;
+  border: var(--border);
   padding: .5em;
 }
 
