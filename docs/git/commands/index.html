@@ -1,0 +1,100 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git, Списки команд</title>
+  <link rel="stylesheet" href="../../index.css" type="text/css">
+  <script src="../../index.js"></script>
+</head>
+
+<body id="commands">
+  <main>
+    <header>
+      <h1><span class="subject">[Git]</span> Списки команд</h1>
+      <time datetime="Wed 02 Oct 2019, 00:37">Wed 02 Oct 2019, 00:37</time>
+    </header>
+
+    <article>
+      <h2>Plumbing</h2>
+
+      <ul>
+      <li><code>[pi]</code> = <code>plumbinginterrogators</code></li>
+      <li><code>[pm]</code> = <code>plumbingmanipulators</code></li>
+      <li><code>[ph]</code> = <code>purehelpers</code></li>
+      <li><code>[sh]</code> = <code>synchelpers</code></li>
+      <li><code>[sr]</code> = <code>synchingrepositories</code></li>
+      </ul>
+
+      <h2>Porcelain</h2>
+
+      <ul>
+      <li><code>[ai]</code> = <code>ancillaryinterrogators</code></li>
+      <li><code>[am]</code> = <code>ancillarymanipulators</code></li>
+      <li><code>[mp]</code> = <code>mainporcelain</code></li>
+      <li><code>[fi]</code> = <code>foreignscminterface</code></li>
+      </ul>
+
+      <p><code>&lt;!-- TODO: там еще есть списки, типа "builtins" и "nohelpers" --&gt;</code></p>
+
+      <h2>Misc</h2>
+
+      <ul>
+      <li><code>ls -la /usr/share/doc/git-doc/cmds-*</code> - все списки</li>
+      <li><code>git --list-cmds=list-&lt;list&gt;</code> - получение списка</li>
+      <li><code>git config --global alias.list-mp '--list-cmds=list-mainporcelain'</code> - добавление алиаса</li>
+      <li><code>ls -la /usr/lib/git-core/</code> - папка с бинарниками</li>
+      </ul>
+
+    </article>
+  </main>
+
+  <aside>
+    <nav>
+      <ul>
+        <li><a href="../../">Index</a></li>
+      </ul>
+
+      <ul class="nav">
+        <li><a href="../../bash">Bash</a><ul>
+          <li><a href="../../bash/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="../../cmake">CMake</a><ul>
+          <li><a href="../../cmake/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="../../cpp">C++</a><ul>
+          <li><a href="../../cpp/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="../../git">Git</a><ul>
+          <li><a href="../../git/commands">Списки команд</a></li>
+          <li><a href="../../git/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="../../vim">Vim</a><ul>
+          <li><a href="../../vim/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="../../vscode">vscode</a><ul>
+          <li><a href="../../vscode/materials">Материалы</a></li>
+        </ul></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <footer>
+    <a href="https://github.com/vadim-vj" class="github">
+      <img src="../../github.svg">
+      My GitHub profile
+    </a>
+  </footer>
+</body>
+
+</html>

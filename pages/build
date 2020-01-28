@@ -23,17 +23,25 @@ process_html_file() {
 
   local id=$2
   local title=$3
-  local date=$4
-  local file_base=$5
+  local subject=$4
+  local date=$5
+  local file_base=$6
 
   if [[ -z $date ]]; then
     date=now
   fi
 
   sed -i "s|{{id}}|$generated_id|g" $file
-  sed -i "s|{{title}}|$title|g" $file
   sed -i "s|{{date}}|$([[ $date ]] && LC_TIME="C.UTF-8" date --date="$date" "+%a %d %b %Y, %R")|g" $file
   sed -i "s|{{file_base}}|$file_base|g" $file
+
+  if [[ -n $subject ]]; then
+    sed -i "s|{{subject}}|$subject|g" $file
+  fi
+
+  if [[ -n $title ]]; then
+    sed -i "s|{{title}}|$title|g" $file
+  fi
 }
 
 if [[ -z $1 ]]; then
@@ -51,6 +59,17 @@ if [[ -z $1 ]]; then
       index_subject_full=$(mktemp)
       generated_index=$path_build/$subject/index.html
 
+      title=
+      date=
+
+      subject_settings=$path_posts/$subject/settings.sh
+      if [[ -f $subject_settings ]]; then
+        source $subject_settings
+      fi
+
+      subject_title=${title:-$subject}
+      subject_date=$date
+
       for d in $path_posts/$subject/*; do
         if [[ -d $d ]]; then
           post_md=$d/index.md
@@ -58,9 +77,11 @@ if [[ -z $1 ]]; then
           post_settings=$d/settings.sh
 
           generated_id=$(basename $d)
-          generated_name=$subject/$generated_id.html
-          generated_html=$path_build/$generated_name
+          generated_name=$subject/$generated_id
+          generated_dir=$path_build/$generated_name
+          generated_html=$generated_dir/index.html
 
+          mkdir $generated_dir
           post_html_indented=$(mktemp)
 
           if [[ -s $post_html ]]; then
@@ -86,29 +107,37 @@ if [[ -z $1 ]]; then
 
           if [[ -f $post_settings ]]; then
             source $post_settings
-            echo "<li><a href=\"{{file_base}}$subject/$generated_id.html\">$title</a></li>" >>$index_subject
+            echo "<li><a href=\"{{file_base}}$generated_name\">$title</a></li>" >>$index_subject
           fi
 
-          indent $post_html_indented 4
+          indent $post_html_indented 3
           sed -e "/{{content}}/{r $post_html_indented" -e "d}" index.html >$generated_html
-          process_html_file $generated_html $generated_id "$title" "$date" "../"
+          process_html_file $generated_html $generated_id "$title" "$subject_title" "$date" "../../"
+
+          assets_dir_name=assets
+          assets=$d/$assets_dir_name
+
+          if [[ -d $assets ]]; then
+            cp -r $assets $generated_dir
+
+            if [[ -f $assets/index.css ]]; then
+              css_link="<link rel=\"stylesheet\" href=\"$assets_dir_name/index.css\" type=\"text/css\">"
+              sed -i "/<\/head>/i \  $css_link" $generated_html
+            fi
+
+            if [[ -f $assets/index.js ]]; then
+              js_link="<script src=\"$assets_dir_name/index.js\"></script>"
+              sed -i "/<\/head>/i \  $css_link" $generated_html
+            fi
+          fi
 
           generated+=($generated_html)
           rm $post_html_indented
         fi
       done
 
-      title=$subject
-      date= 
-
-      subject_settings=$path_posts/$subject/settings.sh
-      if [[ -f $subject_settings ]]; then
-        source $subject_settings
-      fi
-
       echo "<ul class=\"nav\">" >>$index_subject_full
-      echo "  <li><a href=\"{{file_base}}$subject\">$title</a></li>" >>$index_subject_full
-      echo "  <li><ul>" >>$index_subject_full
+      echo "  <li><a href=\"{{file_base}}$subject\">$subject_title</a><ul>" >>$index_subject_full
 
       indent $index_subject 2
       cat $index_subject >>$index_subject_full
@@ -120,9 +149,9 @@ if [[ -z $1 ]]; then
       cat $index_subject_full >>$index_html_indented
 
       sed -i -e '1i<nav>' -e '$a</nav>' -e 's/^/  /' $index_subject_full
-      indent $index_subject_full 4
+      indent $index_subject_full 3
       sed -e "/{{content}}/{r $index_subject_full" -e "d}" index.html >$generated_index
-      process_html_file $generated_index $subject "Index of $title" "$date" "../"
+      process_html_file $generated_index $subject "Index" "$subject_title" "$subject_date" "../"
 
       generated+=($generated_index)
       rm $index_subject_full
@@ -133,19 +162,16 @@ if [[ -z $1 ]]; then
   cp index.html $index
   generated+=($index)
 
-  indent $index_html_indented 4
+  indent $index_html_indented 3
   for file in "${generated[@]}"; do
     sed -i -e "/{{links}}/{r $index_html_indented" -e "d}" $file
-
-    if [[ ! $(basename $(dirname $file)) == "docs" ]]; then
-      process_html_file $file "" "" "" "../"
-    fi
+    process_html_file $file "" "" "" "" "$(realpath --relative-to="$(dirname $file)" $path_build)/"
   done
 
   sed -i -e '1i<nav>' -e '$a</nav>' -e 's/^    //' $index_html_indented
-  indent $index_html_indented 4
+  indent $index_html_indented 3
   sed -i -e "/{{content}}/{r $index_html_indented" -e "d}" $index
-  process_html_file $index "index" "Index"
+  process_html_file $index "index" "Index" "Main"
 
   rm $index_html_indented
   cp index.js index.css github.svg $path_build

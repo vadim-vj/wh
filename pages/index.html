@@ -2,34 +2,33 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{subject}}, {{title}}</title>
   <link rel="stylesheet" href="{{file_base}}index.css" type="text/css">
   <script src="{{file_base}}index.js"></script>
 </head>
 
 <body id="{{id}}">
-  <section>
-    <main>
-      <header>
-        <h1>{{title}}</h1>
-        <time datetime="{{date}}">{{date}}</time>
-      </header>
+  <main>
+    <header>
+      <h1><span class="subject">[{{subject}}]</span> {{title}}</h1>
+      <time datetime="{{date}}">{{date}}</time>
+    </header>
 
-      <article>
-        {{content}}
-      </article>
-    </main>
+    <article>
+      {{content}}
+    </article>
+  </main>
 
-    <aside>
-      <nav>
-        <ul>
-          <li><a href="{{file_base}}">Index</a></li>
-        </ul>
+  <aside>
+    <nav>
+      <ul>
+        <li><a href="{{file_base}}">Index</a></li>
+      </ul>
 
-        {{links}}
-      </nav>
-    </aside>
-  </section>
+      {{links}}
+    </nav>
+  </aside>
 
   <footer>
     <a href="https://github.com/vadim-vj" class="github">
