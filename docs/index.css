@@ -9,9 +9,33 @@ body {
   grid: "main aside" minmax(max-content, 100%) "footer footer" / auto 200px;
 }
 
+:root {
+  --border: 1px solid lightgray;
+}
+
 @media (max-width: 768px) {
   body {
     grid: "main" minmax(max-content, 100%) "aside" "footer" / 100%;
+  }
+  ul {
+    margin: 0;
+  }
+  li {
+    margin: 20px auto;
+  }
+  aside>nav {
+    display: grid;
+    grid-gap: 0.1em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  aside>nav>ul {
+    border-bottom: 1px solid lightgray;
+    margin-top: -10px;
+  }
+  aside>nav>ul:nth-child(odd) {
+    border-right: 1px solid lightgray;
+  }
+  aside>nav li {
   }
 }
 
