@@ -92,3 +92,24 @@ a.github {
 a.github>img {
   height: 100%;
 }
+
+/* GitHub-style tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table td, table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
