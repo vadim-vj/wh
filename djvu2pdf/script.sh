@@ -1,6 +1,12 @@
 #!/bin/bash
 
-f='sample.djvu'
+ext=djvu
+f=./sample.$ext
+file_dir=$(dirname "$1")
+file_name=$(basename "$1" ".$ext")
+
+cp "$1" $f
+
 pg=$(djvused -e 'n' $f)
 
 for i in $(seq 1 $pg)
@@ -11,4 +17,7 @@ done
 
 pdfbeads -o ${f/djvu/pdf};
 
-rm ./pg*.html ./pg*.tiff ./pg*.jbig2 ./pg*.sym ./pg*.jpg
+rm -f ./pg*.html ./pg*.tiff ./pg*.jbig2 ./pg*.sym ./pg*.jpg
+
+cp ./sample.pdf "$file_dir/$file_name.pdf"
+gio trash "$1"
