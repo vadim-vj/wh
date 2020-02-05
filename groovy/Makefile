@@ -1,22 +1,22 @@
 .PHONY: clean compile run-java run-groovy run all
 
-BUILD_DIR		:= build
-MAIN_SCRIPT	:= aggregate
-SCRIPT_OPTS	:= --type=grad.Two
-EXTENSION   := groovy
+build_dir		:= build
+main_script	:= aggregate
+script_opts	:= --type=grad.Two
+extension   := groovy
 
 all: clean compile run-java run-groovy
 
 run: run-groovy
 
 run-java:
-		java -classpath '$(BUILD_DIR):/snap/groovy/15/lib/*' $(MAIN_SCRIPT) $(SCRIPT_OPTS)
+		java -classpath "$(build_dir):/snap/groovy/current/lib/*" $(main_script) $(script_opts)
 
 run-groovy:
-		groovy $(MAIN_SCRIPT) $(SCRIPT_OPTS)
+		groovy $(main_script) $(script_opts)
 
 compile: clean
-		groovyc -d=$(BUILD_DIR) $(MAIN_SCRIPT).$(EXTENSION) `find ./classes/ -name "*.$(EXTENSION)"`
+		groovyc -d=$(build_dir) $(main_script).$(extension) `find ./classes/ -name "*.$(extension)"`
 
 clean:
-		rm -rf $(BUILD_DIR)/*
+		rm -rf $(build_dir)/*

@@ -2,7 +2,7 @@ package classes
 
 abstract class Dataset {
   def getTsvPath() {
-    return 'dataset'
+    'dataset'
   }
 
   void process() {
