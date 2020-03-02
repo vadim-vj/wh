@@ -1,3 +1,8 @@
+### Харрисон М., Как устроен Python. Гид для разработчиков, программистов и интересующихся
+<https://www.piter.com/collection/python/product/kak-ustroen-python-gid-dlya-razrabotchikov-programmistov-i-interesuyuschihsya>
+
+---
+
 - введение, как установить, про интерпретируемость
 - формат приглашений REPL определяется в модуле `sys`: `import sys; sys.ps1; sys.ps2`, выход из REPL - `quit()`
 - описание редактора IDLE

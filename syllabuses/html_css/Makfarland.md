@@ -1,3 +1,8 @@
+### Макфарланд Д., Новая большая книга CSS
+<https://www.piter.com/collection/bestsellery-oreilly/product/novaya-bolshaya-kniga-css>
+
+---
+
 - введение в CSS и HTML, что это такое, различия, почему лучше разделять
 - о `doctype`, о различении тегов `<br>` (HTML4) `<br />` (XHTML), и что HTML5 понимает оба варианта
 - CSS3 делится на модули: Selectors, Values and Units, Box Alignment etc. Единого CSS4 не будет, будут только обновления модулей

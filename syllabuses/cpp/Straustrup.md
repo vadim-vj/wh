@@ -1,3 +1,8 @@
+### Страуструп Б., Язык программирования C++. Краткий курс
+<http://www.williamspublishing.com/Books/978-5-907144-12-5.html>
+
+---
+
 C++ Core Guidelines: <https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md>. Выдержки из них приводятся в конце каждого раздела. Я выписываю только (малую) часть.
 
 #### Основы

@@ -1,3 +1,8 @@
+### Маркотт И., Отзывчивый веб-дизайн
+<https://www.mann-ivanov-ferber.ru/books/book-apart/otzivchivij-web-design/>
+
+---
+
 - ссылка на статью "Дао веб дизайна" Джона Олсоппа (перевод: <https://www.webmascon.com/topics/designdetails/3a.asp>). Основные постулаты:
   * принципы полиграфии не нужны в вебе, нужно мыслить по новому
   * ненужность тотального контроля вида страницы ("pixel perfect")

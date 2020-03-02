@@ -1,3 +1,8 @@
+### Силен Д., Мейсман А., Али М., Основы Data Science и Big Data. Python и наука о данных
+<https://www.piter.com/collection/all/product/osnovy-data-science-i-big-data-python-i-nauka-o-dannyh-2>
+
+---
+
 #### Введение
 - большие данные - такие, которые нельзя обработать традиционными средствами (напр., РСУБД). Характеризуются тремя (или четырьмя) V:
   * volume - объем, сколько данных содержит набор

@@ -1,3 +1,8 @@
+### Berman H., Flexbox for Responsive Web Design
+<https://flexbox-rwd.com>
+
+---
+
 - flexbox = CSS3 flexible box layout module (выходит, целый модуль)
 - этот модуль определяет новый layout mode (`flex`), такой же, как `block`, `inline`, `table` etc.
 - причина использования flexbox - простота: не нужны `float`-ы, хаки и умный javascript. Примеры проблем, решаемых флексбоксом: <https://philipwalton.github.io/solved-by-flexbox/>
