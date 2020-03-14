@@ -7,6 +7,7 @@
 - [Персиваль Г., Разработка на основе тестирования](python/test/Persival.md)
 - [Hiilar G., Hands-On RESTful Python Web Services](python/Hillar.md)
 - [Copeland R., Myers J., Essential SQLAlchemy](python/sql/Copeland_Myers.md)
+- [Данжу Д., Путь Pythoп](python/advanced/Danjou.md)
 
 #### Groovy
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
