@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export DATABASE_URL="postgresql:///test"
+
+case "$1" in
+  "server" ) python3 app.py;;
+  "tests"  ) pytest -vs;;
+  *        ) echo "First param must be one of: 'server', 'tests'";;
+esac
