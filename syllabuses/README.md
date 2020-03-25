@@ -13,7 +13,10 @@
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
 - [Заметки по документации](groovy/old.md)
 
-#### Data Science
+#### Computer science
+- [Фило В.Ф., Теоретический минимум по CS](cs/Filho.md)
+
+#### Data science
 - [Силен Д. и др., Основы Data Science](data_science/Silen.md)
 
 #### C++
@@ -22,6 +25,9 @@
 #### Алгоритмы
 - [Бхаргава А., Грокаем алгоритмы](alg/Bhargava.md)
 
+#### Git
+- [Chacon S., Straub B., Pro Git](git/ChaconStraub.md)
+
 #### HTML/CSS
 - [Дакетт Д., HTML и CSS](html_css/Dakett.md)
 - [Макфарланд Д., Новая большая книга CSS](html_css/Makfarland.md)
@@ -29,5 +35,11 @@
 - [Berman H., Flexbox](html_css/responsive/flex/Berman.md)
 - [Meyer E., Grid Layout in CSS](html_css/responsive/grid/Meyer.md)
 
-#### FFMpeg
+#### Misc
 - [Korbel F., FFmpeg Basics](ffmpeg/Korbel.md)
+- [Del Sole Al., Visual Studio Code](tools/vscode/DelSole.md)
+- [Herrero A., Markdown](tools/markdown/Herrero.md)
+
+#### English
+- [Бонк Н., Шаг за шагом I](english/Bonk/1.md)
+- [Бонк Н., Сборник дополнительных упражнений](english/Bonk/exc.md)
