@@ -40,6 +40,9 @@
 - [Del Sole Al., Visual Studio Code](tools/vscode/DelSole.md)
 - [Herrero A., Markdown](tools/markdown/Herrero.md)
 
+#### Interview
+- [McDowell G. L., Cracking the Coding Interview](interview/McDowell.md)
+
 #### English
 - [Бонк Н., Шаг за шагом I](english/Bonk/1.md)
 - [Бонк Н., Сборник дополнительных упражнений](english/Bonk/exc.md)
