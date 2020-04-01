@@ -41,7 +41,7 @@
 - [Herrero A., Markdown](tools/markdown/Herrero.md)
 
 #### Interview
-- [McDowell G. L., Cracking the Coding Interview](interview/McDowell.md)
+- [Лакман Макдауэлл Г., Карьера программиста](interview/LaakmannMcDowell.md)
 
 #### English
 - [Бонк Н., Шаг за шагом I](english/Bonk/1.md)
