@@ -46,3 +46,5 @@
 #### English
 - [Бонк Н., Шаг за шагом I](english/Bonk/1.md)
 - [Бонк Н., Сборник дополнительных упражнений](english/Bonk/exc.md)
+- [Murphy R., Essential Grammar in Use](english/Murphy/Basic.md)
+- [Murphy R., English Grammar in Use](english/Murphy/Intermediate.md)
