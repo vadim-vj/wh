@@ -6,3 +6,12 @@
 - в гайде attributes имя файла technical/long-running-process-protocol.txt не выделено
 - в большом user manual - "git fsck --full --no-dangling". Но --full теперь по дефолту, лишняя
 - для `git help subtree` нет html-версии, только текстовая
+
+#### Anki
+- Ctrl+Z в поле, в диалоге добавления ноты, вставляет пустую строку в начало
+- spellcheck в полях не помешал бы
+- в диалоге добавления ноты "Show duplicate" исчезает не после удаления дублирующей ноты через браузер, а только при клике в поле карточки
+
+#### Apache mod_markdown
+- в автоссылках (`<...>`, MKD_AUTOLINK) не декодируются кириллические урлы
+
