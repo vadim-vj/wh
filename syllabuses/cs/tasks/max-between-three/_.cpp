@@ -25,8 +25,9 @@ int max_between_three_via_assign(int a, int b, int c) {
 // ---
 
 #include <cassert>
+#include <vector>
 
 int main() {
-  assert(max_between_three_simple(1, -10, 33) == 33);
-  assert(max_between_three_via_assign(1, -10, 33) == 33);
-}
+  for (const auto &func : std::vector{max_between_three_simple, max_between_three_via_assign}) {
+    assert(func(1, -10, 33) == 33);
+  }

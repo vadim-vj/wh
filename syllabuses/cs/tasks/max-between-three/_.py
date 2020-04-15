@@ -29,5 +29,6 @@ def max_between_three_via_assign(a, b, c):
 # ---
 
 
-assert max_between_three_simple(1, -10, 33) == 32
-assert max_between_three_via_assign(1, -10, 33) == 33
+if __name__ == '__main__':
+    for func in [max_between_three_simple, max_between_three_via_assign]:
+        assert func(1, -10, 33) == 33
