@@ -6,10 +6,10 @@ def selection_sort(to_sort):
 
         for j in range(i + 1, len(arr)):
             if arr[j] < arr[i_min]:
-                i_min = j
+            i_min = j
 
-        if (i != i_min):
-            arr[i], arr[i_min] = arr[i_min], arr[i]
+            if (i != i_min):
+                arr[i], arr[i_min] = arr[i_min], arr[i]
 
     return arr
 

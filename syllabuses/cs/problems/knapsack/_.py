@@ -36,6 +36,7 @@ def knapsack(items, max_weight):
 
 if __name__ == "__main__":
     data = (
+        # 0 - weight, 1 - price
         ((1, 3), (3, 6)),
     )
 
