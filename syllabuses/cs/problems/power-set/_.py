@@ -12,24 +12,25 @@ def power_set(flowers):
     return fragrances
 
 
-def power_set_lists(flowers):
+def power_set_lists(elements):
     import copy
-    fragrances = [[]]
 
-    for flower in flowers:
-        new_fragrances = copy.deepcopy(fragrances)
+    ps = [[]]
 
-        for fragrance in new_fragrances:
-            fragrance.append(flower)
+    for e in elements:
+        new_ps = copy.deepcopy(ps)
 
-        fragrances += new_fragrances
+        for sets in new_ps:
+            sets.append(e)
 
-    return fragrances
+        ps += new_ps
+
+    return ps
 
 # ---
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     data = (
         # ('a',)
         ('a', 'b', 'c',),

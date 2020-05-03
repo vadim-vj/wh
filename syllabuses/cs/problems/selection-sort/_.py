@@ -1,15 +1,16 @@
 def selection_sort(to_sort):
     arr = to_sort[:]
+    length = len(arr)
 
-    for i in range(len(arr) - 1):
+    for i in range(length - 1):
         i_min = i
 
-        for j in range(i + 1, len(arr)):
+        for j in range(i + 1, length):
             if arr[j] < arr[i_min]:
-            i_min = j
+                i_min = j
 
-            if (i != i_min):
-                arr[i], arr[i_min] = arr[i_min], arr[i]
+        if (i < i_min):
+            arr[i], arr[i_min] = arr[i_min], arr[i]
 
     return arr
 
@@ -18,6 +19,7 @@ def selection_sort(to_sort):
 
 if __name__ == "__main__":
     data = (
+        [5, 2, 3, 1],
         [3, 7, 2],
         [3, 4, 5, 7, 2, 3, 41, 2],
         [0, 0, 0, 0],

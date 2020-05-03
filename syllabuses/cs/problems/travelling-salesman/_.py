@@ -4,9 +4,8 @@ def generate_distance_matrix(n):
     matrix = [[None for i in range(n)] for j in range(n)]
 
     for i in range(n):
-        for j in range(i + 1):
-            if i != j:
-                matrix[i][j] = matrix[j][i] = random.uniform(1, 100)
+        for j in range(i):
+            matrix[i][j] = matrix[j][i] = random.uniform(1, 100)
 
     return matrix
 
@@ -50,4 +49,5 @@ def travelling_salesman(n):
 # ---
 
 if __name__ == '__main__':
+    #print(generate_distance_matrix(3))
     print(travelling_salesman(9))
