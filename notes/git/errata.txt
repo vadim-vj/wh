@@ -27,3 +27,4 @@
 - <https://wizardforcel.gitbooks.io/sicp-in-python/content/1.html>, 1.1.3, `&gt;&gt;&gt;` - экранированы символы, встречается несколько раз. И не только эти символы
 - там же. Цитаты неправильно отображаются
 - ссылка на Stanford's introductory course битая
+- 1.6, ссылка в самом конце битая
