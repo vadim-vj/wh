@@ -18,19 +18,26 @@ def fib_nr(n):
     """
     pred, curr = 1, 1
 
-    while n > 2:
+    for _ in range(2, n):
         pred, curr = curr, pred + curr
-        n -= 1
 
     return curr
+
+mem = [None, 1, 1]
+def fib_mem(n):
+    if len(mem) <= n:
+        mem.append(fib_mem(n - 1) + fib_mem(n - 2))
+        #mem.append(mem[n - 1] + mem[n - 2])
+
+    return mem[n]
 
 # ---
 
 if __name__ == '__main__':
     from doctest import run_docstring_examples
 
-    for func in [fib, fib_nr]:
+    for func in [fib, fib_nr, fib_mem]:
         run_docstring_examples(func, globals())
 
-        for n in range(1, 10):
+        for n in range(1, 11):
             print(n, ': ', func(n))

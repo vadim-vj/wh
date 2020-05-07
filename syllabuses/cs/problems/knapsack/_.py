@@ -31,6 +31,11 @@ def knapsack(items, max_weight):
 
     return best_candidate
 
+def knapsac_rec(items, max_weight):
+    pass
+
+def knapsack_powdered(items, max_weight):
+    pass
 
 # ---
 
@@ -41,6 +46,7 @@ if __name__ == "__main__":
     )
 
     for items in data:
-        print(power_set(items))
-        print(knapsack(items, 3))
-        print(knapsack(items, 4))
+        # print(power_set(items))
+        for func in [knapsack, knapsac_rec, knapsack_powdered]:
+            print(func(items, 3))
+            print(func(items, 4))
