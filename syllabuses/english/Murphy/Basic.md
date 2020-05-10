@@ -122,7 +122,7 @@
 #### 20. for since ago
 -
 
-#### 21. I have done (present perfecc) и I did (past)
+#### 21. I have done (present perfect) и I did (past)
 -
 
 ---
