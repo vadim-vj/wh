@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+import argparse, re, os
+from markdown import markdown
+from markdown.extensions.codehilite import CodeHiliteExtension
+
+def write_markdown(question, answer):
+    global fout
+
+    res = question and answer
+
+    if res:
+        fout.write(' '.join('"'
+            + markdown(
+                os.linesep.join(lines).strip(),
+                output_format='html5',
+                extensions=['fenced_code', CodeHiliteExtension(linenums=True)]
+            ).replace('"', '""')
+            + '"' for lines in [question, answer]
+        ) + os.linesep)
+
+    return res
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Parse markdown into Anki TSV')
+    parser.add_argument('file', metavar='<file-name>', type=str, help='name of a file to parse')
+
+    with open(parser.parse_args().file, 'r') as fin:
+        fout = open('./anki.tsv', 'w')
+
+        num = 0
+        question = []
+        answer = []
+
+        for line in fin:
+            line = line.rstrip()
+            if not line and not answer:
+                continue
+
+            if line.startswith('---'):
+                if num > 0 and not write_markdown(question, answer):
+                    raise Exception('No data', question, answer)
+
+                question = []
+                answer = []
+
+                num += 1
+                continue
+
+            if num > 0:
+                if line.startswith('>') and not answer:
+                    question.append(re.sub(r'^\s*>\s*', '', line))
+
+                else:
+                    answer.append(line)
+
+        write_markdown(question, answer)
+        fout.close()
