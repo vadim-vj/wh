@@ -4,10 +4,12 @@ import argparse, re, os
 from markdown import markdown
 from markdown.extensions.codehilite import CodeHiliteExtension
 
-def write_markdown(question, answer):
-    global fout
-
+def write_markdown(question, answer, p2, tag, tags, fout):
     res = question and answer
+    data = [question, answer]
+
+    if p2:
+        data.append(p2)
 
     if res:
         fout.write(' '.join('"'
@@ -16,14 +18,19 @@ def write_markdown(question, answer):
                 output_format='html5',
                 extensions=['fenced_code', CodeHiliteExtension(linenums=True)]
             ).replace('"', '""')
-            + '"' for lines in [question, answer]
-        ) + os.linesep)
+            + '"' for lines in data
+        ) + (' "' + ' '.join(tags | tag) + '"' if (tags | tag) else '') + os.linesep)
 
     return res
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parse markdown into Anki TSV')
     parser.add_argument('file', metavar='<file-name>', type=str, help='name of a file to parse')
+    parser.add_argument('--tags', metavar='<tags1,tag2,...>', help='comma separated tags list')
+
+    tags = set()
+    if parser.parse_args().tags:
+        tags = set(map(str.strip, parser.parse_args().tags.split(',')))
 
     with open(parser.parse_args().file, 'r') as fin:
         fout = open('./anki.tsv', 'w')
@@ -31,6 +38,8 @@ if __name__ == '__main__':
         num = 0
         question = []
         answer = []
+        p2 = []
+        tag = set()
 
         for line in fin:
             line = line.rstrip()
@@ -38,21 +47,45 @@ if __name__ == '__main__':
                 continue
 
             if line.startswith('---'):
-                if num > 0 and not write_markdown(question, answer):
-                    raise Exception('No data', question, answer)
+                res = write_markdown(question, answer, p2, tag, tags, fout)
+
+                if num > 0 and not res and not tag:
+                    raise Exception('No data', question, answer, p2, tag, tags)
+
+                if res or num <= 0:
+                    num += 1
 
                 question = []
                 answer = []
+                p2 = []
 
-                num += 1
                 continue
 
-            if num > 0:
-                if line.startswith('>') and not answer:
-                    question.append(re.sub(r'^\s*>\s*', '', line))
+
+            if line.lstrip().startswith('#'):
+                matches = re.search(r'\[\s*([-,\s\w]+)\s*\]\s*$', line)
+
+                if matches:
+                    tag = set(map(str.strip, matches.group(1).split(',')))
+
+            elif num > 0:
+                if line.lstrip().startswith('>'):
+                    line = re.sub(r'\s*>\s*', '', line)
+
+                    if answer:
+                        p2.append(line)
+
+                    else:
+                        question.append(line)
 
                 else:
                     answer.append(line)
 
-        write_markdown(question, answer)
+        write_markdown(question, answer, p2, tag, tags, fout)
         fout.close()
+
+        # last divider, empty note
+        if not question:
+            num -= 1
+
+        print('Notes created: ', num)
