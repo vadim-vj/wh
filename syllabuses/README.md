@@ -8,6 +8,7 @@
 - [Hiilar G., Hands-On RESTful Python Web Services](python/Hillar.md)
 - [Copeland R., Myers J., Essential SQLAlchemy](python/sql/Copeland_Myers.md)
 - [Данжу Д., Путь Pythoп](python/advanced/Danjou.md)
+- [Мартелли А. и др., Python. Справочник. Полное описание языка](python/advanced/Martelli.md)
 
 #### Groovy
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
