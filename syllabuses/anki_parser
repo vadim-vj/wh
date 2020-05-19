@@ -8,7 +8,7 @@ def write_markdown(question, answer, p2, tag, tags, fout):
     res = question and answer
     data = [question, answer]
 
-    if p2:
+    if p2 or True:
         data.append(p2)
 
     if res:
@@ -62,7 +62,7 @@ if __name__ == '__main__':
                 continue
 
 
-            if line.lstrip().startswith('#'):
+            if line.lstrip().startswith('#') and not question:
                 matches = re.search(r'\[\s*([-,\s\w]+)\s*\]\s*`?\s*$', line)
 
                 if matches:

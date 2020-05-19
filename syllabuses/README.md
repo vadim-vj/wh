@@ -1,4 +1,4 @@
-### Конспекты прочитанных книг
+### Конспекты прочитанного
 
 #### Python
 - [Федоров Д., Программирование на Python](python/beginner/Fedorov.md)
@@ -9,6 +9,10 @@
 - [Copeland R., Myers J., Essential SQLAlchemy](python/sql/Copeland_Myers.md)
 - [Данжу Д., Путь Pythoп](python/advanced/Danjou.md)
 - [Мартелли А. и др., Python. Справочник. Полное описание языка](python/advanced/Martelli.md)
+- [Q; Env: командная строка, пути и модули, pip, vevn](python/env.md)
+- [Q; Style: PEP8 и всё остальное](python/style.md)
+- [Q; Code: вопросы "что произойдет/выведет?", "как сделать?" и пр.](python/code.md)
+- [Q; Misc: всё, что не вошло в остальные разделы](python/misc.md)
 
 #### Groovy
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
