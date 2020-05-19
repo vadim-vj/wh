@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
 
             if line.lstrip().startswith('#'):
-                matches = re.search(r'\[\s*([-,\s\w]+)\s*\]\s*$', line)
+                matches = re.search(r'\[\s*([-,\s\w]+)\s*\]\s*`?\s*$', line)
 
                 if matches:
                     tag = set(map(str.strip, matches.group(1).split(',')))
