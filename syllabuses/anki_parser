@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
             elif num > 0:
                 if line.lstrip().startswith('>'):
-                    line = re.sub(r'\s*>\s*', '', line)
+                    line = re.sub(r'\s*>(?:\s{1})?', '', line)
 
                     if answer:
                         p2.append(line)
