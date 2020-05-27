@@ -43,6 +43,10 @@ if __name__ == '__main__':
 
         for line in fin:
             line = line.rstrip()
+
+            if line == '####----####':
+                break
+
             if not line and not answer:
                 continue
 
