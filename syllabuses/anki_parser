@@ -4,6 +4,8 @@ import argparse, re, os
 from markdown import markdown
 from markdown.extensions.codehilite import CodeHiliteExtension
 
+sep = ','
+
 def write_markdown(question, answer, p2, tag, tags, fout):
     res = question and answer
     data = [question, answer]
@@ -12,14 +14,14 @@ def write_markdown(question, answer, p2, tag, tags, fout):
         data.append(p2)
 
     if res:
-        fout.write(' '.join('"'
+        fout.write(sep.join('"'
             + markdown(
                 os.linesep.join(lines).strip(),
                 output_format='html5',
                 extensions=['fenced_code', CodeHiliteExtension(linenums=True)]
             ).replace('"', '""')
             + '"' for lines in data
-        ) + (' "' + ' '.join(tags | tag) + '"' if (tags | tag) else '') + os.linesep)
+        ) + (sep + '"' + ' '.join(tags | tag) + '"' if (tags | tag) else '') + os.linesep)
 
     return res
 
