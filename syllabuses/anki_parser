@@ -7,7 +7,19 @@ from markdown.extensions.codehilite import CodeHiliteExtension
 sep = ','
 errRegExp = re.compile(r'"err"')
 
-def write_markdown(question, answer, p2, tag, tags, fout):
+def get_text(lines, is_md):
+    text = os.linesep.join(lines).strip()
+
+    if is_md:
+        text = markdown(
+            text,
+            output_format='html5',
+            extensions=['fenced_code', CodeHiliteExtension(linenums=True)]
+        )
+
+    return text
+
+def write_markdown(question, answer, p2, tag, tags, fout, is_md):
     res = question and answer
     data = [question, answer]
 
@@ -15,19 +27,15 @@ def write_markdown(question, answer, p2, tag, tags, fout):
         data.append(p2)
 
     if res:
-        md = sep.join('"'
-            + markdown(
-                os.linesep.join(lines).strip(),
-                output_format='html5',
-                extensions=['fenced_code', CodeHiliteExtension(linenums=True)]
-            ).replace('"', '""')
+        text = sep.join('"'
+            + get_text(lines, is_md).replace('"', '""')
             + '"' for lines in data
         )
 
-        if errRegExp.search(md):
-            print('Markdown error (wrong syntax): ' + md)
+        if is_md and errRegExp.search(text):
+            print('Markdown error (wrong syntax): ' + text)
 
-        fout.write(md + (sep + '"' + ' '.join(tags | tag) + '"' if (tags | tag) else '') + os.linesep)
+        fout.write(text + (sep + '"' + ' '.join(tags | tag) + '"' if (tags | tag) else '') + os.linesep)
 
     return res
 
@@ -35,10 +43,13 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parse markdown into Anki TSV')
     parser.add_argument('file', metavar='<file-name>', type=str, help='name of a file to parse')
     parser.add_argument('--tags', metavar='<tags1,tag2,...>', help='comma separated tags list')
+    parser.add_argument('--no-markdown', action='store_true', help='do not produce markdown')
 
     tags = set()
     if parser.parse_args().tags:
         tags = set(map(str.strip, parser.parse_args().tags.split(',')))
+
+    is_md = not parser.parse_args().no_markdown
 
     with open(parser.parse_args().file, 'r') as fin:
         fout = open('./anki.tsv', 'w')
@@ -59,10 +70,10 @@ if __name__ == '__main__':
                 continue
 
             if line.startswith('---'):
-                res = write_markdown(question, answer, p2, tag, tags, fout)
+                res = write_markdown(question, answer, p2, tag, tags, fout, is_md)
 
                 if num > 0 and not res and not tag:
-                    raise Exception('No data', question, answer, p2, tag, tags)
+                    raise Exception('No data', question, answer, p2, tag, tags, is_md)
 
                 if res or num <= 0:
                     num += 1
@@ -93,7 +104,7 @@ if __name__ == '__main__':
                 else:
                     answer.append(line)
 
-        write_markdown(question, answer, p2, tag, tags, fout)
+        write_markdown(question, answer, p2, tag, tags, fout, is_md)
         fout.close()
 
         # last divider, empty note
