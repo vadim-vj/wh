@@ -120,7 +120,10 @@
 - вопросы/утверждения о продолженных действиях - present perfect continuous (`have Ьееп` + `-ing`): `I'm learning German.` -> `How long have you Ьееп learning German?` -> `I've been learning German for two years.`
 
 #### 20. for since ago
--
+- `for` + период - в течение / уже какое-то время
+- `since` + время начала - с тех пор / с
+- период + `ago` - (сколько-то времени) тому назад
+- `for` и `since` как правило используются с перфектом, тогда как `ago` - с past simple
 
 #### 21. I have done (present perfect) и I did (past)
 -
