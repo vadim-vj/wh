@@ -14,6 +14,10 @@
 - [Q; Code: вопросы "что произойдет/выведет?", "как сделать?" и пр.](python/code.md)
 - [Q; Misc: всё, что не вошло в остальные разделы](python/misc.md)
 
+#### PostgreSQL
+- [Лузанов П. и др., Postgres: первое знакомство](postrges/_.md)
+- [Моргунов Е., PostgreSQL. Основы языка SQL](postrges/tmp.md)
+
 #### Groovy
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
 - [Заметки по документации](groovy/old.md)
