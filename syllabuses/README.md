@@ -16,7 +16,7 @@
 
 #### PostgreSQL
 - [Лузанов П. и др., Postgres: первое знакомство](postrges/_.md)
-- [Моргунов Е., PostgreSQL. Основы языка SQL](postrges/tmp.md)
+- [Моргунов Е., PostgreSQL. Основы языка SQL](postrges/_.md)
 
 #### Groovy
 - [Башар А.-Дж., Groovy и Grails](groovy/Abdul-Dzhavad.md)
