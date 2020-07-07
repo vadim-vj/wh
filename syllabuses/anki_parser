@@ -24,7 +24,7 @@ def write_markdown(question, answer, p2, tag, tags, fout, is_md):
     res = question and answer
     data = [question, answer]
 
-    if p2:
+    if p2 or True:
         data.append(p2)
 
     if res:
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
             elif num > 0:
                 if line.lstrip().startswith('>'):
-                    line = re.sub(r'\s*>(?:\s{1})?', '', line)
+                    line = re.sub(r'^\s*>(?:\s{1})?', '', line)
 
                     if answer:
                         p2.append(line)
