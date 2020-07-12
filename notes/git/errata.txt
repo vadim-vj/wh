@@ -39,3 +39,7 @@
 ### GEdit
 
 - shortcut-ы сниппетов перекрывают дефолтные странно: `Ctrl+Q` перекрывает нормально, а `Ctrl+A` нет
+
+### Freeplane
+
+- Экспорт в plain xml не захватывает node details
