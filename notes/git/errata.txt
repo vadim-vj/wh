@@ -43,3 +43,9 @@
 ### Freeplane
 
 - Экспорт в plain xml не захватывает node details
+
+### Документация jupyter notebook
+
+- https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/What is the Jupyter Notebook.html - развалено markdown-форматирование
+- https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook Basics.html - зеленые кнопки без надписей, есть проблемы с markdown-форматированием
+- и многие двльнейшие страницы с теми же проблемами
