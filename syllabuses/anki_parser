@@ -21,7 +21,10 @@ def get_text(lines, is_md):
     return commentRegExp.sub('\\1&num;', text)
 
 def write_markdown(question, answer, p2, tag, tags, fout, is_md):
-    res = question and answer
+    if is_just_notes and question and not question[0]:
+        question = [f'Note #{num}']
+
+    res = question and question[0] and answer and answer[0]
     data = [question, answer]
 
     if p2 or True:
@@ -45,12 +48,14 @@ if __name__ == '__main__':
     parser.add_argument('file', metavar='<file-name>', type=str, help='name of a file to parse')
     parser.add_argument('--tags', metavar='<tags1,tag2,...>', help='comma separated tags list')
     parser.add_argument('--no-markdown', action='store_true', help='do not produce markdown')
+    parser.add_argument('--just-notes', action='store_true', help='allow empty questions')
 
     tags = set()
     if parser.parse_args().tags:
         tags = set(map(str.strip, parser.parse_args().tags.split(',')))
 
     is_md = not parser.parse_args().no_markdown
+    is_just_notes = parser.parse_args().just_notes
 
     with open(parser.parse_args().file, 'r') as fin:
         fout = open('./anki.tsv', 'w')
