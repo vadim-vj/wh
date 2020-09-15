@@ -88,7 +88,7 @@ if [[ -z $1 ]]; then
             cat $post_html >$post_html_indented
           else
             if [[ -s $post_md ]]; then
-              markdown $post_md | sed "/^$/N;/^\n$/D" >$post_html_indented
+              markdown -f +fencedcode $post_md | sed "/^$/N;/^\n$/D" >$post_html_indented
 
               if command -v tidy &>/dev/null; then
                 temp=$(mktemp)

@@ -1,2 +1,2 @@
-title=
-date=
+title=${title}
+date=${date}

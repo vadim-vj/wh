@@ -11,4 +11,4 @@ if __name__ == '__main__':
         _data.lst = lst
 
         # print(lst, get_module('max').maxval, sep=' => ')
-        print(lst, get_module('prefix_avg').result, sep=' => ')
+        print(lst, get_module('prefix_avg_3').result, sep=' => ')
