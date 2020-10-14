@@ -110,7 +110,7 @@
 - наречие "уже" может переводиться на английский язык как `already` (утв. предл.) или как `yet` (вопрос)
 
 #### 18. Have you ever ...? (present perfect 3)
-- перфект может использоваться для описания жизненного опыта (`I've been to Canada, but I haven't been to the Uniced States.`)
+- перфект может использоваться для описания жизненного опыта (`I've been to Canada, but I haven't been to the United States.`)
 - поэтому часто используется с `ever` (когда-л.) / `never` (никогда)
 - `gone` = "уехал" (сейчас), `been` = "был"/"бывал" (когда-л.)
 
