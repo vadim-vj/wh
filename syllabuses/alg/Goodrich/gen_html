@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grip _.md --export test.html
