@@ -106,6 +106,17 @@
 </li>
 </ul>
 </li>
+<li>02.11.2020
+<ul>
+<li>сортировки пузырьком и вставками</li>
+<li>рекурсивная генерация перестановок</li>
+</ul>
+</li>
+<li>04.11.2020
+<ul>
+<li>рекурсивный факториал</li>
+</ul>
+</li>
 </ul>
 <hr>
 <h1>
@@ -445,6 +456,21 @@
             <span class="pl-s1">bag</span>.<span class="pl-en">insert</span>(<span class="pl-s1">k</span>, <span class="pl-s1">permutation</span>.<span class="pl-en">pop</span>())
 
     <span class="pl-k">return</span> <span class="pl-s1">result</span></pre></div>
+<hr>
+<h1>
+<a id="user-content-wednesday-04112020" class="anchor" href="#wednesday-04112020" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Wednesday, <code>[04.11.2020]</code>
+</h1>
+<hr>
+<blockquote>
+<p>Напишите рекурсивную функцию вычисления факториала</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">factorial</span>(<span class="pl-s1">n</span>: <span class="pl-s1">int</span>):
+    <span class="pl-k">return</span> <span class="pl-c1">1</span> <span class="pl-k">if</span> <span class="pl-s1">n</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span> <span class="pl-k">else</span> <span class="pl-s1">n</span> <span class="pl-c1">*</span> <span class="pl-en">factorial</span>(<span class="pl-s1">n</span> <span class="pl-c1">-</span> <span class="pl-c1">1</span>)</pre></div>
+<hr>
+<blockquote>
+<p>Напишите рекурсивный алгоритм построения английской линейки</p>
+</blockquote>
+<p>См. <a href="english_ruler.py">english_ruler.py</a></p>
 
               </article>
             </div>
