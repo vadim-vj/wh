@@ -1,0 +1,255 @@
+-- For PostgreSQL
+
+-- DROP DATABASE IF EXISTS toloka;
+-- CREATE DATABASE toloka;
+
+-- \connect toloka
+
+-- ALTER DATABASE toloka SET lc_monetary TO 'en_US.utf8';
+
+CREATE TYPE project_assignments_issuing AS ENUM ('AUTOMATED', 'MAP_SELECTOR');
+CREATE TYPE project_status AS ENUM ('ACTIVE', 'ARCHIVED');
+CREATE TABLE projects (
+  id serial PRIMARY KEY,
+  public_name character varying (512) NOT NULL,
+  public_description text NOT NULL,
+  public_instructions text,
+  private_comment text,
+  task_spec jsonb NOT NULL,
+  assignments_issuing_type project_assignments_issuing NOT NULL DEFAULT 'AUTOMATED',
+  assignments_issuing_view_config jsonb,
+  assignments_automerge_enabled boolean DEFAULT false,
+  max_active_assignments_count smallint,
+  quality_control jsonb,
+  status project_status NOT NULL DEFAULT 'ACTIVE',
+  created timestamp (3) with time zone NOT NULL DEFAULT current_timestamp
+);
+
+CREATE TYPE pool_type AS ENUM ('REGULAR', 'TRAINING');
+CREATE TYPE pool_status AS ENUM ('OPEN', 'CLOSED', 'ARCHIVED');
+CREATE TYPE pool_close_reason AS ENUM ('MANUAL', 'EXPIRED', 'COMPLETED', 'NOT_ENOUGH_BALANCE', 'ASSIGNMENTS_LIMIT_EXCEEDED', 'BLOCKED');
+CREATE TABLE pools (
+  id serial PRIMARY KEY,
+  project_id integer REFERENCES projects ON UPDATE CASCADE ON DELETE CASCADE,
+  private_name character varying (512) NOT NULL,
+  private_comment text,
+  public_description text,
+  may_contain_adult_content boolean NOT NULL,
+  will_expire timestamp (3) with time zone NOT NULL,
+  auto_close_after_complete_delay_seconds integer CHECK (
+    auto_close_after_complete_delay_seconds >= 0
+    AND
+    auto_close_after_complete_delay_seconds <= 259200
+  ),
+  reward_per_assignment money NOT NULL CHECK (
+    reward_per_assignment >= 0.01::money
+  ),
+  dynamic_pricing_config jsonb,
+  assignment_max_duration_seconds smallint,
+  auto_accept_solutions boolean DEFAULT true,
+  assignments_issuing_config jsonb,
+  filter jsonb,
+  quality_control jsonb,
+  dynamic_overlap_config jsonb,
+  defaults jsonb,
+  mixer_config jsonb,
+  priority integer DEFAULT 0 CHECK (
+    priority >= 0
+    AND
+    priority <= 100
+  ),
+  type pool_type NOT NULL DEFAULT 'REGULAR',
+  status pool_status NOT NULL DEFAULT 'CLOSED',
+  last_close_reason pool_close_reason,
+  created timestamp (3) with time zone NOT NULL DEFAULT current_timestamp,
+  last_started timestamp (3) with time zone,
+  last_stopped timestamp (3) with time zone
+);
+
+INSERT INTO projects (
+  public_name,
+  public_description,
+  public_instructions,
+  private_comment,
+  task_spec
+) VALUES (
+  'Цвет слона',
+  'Какого цвета слон на картинке?',
+  '<p>Рассмотрите изображение и определите цвет слона.</p> Картинку можно увеличить или уменьшить при помощи кнопок:</p> <img src="disc/img1.png">',
+  'Мой первый проект',
+  '{
+    "input_spec": {
+      "image": {
+        "type": "url",
+        "required": true,
+        "hidden": false
+      }
+    },
+    "output_spec": {
+      "result": {
+        "type": "string",
+        "required": true,
+        "hidden": false
+      }
+    },
+    "view_spec": {
+      "assets": {
+        "script_urls": [
+          "library1.js",
+          "library2.js"
+        ]
+      },
+      "markup": "<код интерфейса задания>",
+      "script": "<код JavaScript>",
+      "styles": "<код CSS>",
+      "settings": {
+        "showSkip": true,
+        "showTimer": true,
+        "showTitle": true,
+        "showSubmit": true,
+        "showFullscreen": true,
+        "showInstructions": true
+      }
+    }
+  }'
+);
+
+INSERT INTO pools (
+  project_id,
+  private_name,
+  private_comment,
+  public_description,
+  may_contain_adult_content,
+  will_expire,
+  auto_close_after_complete_delay_seconds,
+  reward_per_assignment,
+  dynamic_pricing_config,
+  assignment_max_duration_seconds,
+  assignments_issuing_config,
+  quality_control,
+  dynamic_overlap_config,
+  defaults,
+  mixer_config,
+  priority
+) VALUES (
+  1,
+  'My first pool',
+  'This is my first pool',
+  'Pool''s description',
+  false,
+  '2020-09-01T13:00',
+  600,
+  0.02,
+  '{
+    "type": "SKILL",
+    "skill_id": 1289,
+    "intervals": [
+      {
+        "from": 0,
+        "to": 60,
+        "reward_per_assignment": 0.03
+      },
+      {
+        "from": 61,
+        "to": 100,
+        "reward_per_assignment": 0.04
+      }
+    ]
+  }',
+  300,
+  '{
+    "issue_task_suites_in_creation_order": false
+  }',
+  '{
+    "training_requirement": {
+      "training_pool_id": "21",
+      "training_passing_skill_value": 70
+    },
+    "captcha_frequency": "LOW",
+    "configs": {},
+    "checkpoints_config": {
+      "real_settings": {
+        "target_overlap": 5,
+        "task_distribution_function": {
+          "scope": "PROJECT",
+          "distribution": "UNIFORM",
+          "window_days": 7,
+          "intervals": [
+            {
+              "from": 1,
+              "to": 100,
+              "frequency": 25
+            },
+            {
+              "from": 101,
+              "to": 1000,
+              "frequency": 5
+            }
+          ]
+        }
+      }
+    }
+  }',
+  '{
+    "type": "BASIC",
+    "max_overlap": 5,
+    "min_confidence": 0.9,
+    "answer_weight_skill_id": 1289,
+    "fields": [
+      {
+        "name": "result"
+      }
+    ]
+  }',
+  '{
+    "default_overlap_for_new_task_suites": 3,
+    "default_overlap_for_new_tasks": 3
+  }',
+  '{
+    "real_tasks_count": 6,
+    "golden_tasks_count": 1,
+    "training_tasks_count": 1,
+    "min_real_tasks_count": 2,
+    "min_golden_tasks_count": 0,
+    "min_training_tasks_count": 0,
+    "force_last_assignment": true,
+    "force_last_assignment_delay_seconds": 10,
+    "mix_tasks_in_creation_order": true,
+    "shuffle_tasks_in_task_suite": false,
+    "golden_task_distribution_function": {
+      "scope": "PROJECT",
+      "distribution": "UNIFORM",
+      "window_days": 7,
+      "intervals": [
+        {
+          "from": 1,
+          "to": 25,
+          "frequency": 5
+        },
+        {
+          "from": 26,
+          "to": 1000,
+          "frequency": 25
+        }
+      ]
+    },
+    "training_task_distribution_function": {
+      "scope": "PROJECT",
+      "distribution": "UNIFORM",
+      "window_days": 7,
+      "intervals": [
+        {
+          "from": 1,
+          "to": 25,
+          "frequency": 5
+        },
+        {
+          "from": 26,
+          "to": 1000,
+          "frequency": 25
+        }
+      ]
+    }
+  }',
+  10
+);

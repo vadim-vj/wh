@@ -1,0 +1,9 @@
+#!/bin/bash
+
+git subtree push --prefix toloka-api heroku master
+
+# git add .
+# git commit --amend -m '[toloka-api] Fix for Heroku deploy'
+# git subtree split --prefix toloka-api -b temp
+# git push --force-with-lease heroku temp:master
+# git branch -D temp

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# psql -c 'DROP DATABASE IF EXISTS toloka_test'
+# psql -c 'CREATE DATABASE toloka_test'
+# psql -c 'ALTER DATABASE toloka SET lc_monetary TO "en_US.utf8"'
+# psql -d toloka_test -f dump.sql
+
+PYTHONDONTWRITEBYTECODE=1 \
+DATABASE_URL='postgres://localhost@localhost:5433/toloka_test' \
+python3 -m unittest tlkapi.tests
+
+# psql -c 'DROP DATABASE IF EXISTS toloka_test'

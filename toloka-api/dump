@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pg_dump -Fc --no-acl --no-owner toloka > dump.raw
+heroku pg:backups:restore 'https://raw.githubusercontent.com/vadim-vj/portfolio/main/toloka-api/dump.raw' DATABASE_URL -a toloka-api

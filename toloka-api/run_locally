@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PYTHONDONTWRITEBYTECODE=1 \
+DATABASE_URL='postgres://localhost@localhost:5433/toloka' \
+adev runserver --app-factory 'init_app'
